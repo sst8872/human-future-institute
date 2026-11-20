@@ -101,7 +101,7 @@
     $$('.slide', track).forEach((el, k) => { if (k === 0 || k === N + 1) el.setAttribute('aria-hidden', 'true'); });
     const all = $$('.slide', track);
     const cur = $('.cur', visual), bar = $('.bar i', visual), pauseBtn = $('.pause', visual);
-    $('.total', visual).textContent = N;
+    $('.total', visual).textContent = String(N).padStart(2, '0');
     let pos = 1, timer = null, playing = true, moving = false;
 
     const setX = (px = 0, anim = false) => {
@@ -111,7 +111,8 @@
     const mark = () => {
       const realIdx = (pos - 1 + N) % N;
       all.forEach((el, k) => el.classList.toggle('on', k === pos || (pos === 0 && k === N) || (pos === N + 1 && k === 1)));
-      cur.textContent = realIdx + 1;
+      cur.textContent = String(realIdx + 1).padStart(2, '0');
+      visual.style.setProperty('--prog', N > 1 ? realIdx / (N - 1) : 0);
     };
     const runBar = () => {
       bar.classList.remove('run'); void bar.offsetWidth;
