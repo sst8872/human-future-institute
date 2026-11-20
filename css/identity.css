@@ -1,7 +1,7 @@
 /* =========================================================
    인간과미래연구소 — 고유 디자인 (identity.css)
    콘셉트: 「인간 ↔ 미래」를 잇는 축
-     · 인간 = 종이빛 바탕 + 명조(세리프) 제목
+     · 인간 = 종이빛 바탕
      · 미래 = 먹빛 남색 + 금색 선
    style.css·sub.css 다음에 읽혀 덮어씁니다.
    이 파일 연결(<link ... identity.css>)만 지우면 이전 모습으로 돌아갑니다.
@@ -12,7 +12,7 @@
   --paper-line:#e6dfcf;
   --gold:#b8913a;         /* 금색 선 */
   --gold-soft:#e3cf9c;
-  --serif:'Noto Serif KR','Nanum Myeongjo',serif;
+  --head:Pretendard,sans-serif;   /* 제목 글꼴: Pretendard (OFL, 상업 무료) */
   --deep:#0b1633;
 }
 
@@ -50,17 +50,17 @@
   .depth2 li a{padding:6px 13px;font-size:14px}
   .logo em{display:none}
 }
-.logo b{font-family:var(--serif);font-weight:700;letter-spacing:-.6px}
+.logo b{font-family:var(--head);font-weight:800;letter-spacing:-.5px}
 .header.open{background:var(--paper)}
 
 /* ---------- 메인 슬라이드 ---------- */
-.lead{font-family:var(--serif);font-weight:700;letter-spacing:-1.5px}
-.big{font-family:var(--serif);font-weight:900;letter-spacing:-4px}
+.lead{font-family:var(--head);font-weight:900;letter-spacing:-1px}
+.big{font-family:var(--head);font-weight:900;letter-spacing:-3px}
 .eyebrow{color:var(--gold-soft)}
 .slide[style*="--img"]::before{background:linear-gradient(90deg,rgba(11,22,51,calc(var(--dim,.45) + .12)),rgba(11,22,51,var(--dim,.45)) 70%)}
 /* 번호·막대: 가운데 → 왼쪽 아래 */
 .visual-ctrl{left:max(40px,calc((100% - 1600px)/2 + 40px));transform:none;bottom:44px;gap:14px}
-.count{gap:16px;font-family:var(--serif);font-size:15px;font-weight:500}
+.count{gap:16px;font-family:var(--en);font-size:15px;font-weight:500}
 .count .cur{font-size:28px;font-weight:700;color:var(--gold-soft)}
 .count .bar{width:140px;height:1px;background:rgba(255,255,255,.4)}
 .count .bar i{height:3px;top:-1px;background:var(--gold-soft)}
@@ -82,12 +82,12 @@
   .count .bar{width:56px}
 }
 
-/* ---------- 섹션 제목: 번호 + 명조 제목 + 선 ---------- */
+/* ---------- 섹션 제목: 번호 + 굵은 한글 제목 + 선 ---------- */
 .section_title{display:flex;align-items:flex-end;gap:26px;text-align:left;max-width:var(--inner);margin:0 auto;padding:0 40px 40px}
 .section_title::after{content:"";flex:1;height:1px;margin-bottom:14px;background:var(--paper-line)}
-.st-no{font-family:var(--serif);font-size:96px;font-weight:500;line-height:.78;color:transparent;-webkit-text-stroke:1px var(--gold)}
+.st-no{font-family:var(--en);font-size:96px;font-weight:300;line-height:.78;color:transparent;-webkit-text-stroke:1px var(--gold)}
 .st-en{font-family:var(--en);font-size:13px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.section_title h2{font-family:var(--serif);font-size:44px;font-weight:700;line-height:1.15;color:var(--ink);letter-spacing:-1px}
+.section_title h2{font-family:var(--head);font-size:44px;font-weight:800;line-height:1.15;color:var(--ink);letter-spacing:-1.2px}
 @media (max-width:1024px){
   .section_title{padding:0 24px 30px;gap:18px}
   .st-no{font-size:68px}
@@ -104,7 +104,7 @@
 /* ---------- 01 공지와 행사: 종이빛 바탕 ---------- */
 .ne-sec .ne-band{background:var(--paper);border-color:var(--paper-line)}
 .ne-col+.ne-col,.ne-col.events{border-color:var(--paper-line)!important}
-.col-hd h3{font-family:var(--serif);color:var(--ink)}
+.col-hd h3{font-family:var(--head);color:var(--ink)}
 .board li{border-bottom:1px dashed var(--paper-line)}
 .board .cat{background:transparent;border:1px solid var(--gold-soft);color:#8a6a24}
 .board .pin{background:#fff;stroke:var(--gold)}
@@ -112,7 +112,7 @@
 .ev-banner{border-radius:0;background:linear-gradient(180deg,rgba(11,22,51,0) 25%,rgba(11,22,51,.9) 100%),var(--bg) center/cover}
 .ev-banner::before{content:"";position:absolute;left:24px;top:0;width:36px;height:3px;background:var(--gold-soft)}
 .ev-banner::after{border-radius:0}
-.ev-banner strong{font-family:var(--serif);font-weight:700}
+.ev-banner strong{font-family:var(--head);font-weight:700}
 .ev-lab{background:transparent;border:1px solid var(--gold-soft);color:var(--gold-soft);border-radius:0}
 .more{color:var(--ink)}
 .more::after{border-color:var(--gold)}
@@ -124,10 +124,10 @@
 .rp-img{position:relative}
 .rp-img::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:4px;background:var(--gold)}
 .rp-cont{position:relative}
-.rp-cont::before{content:"\201C";position:absolute;right:0;top:-6px;font-family:var(--serif);font-size:150px;line-height:1;color:var(--paper-line)}
+.rp-cont::before{content:"\201C";position:absolute;right:0;top:-6px;font-family:var(--en);font-size:150px;line-height:1;color:var(--paper-line)}
 .rp-label{position:relative;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:0}
 .rp-label i{border-color:var(--ink)}
-.rp-title{position:relative;font-family:var(--serif);font-size:28px;line-height:1.35;color:var(--ink)}
+.rp-title{position:relative;font-family:var(--head);font-size:27px;line-height:1.35;font-weight:700;color:var(--ink)}
 .rp-more{color:var(--ink);border-bottom-color:var(--gold)}
 .rp-cursor{background:rgba(184,145,58,.95)}
 
@@ -137,13 +137,13 @@
   linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/48px 48px,
   radial-gradient(ellipse 60% 80% at 100% 0%,rgba(184,145,58,.22),transparent 60%),
   var(--ink)}
-.hl-title-box h3{font-family:var(--serif);font-size:32px;line-height:1.4}
+.hl-title-box h3{font-family:var(--head);font-size:32px;line-height:1.4}
 .hl-card{border:0;border-top:1px solid rgba(255,255,255,.22);padding:26px 26px 26px 0;position:relative}
 .hl-card::before{content:"";position:absolute;left:0;top:-1px;width:0;height:2px;background:var(--gold-soft);transition:width .35s}
 .hl-card:hover{background:none;border-color:rgba(255,255,255,.22)}
 .hl-card:hover::before{width:100%}
 .hl-cate{color:var(--gold-soft);letter-spacing:.05em}
-.hl-title{font-family:var(--serif);color:#eef1f7}
+.hl-title{font-family:var(--head);color:#eef1f7}
 .hl-progress .swiper-pagination-progressbar-fill{background:var(--gold-soft)!important}
 
 /* ---------- 기관 안내: 왼쪽 먹빛 글 · 오른쪽 사진 ---------- */
@@ -160,7 +160,7 @@
   .inst-tabs{top:64px;bottom:auto;right:auto;left:max(40px,calc((100% - 1600px)/2 + 40px));gap:28px}
   .inst-pane .inner{padding-top:40px}
 }
-.inst-pane h3{font-family:var(--serif);font-weight:700}
+.inst-pane h3{font-family:var(--head);font-weight:700}
 .inst-tag{color:var(--gold-soft)}
 .inst-desc{font-weight:400;color:rgba(255,255,255,.85)}
 .inst-btns svg,.inst-links strong svg{stroke:var(--gold-soft)}
@@ -179,10 +179,10 @@
 /* ---------- 푸터·떠 있는 버튼 ---------- */
 .f-bottom{background:#070e22}
 .f-row1{border-bottom-color:rgba(255,255,255,.08)}
-.f-emblem b{font-family:var(--serif)}
+.f-emblem b{font-family:var(--head)}
 .f-gotop{background:var(--ink);border:1px solid var(--gold)}
 .allmenu-hd{background:var(--ink)}
-.allmenu-body h4{font-family:var(--serif);color:var(--ink);border-bottom:1px solid var(--gold)}
+.allmenu-body h4{font-family:var(--head);color:var(--ink);border-bottom:1px solid var(--gold)}
 
 /* ---------- 서브페이지 머리 ---------- */
 .sub-visual{background:
@@ -190,6 +190,6 @@
   linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/48px 48px,
   radial-gradient(ellipse 50% 70% at 85% 100%,rgba(184,145,58,.3),transparent 60%),
   var(--ink)}
-.sub-visual h2{font-family:var(--serif);font-weight:700;letter-spacing:-1px}
+.sub-visual h2{font-family:var(--head);font-weight:700;letter-spacing:-1px}
 .sub-visual .eyebrow{color:var(--gold-soft)}
-.sub-title h3{font-family:var(--serif);color:var(--ink)}
+.sub-title h3{font-family:var(--head);color:var(--ink)}
