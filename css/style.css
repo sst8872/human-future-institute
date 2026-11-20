@@ -89,7 +89,7 @@ body.lock{overflow:hidden}
 .keywords a{margin-right:10px;color:#777}
 
 /* 전체 메뉴 */
-.allmenu{position:fixed;inset:0;background:#fff;z-index:200;transform:translateX(100%);visibility:hidden;transition:.35s;overflow-y:auto}
+.allmenu{position:fixed;inset:0;background:#fff;z-index:220;transform:translateX(100%);visibility:hidden;transition:.35s;overflow-y:auto}
 .allmenu.on{transform:none;visibility:visible}
 .allmenu-hd{display:flex;justify-content:space-between;align-items:center;height:72px;padding:0 24px;background:var(--deep);color:#fff;font-size:18px}
 .btn-close{font-size:22px;width:40px;height:40px}
