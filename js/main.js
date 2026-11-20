@@ -27,8 +27,8 @@
     gnb.addEventListener('focusout', e => { if (!gnb.contains(e.relatedTarget)) header.classList.remove('open'); });
   }
 
-  /* 로고 영문 맞춤 — 영문(INSTITUTE FOR ...) 장평을 줄여 한글 이름 길이와 같게 */
-  const fitLogo = () => $$('.logo span').forEach(sp => {
+  /* 로고 영문 맞춤 — 상단 로고·푸터 엠블럼의 영문(INSTITUTE FOR ...) 장평을 줄여 한글 이름 길이와 같게 */
+  const fitLogo = () => $$('.logo span, .f-emblem').forEach(sp => {
     const b = $('b', sp), em = $('em', sp);
     if (!b || !em || !em.offsetWidth) return;
     em.style.setProperty('--em-fit', 1);

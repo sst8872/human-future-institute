@@ -212,3 +212,13 @@
 .logo b{display:inline-block;font-size:17px;white-space:nowrap}
 .logo em{display:block;font-size:9px;letter-spacing:0;white-space:nowrap;width:max-content;transform:scaleX(var(--em-fit,.8));transform-origin:left center;margin-top:2px}
 @media (max-width:1024px){.logo b{font-size:15px}}
+
+/* 푸터 엠블럼 (11-21): 영문을 한 줄로, 장평을 줄여 한글 이름 길이에 맞춤 (main.js가 비율 계산) */
+.f-emblem b{white-space:nowrap}
+.f-emblem em{display:block;white-space:nowrap;width:max-content;letter-spacing:0;font-size:8px;transform:scaleX(var(--em-fit,.8));transform-origin:center;opacity:.6}
+@media (max-width:1024px){
+  .f-emblem{display:grid;grid-template-columns:auto auto;justify-content:start;column-gap:12px;row-gap:2px;align-items:center}
+  .f-emblem .logo-img{grid-row:1 / span 2}
+  .f-emblem b{align-self:end}
+  .f-emblem em{align-self:start;transform-origin:left center}
+}
