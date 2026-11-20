@@ -16,13 +16,13 @@
   };
 
   /* 인쇄 · 주소 복사 */
-  $('.btn-print')?.addEventListener('click', () => window.print());
-  $('.btn-share')?.addEventListener('click', () => {
+  $$('.btn-print').forEach(b => b.addEventListener('click', () => window.print()));
+  $$('.btn-share').forEach(b => b.addEventListener('click', () => {
     const url = location.href;
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
       .then(() => toast('페이지 주소를 복사했습니다.'))
       .catch(() => { prompt('아래 주소를 복사하세요.', url); });
-  });
+  }));
 
   /* 탭: [data-tabs] 단추 → 같은 순서의 [data-panel] */
   $$('[data-tabs]').forEach(tabs => {

@@ -90,10 +90,15 @@
 
 <main id="main">
 <!-- ===== 서브 비주얼 (가톨릭대: 높이 240, 영문 18px Roboto Light, 자간 10.8px) ===== -->
-<section class="sub-visual" style="--img:url(../images/hero04.jpg);--dim:0.66">
-  <p class="sv-en">INSTITUTE FOR HUMAN &amp; FUTURE</p>
-  <p class="sv-group">RESOURCES</p>
+<!-- ===== 칼럼 첫 화면: 큰 사진 + 제목 ===== -->
+<section class="clm-hero" style="--img:url(../images/research01.jpg)">
+  <div class="clm-hero-in">
+    <p class="clm-kicker"><span>기술</span>연구자 칼럼</p>
+    <h2 class="clm-title">기계가 대신 판단하는 시대, <br>책임은 어디에 남는가</h2>
+    <p class="clm-deck">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
 </section>
+<p class="clm-credit">사진 · Unsplash (예시)</p>
 <!-- ===== 경로 막대 (높이 64) ===== -->
 <nav class="lnb" aria-label="현재 위치">
   <div class="sub-inner">
@@ -106,58 +111,47 @@
     </div>
   </div>
 </nav>
-<section class="sub-content">
+<section class="sub-content clm-page">
   <div class="sub-inner">
-    <div class="sub-title"><h3>연구자 칼럼</h3></div>
-
-<article class="clm">
-  <div class="clm-head">
-    <p class="meta"><span class="badge p-tech">기술</span><span class="clm-series">연구자 칼럼</span></p>
-    <h4 class="clm-title">기계가 대신 판단하는 시대, <br>책임은 어디에 남는가</h4>
-    <p class="clm-deck">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <div class="clm-info">
-      <p class="col-by"><span>○○○ 연구원</span><time datetime="2026-11-18">2026.11.18</time></p>
-      <p class="clm-read">읽는 시간 약 6분</p>
+    <div class="clm-wrap">
+      <aside class="clm-side">
+        <p class="clm-bio"><b>○○○</b>은(는) 인간과미래연구소 연구원입니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <dl class="clm-facts"><div><dt>발행</dt><dd><time datetime="2026-11-18">2026.11.18</time></dd></div><div><dt>분량</dt><dd>원고지 약 25매 · 읽는 시간 6분</dd></div></dl>
+        <ul class="clm-topics"><li><a href="pub-column.html">기술</a></li><li><a href="#">인공지능과 윤리</a></li><li><a href="#">책임</a></li></ul>
+        <div class="clm-tools">
+          <button type="button" class="btn-share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></svg>주소 복사</button>
+          <button type="button" class="btn-print"><svg viewBox="0 0 24 24"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M7 14h10v7H7z"/></svg>인쇄</button>
+        </div>
+      </aside>
+      <article class="clm-main">
+        <div class="clm-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      <p class="clm-pull">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+      <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+      <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+      <figure class="clm-fig"><img src="images/research02.jpg" alt=""><figcaption>Sed ut perspiciatis unde omnis iste natus error. (사진 설명 예시)</figcaption></figure>
+      <p>Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+      <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+      <p class="clm-pull">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</p>
+      <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+        </div>
+        <div class="clm-end">
+          <ul class="clm-topics"><li><a href="pub-column.html">기술</a></li><li><a href="#">인공지능과 윤리</a></li><li><a href="#">책임</a></li></ul>
+          <time datetime="2026-11-18">2026.11.18</time>
+        </div>
+      </article>
     </div>
-  </div>
 
-  <figure class="clm-hero"><img src="images/research01.jpg" alt=""><figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. (사진 설명 예시)</figcaption></figure>
-
-  <div class="clm-body">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    <h5>1. Lorem ipsum dolor sit amet</h5>
-    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <blockquote><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.”</p></blockquote>
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    <h5>2. Consectetur adipiscing elit</h5>
-    <ul>
-      <li>Ut enim ad minim veniam, quis nostrud exercitation.</li>
-      <li>Duis aute irure dolor in reprehenderit in voluptate.</li>
-      <li>Excepteur sint occaecat cupidatat non proident.</li>
-    </ul>
-    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-    <figure><img src="images/research02.jpg" alt=""><figcaption>Sed ut perspiciatis unde omnis iste natus error. (사진 설명 예시)</figcaption></figure>
-    <h5>3. Sed do eiusmod tempor</h5>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-
-  <div class="clm-foot">
-    <p class="clm-tags"><a href="#">#Lorem</a><a href="#">#Ipsum</a><a href="#">#Dolor</a></p>
-    <div class="clm-author">
-      <div class="clm-ph" aria-hidden="true">○</div>
-      <div><strong>○○○ <small>연구원</small></strong><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
-    </div>
-  </div>
-</article>
-
-<nav class="clm-nav" aria-label="다른 칼럼">
-  <a href="pub-column-view.html" class="clm-prev"><span>이전 글</span><b>정답보다 질문을 가르치는 교실</b></a>
-  <span class="clm-next none"><span>다음 글</span><b>최신 칼럼입니다</b></span>
-</nav>
-<div class="clm-btns"><a href="pub-column.html" class="btn-list">목록</a></div>
-<p class="tbl-note">※ 이 페이지는 칼럼 본문 양식을 확인하기 위한 시험 페이지입니다. 글은 모두 로렘 입숨(임시 글)입니다.</p>
+    <nav class="clm-nav" aria-label="다른 칼럼">
+      <a href="pub-column-view.html" class="clm-prev"><span>이전 글</span><b>정답보다 질문을 가르치는 교실</b></a>
+      <span class="clm-next none"><span>다음 글</span><b>최신 칼럼입니다</b></span>
+    </nav>
+    <div class="clm-btns"><a href="pub-column.html" class="btn-list">목록</a></div>
+    <p class="tbl-note">※ 이 페이지는 칼럼 본문 양식(기본 템플릿)을 확인하기 위한 시험 페이지입니다. 글은 모두 로렘 입숨(임시 글)입니다.</p>
 
     <!-- 콘텐츠 담당부서 -->
     <div class="charge">
