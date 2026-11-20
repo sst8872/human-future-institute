@@ -203,9 +203,6 @@
 .sub-visual .eyebrow{color:var(--gold-soft)}
 .sub-title h3{font-family:var(--head);color:var(--ink)}
 
-/* 밝은 로고(11-21 색 반전): 흰 헤더에서도 둥근 테두리가 보이도록 */
-.logo .logo-img,.f-emblem .logo-img{border-radius:50%;box-shadow:0 0 0 1px rgba(11,22,51,.18)}
-
 /* 로고 글자 (11-21): 한글 17px, 아래 영문은 장평을 줄여 한글 길이에 딱 맞춤
    (정확한 비율은 main.js 「로고 영문 맞춤」이 글꼴을 읽은 뒤 다시 계산) */
 .logo span{align-items:flex-start}
@@ -221,4 +218,44 @@
   .f-emblem .logo-img{grid-row:1 / span 2}
   .f-emblem b{align-self:end}
   .f-emblem em{align-self:start;transform-origin:left center}
+}
+
+/* =========================================================
+   휴대폰 기본 반응형 (11-21)
+   - 화면이 옆으로 밀리거나 작게 줄어드는 일 없이 폭 안에 고정
+   - 표는 옆으로 끌지 않고 화면 폭에 맞춤
+   - 글·그림이 떠오르거나 움직이는 효과는 끔
+   ========================================================= */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (max-width:1024px){
+  html,body{max-width:100%;overflow-x:hidden}
+  img,video,iframe{max-width:100%}
+  .hist>*{min-width:0}
+  .addr{flex-direction:column;align-items:flex-start;gap:20px;padding:24px 20px}
+  .addr dl{grid-template-columns:72px minmax(0,1fr)}
+  .addr dd{word-break:break-all}
+}
+@media (max-width:640px){
+  /* 표: 화면 폭에 맞춤 */
+  .tbl-scroll{overflow-x:visible}
+  .tbl-scroll .tbl,.tbl{min-width:0;width:100%;table-layout:auto;font-size:13px}
+  .tbl col{width:auto!important}
+  .tbl th,.tbl td{padding:12px 6px;word-break:keep-all;overflow-wrap:anywhere}
+  .matrix tbody th,.matrix td{padding:12px 8px}
+  .matrix td b,.matrix tbody th b{font-size:14px}
+  .timetable td.time{white-space:nowrap}
+  /* 게시판 표: 분류·제목·등록일만 */
+  .tbl.board th:nth-child(1),.tbl.board td:nth-child(1),
+  .sub-news .tbl.board th:nth-child(n+5),.sub-news .tbl.board td:nth-child(n+5),
+  .sub-pub .tbl.board th:nth-child(4),.sub-pub .tbl.board td:nth-child(4),
+  .sub-pub .tbl.board th:nth-child(6),.sub-pub .tbl.board td:nth-child(6){display:none}
+  .tbl.board td.title,.tbl.board td.l{text-align:left}
+  .tbl.board td.title a{display:inline;white-space:normal}
+  .tbl.board .ico-file{display:inline-block;vertical-align:-3px;margin-left:4px}
+  .tbl.board td:not(.title){white-space:nowrap}
+  /* 움직이는 효과 끄기 */
+  .up{opacity:1!important;transform:none!important;transition:none!important}
+  .slide .txt>*{opacity:1!important;transform:none!important;transition:none!important}
+  .map-pin svg{animation:none}
+  .rp-img img,.nw-img img,.sns-img img{transition:none}
 }
