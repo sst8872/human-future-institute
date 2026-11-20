@@ -6,7 +6,7 @@
   1. about-greeting.html 의 헤더나 푸터를 먼저 고칩니다.
      (헤더 = 파일 처음부터 <main id="main"> 앞까지, 푸터 = </main> 뒤부터 끝까지)
   2. 이 폴더에서 실행합니다:  python _tools/sync_layout.py
-  3. 나머지 서브페이지(about-*, research-*, edu-*, event-*, pub-*, news-*)에
+  3. 나머지 서브페이지(about-*, research-*, event-*, future-*, pub-*, news-*)에
      같은 헤더·푸터가 들어갑니다. 각 페이지의 <title>, body class, 현재 메뉴 표시는 그대로 둡니다.
 
 index.html(메인)은 헤더 모양이 달라 건드리지 않습니다. 메인의 메뉴를 고쳤다면 직접 같이 고쳐 주세요.
@@ -15,7 +15,7 @@ import re, glob, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'about-greeting.html')
-GROUPS = ['about', 'research', 'edu', 'event', 'pub', 'news']
+GROUPS = ['about', 'research', 'event', 'future', 'pub', 'news']
 
 
 def split(text):
