@@ -77,7 +77,15 @@
 .hv-axis{position:absolute;right:46px;top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:14px;color:rgba(255,255,255,.75);font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.35em;pointer-events:none}
 .hv-axis span{writing-mode:vertical-rl}
 .hv-axis i{position:relative;display:block;width:1px;height:220px;background:linear-gradient(rgba(255,255,255,.15),rgba(227,207,156,.8),rgba(255,255,255,.15))}
-.hv-axis b{position:absolute;left:-4px;top:calc(var(--prog,0) * 100%);width:9px;height:9px;margin-top:-4px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 0 5px rgba(227,207,156,.18);transition:top .6s ease}
+.hv-axis b{position:absolute;left:-4px;top:calc(var(--prog,0) * 100%);width:9px;height:9px;margin-top:-4px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 0 5px rgba(227,207,156,.18);transition:top 1.2s cubic-bezier(.77,0,.18,1)}
+/* 슬라이드 넘김을 부드럽게: 1.2초 동안 천천히 출발해 천천히 멈춤 */
+.track.anim{transition:transform 1.2s cubic-bezier(.77,0,.18,1)}
+/* 새 슬라이드 글은 화면이 거의 자리 잡은 뒤 차례로 나타남 */
+.slide.on .txt>*{transition:opacity .8s .55s,transform .8s .55s}
+.slide.on .txt>*:nth-child(2){transition-delay:.67s}
+.slide.on .txt>*:nth-child(3){transition-delay:.79s}
+.slide.on .txt>*:nth-child(4){transition-delay:.91s}
+.slide.on .txt>.hv-link{transition:opacity .8s .91s,transform .8s .91s,background .25s,color .25s}
 @media (max-width:1024px){
   .hv-axis{right:14px;font-size:9px}
   .hv-axis i{height:120px}

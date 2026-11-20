@@ -99,11 +99,11 @@
   $('.f-gotop')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   /* 6. 메인 비주얼 — 옆으로 밀리는 무한 반복 슬라이드
-        가톨릭대와 같은 설정: 4초마다 넘김(DELAY), 넘어가는 시간 0.3초(css .track.anim).
+        5초마다 넘김(DELAY), 넘어가는 시간 1.2초(css/identity.css 의 .track.anim).
         슬라이드에 data-delay="6000" 을 넣으면 그 슬라이드만 더 오래 보여 줍니다. */
   const visual = $('.visual');
   if (visual) {
-    const DELAY = 4000;
+    const DELAY = 5000;
     const track = $('.track', visual);
     const real = $$('.slide', track);
     const N = real.length;
