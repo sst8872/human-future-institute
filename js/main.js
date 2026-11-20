@@ -27,6 +27,18 @@
     gnb.addEventListener('focusout', e => { if (!gnb.contains(e.relatedTarget)) header.classList.remove('open'); });
   }
 
+  /* 로고 영문 맞춤 — 영문(INSTITUTE FOR ...) 장평을 줄여 한글 이름 길이와 같게 */
+  const fitLogo = () => $$('.logo span').forEach(sp => {
+    const b = $('b', sp), em = $('em', sp);
+    if (!b || !em || !em.offsetWidth) return;
+    em.style.setProperty('--em-fit', 1);
+    const r = b.getBoundingClientRect().width / em.getBoundingClientRect().width;
+    em.style.setProperty('--em-fit', r.toFixed(4));
+  });
+  fitLogo();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLogo);
+  window.addEventListener('resize', fitLogo);
+
   /* 2. 드롭다운 (Language, 주요 키워드) */
   $$('.drop>button').forEach(b => b.addEventListener('click', e => {
     e.stopPropagation();

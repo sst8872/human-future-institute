@@ -202,3 +202,13 @@
 .sub-visual h2{font-family:var(--head);font-weight:700;letter-spacing:-1px}
 .sub-visual .eyebrow{color:var(--gold-soft)}
 .sub-title h3{font-family:var(--head);color:var(--ink)}
+
+/* 밝은 로고(11-21 색 반전): 흰 헤더에서도 둥근 테두리가 보이도록 */
+.logo .logo-img,.f-emblem .logo-img{border-radius:50%;box-shadow:0 0 0 1px rgba(11,22,51,.18)}
+
+/* 로고 글자 (11-21): 한글 17px, 아래 영문은 장평을 줄여 한글 길이에 딱 맞춤
+   (정확한 비율은 main.js 「로고 영문 맞춤」이 글꼴을 읽은 뒤 다시 계산) */
+.logo span{align-items:flex-start}
+.logo b{display:inline-block;font-size:17px;white-space:nowrap}
+.logo em{display:block;font-size:9px;letter-spacing:0;white-space:nowrap;width:max-content;transform:scaleX(var(--em-fit,.8));transform-origin:left center;margin-top:2px}
+@media (max-width:1024px){.logo b{font-size:15px}}
