@@ -51,6 +51,15 @@
   .logo em{display:none}
 }
 .logo b{font-family:var(--head);font-weight:800;letter-spacing:-.5px}
+/* 로고 크기 (11-21 줄임: 52px·24px → 40px·19px) */
+.logo a{gap:10px}
+.logo .logo-img{width:40px;height:40px}
+.logo b{font-size:19px;letter-spacing:-.4px}
+.logo em{font-size:8.5px;letter-spacing:1.3px}
+@media (max-width:1024px){
+  .logo .logo-img{width:32px;height:32px}
+  .logo b{font-size:16px}
+}
 .header.open{background:var(--paper)}
 
 /* ---------- 메인 슬라이드 ---------- */
