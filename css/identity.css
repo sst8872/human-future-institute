@@ -267,3 +267,30 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .map-pin svg{animation:none}
   .rp-img img,.nw-img img,.sns-img img{transition:none}
 }
+
+/* ---------- 연구자 칼럼 (pub-column.html) — 글 중심 목록 ---------- */
+.col-list{margin-top:10px;border-top:2px solid var(--ink)}
+.col-list>li{border-bottom:1px solid var(--paper-line)}
+.col-item{display:flex;align-items:center;gap:48px;padding:34px 0}
+.col-txt{flex:1;min-width:0}
+.col-item strong{display:block;margin-top:12px;font-size:22px;font-weight:700;line-height:1.45;color:#1a1f2e;letter-spacing:-.3px}
+.col-item:hover strong{color:var(--primary)}
+.col-sum{margin-top:10px;font-size:15px;line-height:1.75;color:#666;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.col-by{display:flex;align-items:center;gap:14px;margin-top:16px;font-size:14px;color:#888}
+.col-by span{position:relative;padding-left:16px;color:#444;font-weight:600}
+.col-by span::before{content:"";position:absolute;left:0;top:50%;width:9px;height:1px;background:var(--gold)}
+.col-by time{font-family:var(--en)}
+.col-thumb{flex:0 0 260px;aspect-ratio:4/3;overflow:hidden;background:#eee}
+.col-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.col-item:hover .col-thumb img{transform:scale(1.05)}
+@media (max-width:1024px){
+  .col-item{gap:28px}
+  .col-thumb{flex-basis:200px}
+}
+@media (max-width:640px){
+  .col-item{flex-direction:column-reverse;align-items:stretch;gap:16px;padding:24px 0}
+  .col-thumb{flex-basis:auto;width:100%}
+  .col-item strong{font-size:18px}
+  .col-sum{font-size:14px}
+  .col-thumb img{transition:none}
+}
