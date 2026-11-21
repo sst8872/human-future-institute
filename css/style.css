@@ -444,10 +444,8 @@ body.lock{overflow:hidden}
   .sites span{display:none}
   .util{font-size:14px}
   .svc-list{grid-template-columns:repeat(4,1fr);row-gap:30px}
-  .ne-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .ne-col.events{grid-column:1/-1;border-left:0;border-top:1px solid #dfe4ea;padding-left:0}
-  .ev-swiper .swiper-slide{flex-direction:row}
-  .ev-banner{flex:1}
+  .ne-grid{grid-template-columns:minmax(0,1fr) 340px}
+  .ev-banner{height:220px}
   .rp-swiper .swiper-slide{width:86vw}
   .rp-img{width:50%;height:auto;aspect-ratio:660/445}
   .rp-cont{padding:20px 0 10px 32px}
