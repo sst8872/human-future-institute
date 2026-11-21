@@ -430,3 +430,39 @@ body.sub .header .logo .logo-img{
   .er-body{padding:18px 18px 24px;font-size:14px}
 }
 .er-sub{font-weight:600;color:#555;margin-bottom:4px}
+
+/* 개인정보처리방침 페이지 (privacy.html, 11-21) */
+.blind{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.privacy{font-size:16px;line-height:1.85;color:#444;word-break:keep-all;overflow-wrap:anywhere}
+.privacy .pv-title{font-size:26px;font-weight:800;color:var(--deep);letter-spacing:-.5px;margin-bottom:18px}
+.privacy .pv-lead{padding:24px 28px;background:var(--paper);border-left:4px solid var(--primary);color:#333}
+.pv-toc{margin:36px 0 10px;padding:26px 30px;border:1px solid var(--paper-line)}
+.pv-toc ol{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 30px;list-style:none}
+.pv-toc li{list-style:none}
+.pv-toc a{color:#333}
+.pv-toc a:hover{color:var(--primary);text-decoration:underline}
+.privacy section{padding-top:50px;scroll-margin-top:110px}
+.privacy h5{font-size:21px;font-weight:700;color:var(--deep);letter-spacing:-.3px;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid #ddd}
+.privacy h6{font-size:17px;font-weight:700;color:var(--primary);margin:22px 0 6px}
+.privacy p+p{margin-top:10px}
+.pv-dot{margin:12px 0 0;list-style:none}
+.pv-dot li{position:relative;padding-left:16px;list-style:none;margin-bottom:6px}
+.pv-dot li::before{content:"";position:absolute;left:2px;top:.8em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.pv-tbl{margin:16px 0 0}
+.pv-tbl+*{margin-top:0}
+.privacy .tbl-scroll+h6{margin-top:34px}
+.pv-box{margin:10px 0 18px;padding:14px 20px;background:#f6f7f9;color:#333;font-weight:500}
+.pv-box a{color:var(--primary);text-decoration:underline}
+@media (max-width:640px){
+  .privacy{font-size:15px}
+  .privacy .pv-title{font-size:21px}
+  .privacy .pv-lead{padding:18px 18px}
+  .pv-toc{padding:20px 18px}
+  .pv-toc ol{grid-template-columns:1fr}
+  .privacy section{padding-top:40px}
+  .privacy h5{font-size:18.5px}
+  .privacy h6{font-size:16px}
+  .privacy .tbl-scroll .pv-tbl{min-width:0}
+  .pv-tbl th,.pv-tbl td{padding:12px 6px;font-size:13px}
+}
+.privacy .pv-title .nw{white-space:nowrap}
