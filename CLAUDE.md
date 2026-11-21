@@ -3,37 +3,27 @@
 ## 🖥️ 컴퓨터 구별 (작업 전에 get_device_info의 deviceName으로 확인)
 | 장치 이름 | 컴퓨터 | 작업 폴더 | 할 수 있는 일 |
 |---|---|---|---|
-| `book-o7dkh035u2` | **랩탑** | `D:\인간과 미래 연구소` | 테마 디자인·게시물 수정, git commit·push·pull. 사이트 반영은 **Chrome(Claude in Chrome)으로 inshnf.com 관리 화면**에서 |
-| (PC에서 연결할 때 적기) | **PC** | `D:\사이트\사이트 판매\인간과 미래 연구소` | 위 작업 + **서버 직접 수정**(SSH, `.deploy`, SSH 열쇠, `deploy_wp.sh`, 서버 폴더 파일 올리기·지우기) |
+| `book-o7dkh035u2` | **랩탑** | `D:\인간과 미래 연구소` | 전부: 테마 디자인·게시물 수정, git commit·push·pull, **SSH 배포**(2026-11-21 18시 사용자 허용) |
+| (PC에서 연결할 때 적기) | **PC** | `D:\사이트\사이트 판매\인간과 미래 연구소` | 전부(위와 같음) |
 
-- **랩탑에서는 서버에 직접 접속하지 않는다.** SSH 접속, `deploy_wp.sh` 실행, `_tools/wp/.deploy` 만들기, SSH 열쇠 만들기·등록, 서버 폴더 파일 올리기·지우기 모두 PC 몫
-- **랩탑에서 테마 디자인 반영하는 법** (모두 Chrome 관리 화면에서):
-  1. 저장소의 HTML·CSS·JS를 고치고 Playwright로 확인 → commit·push
-  2. 작은 CSS·PHP 수정: 외모 → 테마 파일 편집기에서 해당 파일만 고침(저장소와 같은 내용으로)
-  3. 큰 수정: `python3 _tools/wp/build_wp.py <저장소> <임시폴더>`로 테마를 만들어 `inshnf.zip`으로 묶고 → 외모 → 테마 → 새로 추가 → 테마 업로드 → 「현재 테마를 업로드한 것으로 교체」
-  4. 반영 전에 무엇을 바꾸는지 사용자에게 확인받고, 반영 뒤 inshnf.com을 1440·1100·iPhone 13으로 확인
+- **랩탑에서도 SSH로 직접 배포한다**(2026-11-21 18시 사용자가 허용, 이전의 「랩탑은 서버 접속 금지」 규칙은 폐기)
+  - SSH는 클라우드 작업공간(`Bash`)에서는 막혀 있음 → **device_bash(랩탑 Linux VM)**에서 실행. 랩탑 폴더는 device_bash에서 `$HOME/mnt/인간과 미래 연구소`
+  - 열쇠: `_tools/wp/.ssh/inshnf_laptop`(개인 열쇠)·`.pub`, 서버 주소: `_tools/wp/.deploy` — 둘 다 .gitignore에 있어 git에 안 올라감. 공개 열쇠는 hPanel → 고급 → SSH 액세스에 「claude-laptop」으로 등록
+  - 마운트 폴더는 권한을 600으로 못 맞추므로 배포 때 열쇠를 `$HOME/k`로 복사해 `chmod 600` 후 사용:
+    ```
+    cd "$HOME/mnt/인간과 미래 연구소" && git pull --ff-only
+    install -m600 _tools/wp/.ssh/inshnf_laptop $HOME/k && bash _tools/wp/deploy_wp.sh $HOME/k
+    ```
+  - 랩탑 폴더에서 git을 쓰려면 세션마다 device_request_delete_permission으로 삭제 권한을 받아야 함(안 받으면 .git에 잠금 파일이 남음)
+- 반영 전에 무엇을 바꾸는지 사용자에게 확인받고, 반영 뒤 inshnf.com을 1440·1100·iPhone 13으로 확인
+- SSH가 안 될 때의 대안: Chrome(Claude in Chrome) 관리 화면 → 외모 → 테마 파일 편집기(작은 수정) 또는 `build_wp.py`로 만든 `inshnf.zip`을 테마 업로드 → 「현재 테마를 업로드한 것으로 교체」
 - WordPress 로그인은 사용자가 직접 한다(비밀번호를 읽거나 입력하지 않음)
 - 랩탑 Chrome은 프로필이 둘이라 Claude 확장이 두 개(「Browser 1」「Browser 2」)로 잡힌다. **inshnf.com에 로그인된 쪽은 Browser 2**(2026-11-21 확인). 관리 화면이 로그인 화면(`reauth=1`)으로 튕기면 사용자에게 다시 로그인을 부탁하기 전에 `list_connected_browsers`로 다른 프로필을 쓰고 있지 않은지부터 확인
-- 랩탑에서 관리 화면의 테마 파일 편집기(`theme-editor.php`)와 테마 zip 업로드(`theme-install.php?upload`) 둘 다 켜져 있음(2026-11-21 확인)
-- 아래 「랩탑 첫 세션에서 할 일」의 2·3번(.deploy·SSH 열쇠)은 **PC에서만** 한다
 
-## ⚠️ 랩탑 첫 세션에서 맨 먼저 할 일 (2026-11-21 PC → 랩탑 이관)
-1. **git부터 맞추기** — 작업 전에 반드시:
-   ```
-   git fetch origin
-   git status
-   git log origin/main --oneline -3
-   ```
-   - origin/main 맨 위 3개가 `CLAUDE.md 추가`, `WordPress(inshnf.com) 이전 도구 추가`, `상단 메뉴 8칸을 같은 너비로`여야 함(그 아래 `460c10a 양식 원본 보관`)
-   - 없으면 PC에서 push가 안 된 것 → 사용자에게 PC에서 `git push`를 먼저 부탁하고 작업하지 말 것
-   - 있으면 `git pull --ff-only` (처음이면 `git clone https://github.com/sst8872/human-future-institute.git`)
-2. **`_tools/wp/.deploy` 만들기** (서버 주소, git에 올리지 않음 — .gitignore에 있음):
-   ```
-   R=u196702697@145.79.30.102
-   WP=domains/inshnf.com/public_html
-   ```
-3. **SSH 열쇠 새로 만들기** → 공개 열쇠를 사용자에게 주고 hPanel(새 Unlimited 요금제의 inshnf.com) → 고급 → SSH 액세스 → SSH 키 추가를 부탁. PC 때 열쇠 `claude-inshnf`는 지웠는지 확인
-4. 그다음 프로젝트 문서 **「claude/inshnf_WordPress_이전.md」**의 「0. 인수인계」를 읽고 이어서 작업
+## 세션 시작 때
+1. `add_repo(sst8872/human-future-institute, push)` → 클라우드에 clone해서 고치고 Claude가 직접 push
+2. 랩탑 폴더 연결(device_request_folder_access) → 삭제 권한 → `git pull --ff-only`
+3. 프로젝트 문서 **「claude/inshnf_WordPress_이전.md」**의 「0. 인수인계」를 읽고 이어서 작업
 
 ## 기본 규칙
 - 사이트: https://inshnf.com (WordPress, 테마 `inshnf`) · 옛 사이트 https://sst8872.github.io/human-future-institute/

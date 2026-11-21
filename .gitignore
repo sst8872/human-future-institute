@@ -4,3 +4,4 @@ __pycache__/
 Thumbs.db
 _tools/wp/.deploy
 Claude outputs/
+_tools/wp/.ssh/
