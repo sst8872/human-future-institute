@@ -805,3 +805,24 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
   .apply-bar{flex-direction:column;align-items:flex-start;padding:28px 24px}
   .apply-bar-act{align-self:stretch}
 }
+
+/* 주간 포럼 「이번 주」 오른쪽: 포스터 (2026-11-21) — 누르면 크게 */
+.next:has(.sp-poster){grid-template-columns:260px 1fr 300px}
+.next .sp.sp-poster{display:block;position:relative;padding:0;background:#0b1633;overflow:hidden}
+.next .sp-poster img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .4s}
+.next .sp-poster span{position:absolute;left:0;right:0;bottom:0;padding:10px 0;font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(11,22,51,.72);opacity:0;transition:opacity .25s}
+.next .sp-poster:hover img{transform:scale(1.03)}
+.next .sp-poster:hover span,.next .sp-poster:focus-visible span{opacity:1}
+@media (max-width:1280px){
+  .next:has(.sp-poster){grid-template-columns:200px 1fr 220px}
+  .next .sp.sp-poster{grid-column:auto}
+}
+@media (max-width:1024px){
+  .next:has(.sp-poster){grid-template-columns:200px 1fr}
+  .next .sp.sp-poster{grid-column:1/-1;padding:28px;text-align:center}
+  .next .sp-poster img{width:min(320px,100%);height:auto;margin:0 auto;object-fit:contain}
+  .next .sp-poster span{position:static;opacity:1;background:none;margin-top:12px;padding:0;color:#e3cf9c}
+}
+@media (max-width:640px){
+  .next:has(.sp-poster){grid-template-columns:1fr}
+}
