@@ -42,7 +42,10 @@ function hnf_head() {
 /* 링크 미리보기(카카오톡·문자·SNS) — 대표 이미지는 남색 가로형 로고 (2026-11-21) */
 function hnf_og() {
     $site  = '인간과미래연구소';
-    $title = hnf_title(get_bloginfo('name'));
+    $full  = '인간과미래연구소 | Institute for Human & Future';
+    if (is_front_page() || is_home()) $title = $full;
+    elseif (is_singular()) $title = wp_strip_all_tags(get_the_title()) . ' | 인간과미래연구소';
+    else $title = hnf_title($full);
     $desc  = '기술 변혁의 시대, 인간의 가치를 중심에 둔 미래 담론을 선도하는 춘천교육대학교 인간과미래연구소';
     if (is_singular('post')) {
         $f = get_post_meta(get_the_ID(), 'hnf_f', true);
