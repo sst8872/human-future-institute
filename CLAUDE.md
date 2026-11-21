@@ -13,6 +13,8 @@
   3. 큰 수정: `python3 _tools/wp/build_wp.py <저장소> <임시폴더>`로 테마를 만들어 `inshnf.zip`으로 묶고 → 외모 → 테마 → 새로 추가 → 테마 업로드 → 「현재 테마를 업로드한 것으로 교체」
   4. 반영 전에 무엇을 바꾸는지 사용자에게 확인받고, 반영 뒤 inshnf.com을 1440·1100·iPhone 13으로 확인
 - WordPress 로그인은 사용자가 직접 한다(비밀번호를 읽거나 입력하지 않음)
+- 랩탑 Chrome은 프로필이 둘이라 Claude 확장이 두 개(「Browser 1」「Browser 2」)로 잡힌다. **inshnf.com에 로그인된 쪽은 Browser 2**(2026-11-21 확인). 관리 화면이 로그인 화면(`reauth=1`)으로 튕기면 사용자에게 다시 로그인을 부탁하기 전에 `list_connected_browsers`로 다른 프로필을 쓰고 있지 않은지부터 확인
+- 랩탑에서 관리 화면의 테마 파일 편집기(`theme-editor.php`)와 테마 zip 업로드(`theme-install.php?upload`) 둘 다 켜져 있음(2026-11-21 확인)
 - 아래 「랩탑 첫 세션에서 할 일」의 2·3번(.deploy·SSH 열쇠)은 **PC에서만** 한다
 
 ## ⚠️ 랩탑 첫 세션에서 맨 먼저 할 일 (2026-11-21 PC → 랩탑 이관)
