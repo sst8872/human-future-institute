@@ -40,6 +40,6 @@ news-meeting2  photo-1588196749597-9ff075ee6b5b  Chris Montgomery  (신설추진
 news-opening   photo-1495616811223-4d98c6e9c869  Johannes Plenio   (연구소 신설·개소 예정 — 2026-11-21 사용자 제공 그림 news-opening2.jpg로 교체, 지금은 안 씀)
 [WordPress 미디어 — 구성원 연구 성과 「보고서」 대표 사진, 2026-11-21, Unsplash 라이선스]
 rep-hs-lead      photo-1530099486328-e021101a494a  Akson            (고교 성취평가 선도교원 연수 ORM 2024-75)
-rep-ms-lead2     photo-1727109369808-fbab005cca4b  C Cai            (중학교 성취평가 선도교원 연수 ORM 2024-124, 125 — 2H Media 사진에서 교체)
+rep-ms-lead3     photo-1758270704524-596810e891b5  Vitaly Gariev    (중학교 성취평가 선도교원 연수 ORM 2024-124, 125 — 2H Media·C Cai 사진에서 교체)
 rep-hs-admin     photo-1484480974693-6ca0a78fb36b  Unsplash 2017년 사진(작가 이름 확인 못 함)  (고교 성취평가 관리자 연수 ORM 2025-9)
 rep-competency   photo-1434030216411-0b793f4b4173  Unsplash 2015년 사진(작가 이름 확인 못 함)  (교과 역량 체계 개발 연구 RRC 2026-2)
