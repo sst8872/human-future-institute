@@ -165,7 +165,12 @@ function hnf_filter($slug, $bc, $state) {
 }
 
 /* 연구 성과는 발행 연월만(날짜 없이) — 2026-11-21 사용자 지시 */
-function hnf_date($p) { return get_the_date(hnf_post_board($p->ID) === 'research-results' ? 'Y.m' : 'Y.m.d', $p); }
+function hnf_date($p) {
+    if (hnf_post_board($p->ID) !== 'research-results') return get_the_date('Y.m.d', $p);
+    $f = get_post_meta($p->ID, 'hnf_f', true);   // 발행 연월에 달이 없으면(예: 2024.) 연도만
+    if (is_array($f) && preg_match('/^\s*\d{4}\s*\.?\s*$/', (string) ($f['pub_date'] ?? ''))) return get_the_date('Y', $p);
+    return get_the_date('Y.m', $p);
+}
 function hnf_is_new($p) { return (time() - get_post_time('U', true, $p)) < 7 * DAY_IN_SECONDS; }
 
 function hnf_table($slug, $cfg, $posts, $pins, $total, $pg) {
