@@ -433,56 +433,56 @@ body.sub .header .logo .logo-img{
 
 /* 개인정보처리방침 페이지 (privacy.html, 11-21) */
 .blind{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.privacy{font-size:16px;line-height:1.85;color:#444;word-break:keep-all;overflow-wrap:anywhere}
-.privacy .pv-title{font-size:26px;font-weight:800;color:var(--deep);letter-spacing:-.5px;margin-bottom:18px}
-.privacy .pv-lead{padding:24px 28px;background:var(--paper);border-left:4px solid var(--primary);color:#333}
+.pv-doc{font-size:16px;line-height:1.85;color:#444;word-break:keep-all;overflow-wrap:anywhere}
+.pv-doc .pv-title{font-size:26px;font-weight:800;color:var(--deep);letter-spacing:-.5px;margin-bottom:18px}
+.pv-doc .pv-lead{padding:24px 28px;background:var(--paper);border-left:4px solid var(--primary);color:#333}
 .pv-toc{margin:36px 0 10px;padding:26px 30px;border:1px solid var(--paper-line)}
 .pv-toc ol{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 30px;list-style:none}
 .pv-toc li{list-style:none}
 .pv-toc a{color:#333}
 .pv-toc a:hover{color:var(--primary);text-decoration:underline}
-.privacy section{padding-top:50px;scroll-margin-top:110px}
-.privacy h5{font-size:21px;font-weight:700;color:var(--deep);letter-spacing:-.3px;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid #ddd}
-.privacy h6{font-size:17px;font-weight:700;color:var(--primary);margin:22px 0 6px}
-.privacy p+p{margin-top:10px}
+.pv-doc section{padding-top:50px;scroll-margin-top:110px}
+.pv-doc h5{font-size:21px;font-weight:700;color:var(--deep);letter-spacing:-.3px;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid #ddd}
+.pv-doc h6{font-size:17px;font-weight:700;color:var(--primary);margin:22px 0 6px}
+.pv-doc p+p{margin-top:10px}
 .pv-dot{margin:12px 0 0;list-style:none}
 .pv-dot li{position:relative;padding-left:16px;list-style:none;margin-bottom:6px}
 .pv-dot li::before{content:"";position:absolute;left:2px;top:.8em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .pv-tbl{margin:16px 0 0}
 .pv-tbl+*{margin-top:0}
-.privacy .tbl-scroll+h6{margin-top:34px}
+.pv-doc .tbl-scroll+h6{margin-top:34px}
 .pv-box{margin:10px 0 18px;padding:14px 20px;background:#f6f7f9;color:#333;font-weight:500}
 .pv-box a{color:var(--primary);text-decoration:underline}
 @media (max-width:640px){
-  .privacy{font-size:15px}
-  .privacy .pv-title{font-size:21px}
-  .privacy .pv-lead{padding:18px 18px}
+  .pv-doc{font-size:15px}
+  .pv-doc .pv-title{font-size:21px}
+  .pv-doc .pv-lead{padding:18px 18px}
   .pv-toc{padding:20px 18px}
   .pv-toc ol{grid-template-columns:1fr}
-  .privacy section{padding-top:40px}
-  .privacy h5{font-size:18.5px}
-  .privacy h6{font-size:16px}
-  .privacy .tbl-scroll .pv-tbl{min-width:0}
+  .pv-doc section{padding-top:40px}
+  .pv-doc h5{font-size:18.5px}
+  .pv-doc h6{font-size:16px}
+  .pv-doc .tbl-scroll .pv-tbl{min-width:0}
   .pv-tbl th,.pv-tbl td{padding:12px 6px;font-size:13px}
 }
-.privacy .pv-title .nw{white-space:nowrap}
+.pv-doc .pv-title .nw{white-space:nowrap}
 /* 이메일무단수집거부 창: 제목은 화면에서 숨기고(원문 그대로) 닫기 버튼만 오른쪽 위에 */
 .er-head{justify-content:flex-end;padding:10px 14px 0;border-bottom:0}
 .er-body{padding-top:6px}
 /* 개인정보처리방침 전문 (11-21): 맨 윗줄 안내, 넓은 표, 책임자 표, 개정이력 */
-.privacy .pv-notice{margin-bottom:28px;padding:16px 22px;background:var(--deep);color:#fff;font-weight:600;line-height:1.6}
-.privacy .pv-wide td,.privacy .pv-wide th{font-size:13.5px;padding:14px 8px;line-height:1.6;word-break:keep-all}
-.privacy .pv-officer ul{list-style:none}
-.privacy .pv-officer li{list-style:none}
-.privacy .tbl td.l{text-align:left}
-.privacy .tbl a{color:inherit}
-.privacy .tbl-scroll{margin-bottom:16px}
+.pv-doc .pv-notice{margin-bottom:28px;padding:16px 22px;background:var(--deep);color:#fff;font-weight:600;line-height:1.6}
+.pv-doc .pv-wide td,.pv-doc .pv-wide th{font-size:13.5px;padding:14px 8px;line-height:1.6;word-break:keep-all}
+.pv-doc .pv-officer ul{list-style:none}
+.pv-doc .pv-officer li{list-style:none}
+.pv-doc .tbl td.l{text-align:left}
+.pv-doc .tbl a{color:inherit}
+.pv-doc .tbl-scroll{margin-bottom:16px}
 .pv-hist{padding-top:40px}
 .pv-hist p{margin:0!important;font-size:15px;color:#555}
 @media (max-width:640px){
-  .privacy .pv-notice{padding:14px 16px;font-size:14.5px}
-  .privacy .tbl-scroll .pv-wide{min-width:860px}
-  .privacy .tbl-scroll .pv-tbl:not(.pv-wide){min-width:520px}
-  .privacy .tbl-scroll .pv-officer{min-width:0}
+  .pv-doc .pv-notice{padding:14px 16px;font-size:14.5px}
+  .pv-doc .tbl-scroll .pv-wide{min-width:860px}
+  .pv-doc .tbl-scroll .pv-tbl:not(.pv-wide){min-width:520px}
+  .pv-doc .tbl-scroll .pv-officer{min-width:0}
 }
-.privacy .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pv-doc .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
