@@ -5,12 +5,13 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261121w10');
+define('HNF_VER', '20261121w11');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
 require __DIR__ . '/inc/editor.php';
 require __DIR__ . '/inc/write.php';
+require __DIR__ . '/inc/apply.php';
 
 add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');

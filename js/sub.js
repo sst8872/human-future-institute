@@ -183,6 +183,19 @@
     $('.msg', f).textContent = ok ? '구독 신청이 접수되었습니다. 확인 메일을 보내 드립니다.' : '개인정보 수집·이용에 동의해 주세요.';
   }));
 
+  /* 참여 신청: 보낸 뒤 결과 알림(?sent=1 · ?dup=1 · ?err=1) */
+  const apForm = $('.apply-form');
+  if (apForm) {
+    const q = new URLSearchParams(location.search);
+    const key = ['sent', 'dup', 'err'].find(k => q.has(k));
+    if (key) {
+      const m = $('.apply-msg[data-msg="' + key + '"]');
+      if (m) { m.hidden = false; setTimeout(() => m.scrollIntoView({ block: 'center' }), 50); }
+      if (key !== 'err') apForm.hidden = true;
+    }
+    apForm.addEventListener('submit', () => { const b = $('button[type=submit]', apForm); if (b) { b.disabled = true; b.textContent = '보내는 중…'; } });
+  }
+
   /* 자리만 있는 링크(#) 누르면 안내 */
   $$('.sub-content a[href="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); toast('실제 운영 시 연결될 링크입니다.'); }));
 })();

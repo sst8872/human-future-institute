@@ -739,3 +739,44 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 .ppl .avatar.name+strong{margin-top:22px;font-size:18px;color:var(--primary)}
 .ppl strong+p{margin-top:8px;padding-bottom:30px}
 .ppl strong+p{padding-bottom:0;margin-bottom:32px;min-height:0}
+
+/* ---------- 행사 참여 신청 (event-apply.html, 2026-11-21) ---------- */
+.apply{max-width:920px}
+.apply-ev{display:grid;grid-template-columns:90px 1fr;gap:12px 20px;padding:26px 30px;background:#f5f6fa;border-top:2px solid var(--primary);font-size:16px;line-height:1.6}
+.apply-ev dt{font-weight:700;color:#111}
+.apply-ev dd{color:#444}
+.apply-ev a{color:var(--primary);text-decoration:underline;text-underline-offset:3px}
+.apply-note{display:flex;align-items:center;gap:10px;margin:22px 0 0;padding:16px 20px;border:1px solid #e6d6ad;background:#fbf6ea;font-size:16px;color:#5b4a1e}
+.apply-note svg{flex:none;width:22px;height:22px;fill:none;stroke:#b08a2e;stroke-width:1.8;stroke-linejoin:round}
+.apply-note b{color:#111}
+.apply-msg{margin-top:22px;padding:22px 26px;border-left:4px solid var(--primary);background:#eef2fb}
+.apply-msg.err{border-color:#c0392b;background:#fdf0ee}
+.apply-msg strong{display:block;font-size:18px;color:#111;margin-bottom:4px}
+.apply-msg p{font-size:15px;color:#555;line-height:1.6}
+.apply-form .c-tit{margin:56px 0 20px;font-size:22px}
+.apply-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+.apply-grid label{display:flex;flex-direction:column;gap:8px}
+.apply-grid span{font-size:15px;font-weight:600;color:#222}
+.apply-grid em,.apply-agree em{font-style:normal;color:#c0392b}
+.apply-grid input{height:50px;padding:0 16px;border:1px solid #d5dbe5;border-radius:2px;font:inherit;font-size:16px;color:#111;background:#fff;outline:0;transition:border-color .2s}
+.apply-grid input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(29,68,216,.12)}
+.apply-grid input::placeholder{color:#aab}
+.apply-privacy{padding:24px 26px;border:1px solid #e2e6ee;background:#fafbfc;font-size:14.5px;line-height:1.7;color:#555}
+.apply-privacy a{color:var(--primary);text-decoration:underline;text-underline-offset:3px}
+.apply-ptbl{width:100%;margin:14px 0;border-collapse:collapse;border-top:1px solid #cfd6e2;background:#fff}
+.apply-ptbl th,.apply-ptbl td{padding:11px 14px;border-bottom:1px solid #e2e6ee;text-align:left;vertical-align:top}
+.apply-ptbl th{width:140px;background:#f3f5f9;color:#222;font-weight:600;white-space:nowrap}
+.apply-agree{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:16px;border-top:1px dashed #d5dbe5;font-size:16px;font-weight:600;color:#111;cursor:pointer}
+.apply-agree input{width:20px;height:20px;accent-color:var(--primary);flex:none}
+.apply-submit{margin-top:34px;text-align:center}
+.apply-submit .btn{height:56px;padding:0 48px;font-size:17px}
+@media (max-width:640px){
+  .apply-ev{grid-template-columns:60px 1fr;padding:20px;font-size:15px}
+  .apply-grid{grid-template-columns:1fr}
+  .apply-privacy{padding:18px}
+  .apply-ptbl th{width:auto;white-space:normal}
+  .apply-ptbl th,.apply-ptbl td{display:block;border-bottom:0}
+  .apply-ptbl td{border-bottom:1px solid #e2e6ee}
+  .apply-submit .btn{width:100%}
+}
