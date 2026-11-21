@@ -398,3 +398,14 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 /* 로고: 흰색 원본 로고(투명 배경)를 그대로 쓰고, 흰 머리글에서도 보이도록 진한 남색 원판을 뒤에 깐다 */
 .logo-img{background:var(--deep);border-radius:50%;padding:3px;box-sizing:border-box;object-fit:contain}
+
+/* 로고: 흰(종이빛) 머리글에서는 남색 원판 대신 로고 모양 자체를 파란색(--primary)으로 칠한다 (11-21)
+   흰색 원본 로고의 모양(투명도)을 마스크로 쓰고 그 안을 파란색으로 채움. 원본 흰 그림은 칸 밖으로 밀어 숨김.
+   어두운 바탕(메인 첫 화면 머리글·바닥글)에서는 위의 원본 흰 로고 + 남색 원판 그대로. */
+.header.open .logo .logo-img,
+body.sub .header .logo .logo-img{
+  background:var(--primary);border-radius:0;padding:0;
+  object-position:-9999px 0;
+  -webkit-mask:url(../images/logo.png) center/contain no-repeat;
+          mask:url(../images/logo.png) center/contain no-repeat;
+}
