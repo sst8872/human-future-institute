@@ -239,7 +239,7 @@ function hnf_gallery($posts) {
     foreach ($posts as $p) {
         $img = hnf_thumb($p);
         $t = esc_html(wp_strip_all_tags($p->post_title));
-        echo '<a href="' . esc_url(get_permalink($p)) . '">' . ($img ? '<img src="' . esc_url($img) . '" alt="' . $t . '" loading="lazy">' : '') . '<span class="cap">' . $t . '</span></a>';
+        echo '<a href="' . esc_url(get_permalink($p)) . '">' . ($img ? '<img src="' . esc_url($img) . '" alt="' . $t . '" loading="lazy">' : '<span class="gal-ph"><b>사진 준비 중</b></span>') . '<span class="cap">' . $t . '</span></a>';
     }
     echo '</div>';
 }

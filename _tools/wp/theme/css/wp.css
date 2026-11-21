@@ -90,3 +90,6 @@
 .tp-tags a{padding:5px 12px;border-radius:20px;background:#eef2f8;color:var(--primary,#1d44d8);font-size:14px;font-weight:600}
 .tp-tags a:hover{background:var(--primary,#1d44d8);color:#fff}
 .p-card .p-tags{display:block;margin-top:6px;font-size:13px;color:var(--primary,#1d44d8);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+/* 갤러리: 사진이 아직 없을 때 자리 표시 (2026-11-21) */
+.gal .gal-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#f3f0e8;border:1px dashed #d8cfb8}
+.gal .gal-ph b{font-size:15px;font-weight:600;color:#9a8a62;letter-spacing:.04em}
