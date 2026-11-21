@@ -826,3 +826,6 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 @media (max-width:640px){
   .next:has(.sp-poster){grid-template-columns:1fr}
 }
+
+/* 간담회 소개 칸 두 개 (2026-11-21, 「간담회 이후」 뺌) */
+@media (min-width:641px){.ex-top.ex-two{grid-template-columns:1.5fr 1fr}}
