@@ -33,7 +33,8 @@ function hnf_fields($slug) {
         ],
         'pub-insight' => [
             ['author', '필자', 'line', true, '예: 윤회정 (인간과미래연구소 소장)'],
-            ['summary', '요약', 'area', true, '2~3문장. 첫 화면 「주간 인사이트」와 글 맨 위 요약 상자에 나옵니다'],
+            ['summary', '요약', 'area', true, '2~3문장. 첫 화면 「주간 인사이트」와 목록에 나옵니다(「핵심 문구」가 없으면 글 맨 위 상자에도)'],
+            ['quote', '핵심 문구', 'area', false, '본문에서 가장 핵심적인 문장을 그대로 옮겨 쓰세요. 글 맨 위에 따옴표 상자로 나옵니다'],
             ['thumb', '대표 사진', 'image', false, '목록 카드·첫 화면 그림'],
             $body, $photos,
             ['refs', '참고 문헌', 'area', false, '한 줄에 하나씩'],
@@ -218,7 +219,8 @@ function hnf_tpl_html($slug, $f) {
             return $info(['ev_date' => '행사 일자', 'ev_place' => '장소']) . hnf_txt2html($g('body')) . $photos();
         case 'pub-insight':
             $refs = array_filter(array_map('trim', explode("\n", $g('refs'))));
-            return ($g('author') !== '' ? '<p class="tp-author">글 · ' . esc_html($g('author')) . '</p>' : '') . $sum() . $thumb() . hnf_txt2html($g('body')) . $photos()
+            $top = $g('quote') !== '' ? '<div class="tp-sum tp-quote"><blockquote>' . hnf_txt2html($g('quote')) . '</blockquote></div>' : $sum();
+            return ($g('author') !== '' ? '<p class="tp-author">글 · ' . esc_html($g('author')) . '</p>' : '') . $top . $thumb() . hnf_txt2html($g('body')) . $photos()
                 . ($refs ? '<div class="tp-refs"><b>참고 문헌</b><ol>' . implode('', array_map(fn($r) => '<li>' . hnf_inline($r) . '</li>', $refs)) . '</ol></div>' : '')
                 . hnf_tags_html(hnf_tags($g('tags')));
         case 'pub-reports':
