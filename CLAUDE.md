@@ -3,10 +3,15 @@
 ## 🖥️ 컴퓨터 구별 (작업 전에 get_device_info의 deviceName으로 확인)
 | 장치 이름 | 컴퓨터 | 작업 폴더 | 할 수 있는 일 |
 |---|---|---|---|
-| `book-o7dkh035u2` | **랩탑** | `D:\인간과 미래 연구소` | 사이트 디자인·게시물 수정, git commit·push·pull. 사이트 편집은 되도록 **Chrome(Claude in Chrome)으로 inshnf.com 관리 화면**에서 |
-| (PC에서 연결할 때 적기) | **PC** | `D:\사이트\사이트 판매\인간과 미래 연구소` | 위 작업 + **SSH·서버 작업**(`.deploy`, SSH 열쇠, `deploy_wp.sh`로 올리기·지우기) |
+| `book-o7dkh035u2` | **랩탑** | `D:\인간과 미래 연구소` | 테마 디자인·게시물 수정, git commit·push·pull. 사이트 반영은 **Chrome(Claude in Chrome)으로 inshnf.com 관리 화면**에서 |
+| (PC에서 연결할 때 적기) | **PC** | `D:\사이트\사이트 판매\인간과 미래 연구소` | 위 작업 + **서버 직접 수정**(SSH, `.deploy`, SSH 열쇠, `deploy_wp.sh`, 서버 폴더 파일 올리기·지우기) |
 
-- **랩탑에서는 서버 폴더에 파일을 올리거나 지우지 않는다.** SSH 접속, `deploy_wp.sh` 실행, `_tools/wp/.deploy` 만들기, SSH 열쇠 만들기·등록 모두 하지 않는다. 서버에 올려야 하는 수정(테마 파일 등)은 commit·push까지만 하고 「PC에서 배포 필요」라고 사용자에게 알린다
+- **랩탑에서는 서버에 직접 접속하지 않는다.** SSH 접속, `deploy_wp.sh` 실행, `_tools/wp/.deploy` 만들기, SSH 열쇠 만들기·등록, 서버 폴더 파일 올리기·지우기 모두 PC 몫
+- **랩탑에서 테마 디자인 반영하는 법** (모두 Chrome 관리 화면에서):
+  1. 저장소의 HTML·CSS·JS를 고치고 Playwright로 확인 → commit·push
+  2. 작은 CSS·PHP 수정: 외모 → 테마 파일 편집기에서 해당 파일만 고침(저장소와 같은 내용으로)
+  3. 큰 수정: `python3 _tools/wp/build_wp.py <저장소> <임시폴더>`로 테마를 만들어 `inshnf.zip`으로 묶고 → 외모 → 테마 → 새로 추가 → 테마 업로드 → 「현재 테마를 업로드한 것으로 교체」
+  4. 반영 전에 무엇을 바꾸는지 사용자에게 확인받고, 반영 뒤 inshnf.com을 1440·1100·iPhone 13으로 확인
 - WordPress 로그인은 사용자가 직접 한다(비밀번호를 읽거나 입력하지 않음)
 - 아래 「랩탑 첫 세션에서 할 일」의 2·3번(.deploy·SSH 열쇠)은 **PC에서만** 한다
 
