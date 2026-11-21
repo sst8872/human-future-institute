@@ -1,0 +1,57 @@
+/* 페이지 편집기 (로그인한 편집자에게만 보임) */
+.hnf-region{display:contents}
+.hnf-fab{position:fixed;left:20px;bottom:20px;z-index:9990;display:flex;gap:6px;font-family:Pretendard,sans-serif}
+.hnf-fab button,.hnf-fab a{height:44px;padding:0 18px;border-radius:22px;font-size:15px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.25);display:inline-flex;align-items:center}
+.hnf-fab .go{background:#f2c230;color:#111;border:0;cursor:pointer}
+.hnf-fab a{background:#fff;color:#0c2e86;font-weight:600}
+.hnf-bar{position:fixed;left:0;right:0;bottom:0;z-index:9991;background:#111827;color:#fff;font-family:Pretendard,sans-serif;font-size:14px;transform:translateY(110%);transition:.25s;box-shadow:0 -6px 20px rgba(0,0,0,.3)}
+.hnf-bar.on{transform:none}
+.hnf-bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:12px 20px 6px;border-top:4px solid #f2c230}
+.hnf-bar .t{font-size:15px;margin-right:auto}
+.hnf-bar .g{display:flex;align-items:center;gap:4px;position:relative}
+.hnf-bar .g.off{opacity:.35;pointer-events:none}
+.hnf-bar .lb{color:#9ca3af;font-size:13px;margin-right:4px}
+.hnf-bar button{height:34px;min-width:34px;padding:0 11px;border:1px solid #374151;background:#1f2937;color:#fff;border-radius:4px;font-size:14px;cursor:pointer;font-family:inherit}
+.hnf-bar button:hover{background:#374151}
+.hnf-bar button.pri{background:#f2c230;border-color:#f2c230;color:#111;font-weight:700;padding:0 22px}
+.hnf-bar button:disabled{opacity:.6}
+.hnf-bar .menu{display:none;position:absolute;right:0;bottom:42px;background:#fff;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.3);padding:6px;flex-direction:column;min-width:190px}
+.hnf-bar .menu.on{display:flex}
+.hnf-bar .menu button{background:#fff;color:#111;border:0;text-align:left;height:38px}
+.hnf-bar .menu button:hover{background:#f3f4f6}
+.hnf-hint{margin:0;padding:0 20px 10px;color:#9ca3af;font-size:12.5px}
+.hnf-editing{padding-bottom:120px}
+.hnf-editing .float-btns{display:none}
+.hnf-editing .hnf-region [contenteditable]{outline:1px dashed rgba(12,46,134,.35);outline-offset:6px}
+.hnf-editing .hnf-region [contenteditable]:focus{outline:2px solid #f2c230}
+.hnf-editing .hnf-sel{outline:3px solid #2563eb!important;outline-offset:3px;background:rgba(37,99,235,.04)}
+.hnf-editing .hnf-img{outline:4px solid #f2c230!important;outline-offset:2px;cursor:pointer}
+.hnf-editing .hnf-region img{cursor:pointer}
+.hnf-editing .rv{opacity:1!important;transform:none!important;visibility:visible!important}
+.hnf-editing [data-panel]{display:block!important;margin-bottom:60px;padding-top:20px;border-top:2px dashed #f2c230}
+.hnf-editing .hnf-region a{cursor:text}
+.hnf-toast{position:fixed;left:50%;bottom:140px;transform:translate(-50%,20px);opacity:0;z-index:9999;background:#111827;color:#fff;padding:14px 22px;border-radius:6px;font:600 15px Pretendard,sans-serif;transition:.25s;pointer-events:none;max-width:90vw}
+.hnf-toast.on{opacity:1;transform:translate(-50%,0)}
+.hnf-toast.bad{background:#b42318}
+@media (max-width:767px){
+  .hnf-fab{left:12px;bottom:12px}
+  .hnf-fab button,.hnf-fab a{height:40px;font-size:14px;padding:0 14px}
+  .hnf-bar-in{gap:8px;padding:10px 12px 4px}
+  .hnf-bar .t{width:100%;font-size:14px}
+  .hnf-bar .lb{display:none}
+  .hnf-bar button{height:32px;padding:0 9px;font-size:13px}
+  .hnf-hint{display:none}
+}
+/* 편집 중에는 옆으로 넘기는 카드(swiper)를 여러 줄로 펼침 */
+.hnf-editing .hnf-region .swiper{overflow:visible}
+.hnf-editing .hnf-region .swiper-wrapper{flex-wrap:wrap;gap:20px 0;transform:none!important;height:auto!important}
+.hnf-editing .hnf-region .swiper-slide{width:25%!important;margin:0!important;height:auto}
+.hnf-editing .hnf-region .swiper-button-prev,.hnf-editing .hnf-region .swiper-button-next,.hnf-editing .hnf-region [class*=prev],.hnf-editing .hnf-region [class*=next],.hnf-editing .hnf-region .swiper-pagination{display:none!important}
+@media (max-width:1100px){.hnf-editing .hnf-region .swiper-slide{width:33.333%!important}}
+@media (max-width:767px){.hnf-editing .hnf-region .swiper-slide{width:50%!important}}
+/* 로그인한 사람의 왼쪽 아래 관리 단추 */
+.hnf-fab{flex-wrap:wrap;max-width:calc(100vw - 100px)}
+.hnf-fab a.pri,.hnf-fab .go{background:#f2c230;color:#111!important;border:0;cursor:pointer}
+.hnf-fab a.out{background:rgba(255,255,255,.92);color:#666!important;font-weight:500}
+.hnf-editing .hnf-fab{display:none!important}
+@media (max-width:767px){.hnf-fab{gap:5px}.hnf-fab button,.hnf-fab a{height:36px;font-size:13px;padding:0 12px}.hnf-fab a.out{display:none}}
