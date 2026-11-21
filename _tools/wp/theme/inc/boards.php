@@ -14,7 +14,7 @@ function hnf_boards() {
         'pub-rules' => ['type' => 'table', 'per' => 10, 'catbadge' => true, 'style' => 'plain',
             'cols' => ['no' => ['번호', 90], 'cat' => ['분류', 110], 'title' => ['제목', 0], 'files' => ['파일', 110], 'date' => ['등록일', 130], 'writer' => ['작성', 140]]],
         'pub-archive' => ['type' => 'table', 'per' => 10, 'catbadge' => true, 'style' => 'archive',
-            'cols' => ['no' => ['번호', 90], 'cat' => ['분류', 110], 'title' => ['제목', 0], 'files' => ['파일', 190], 'date' => ['등록일', 130], 'writer' => ['작성', 140]]],
+            'cols' => ['no' => ['번호', 90], 'cat' => ['분류', 110], 'title' => ['제목', 0], 'files' => ['파일', 240], 'date' => ['등록일', 130], 'writer' => ['작성', 140]]],
         'news-stories' => ['type' => 'card', 'per' => 12],
         'pub-insight' => ['type' => 'card', 'per' => 12, 'extra' => '<span class="badge gray">Weekly Insight</span>'],
         'research-results' => ['type' => 'card', 'per' => 12, 'badge' => ['보고서' => 'gold', '학술발표' => 'green']],
