@@ -83,7 +83,11 @@ const HNF_FIG_RE = '/^\\[\\s*사진\\s*(\\d+)\\s*(?:\\|\\s*(.*?))?\\s*\\]$/u';
 /* 고해상도 화면에서도 선명하게: 여러 크기(srcset)를 함께 넣는다 */
 function hnf_srcset($id, $size = 'large') {
     $ss = wp_get_attachment_image_srcset((int) $id, $size);
-    return $ss ? ' srcset="' . esc_attr($ss) . '" sizes="(max-width: 960px) 100vw, 960px"' : '';
+    if (!$ss) return '';
+    // --mw: 이 그림이 커질 수 있는 최대 폭(원래 크기, 세로 640px 제한 반영). CSS가 width:100%와 함께 쓴다
+    $m = wp_get_attachment_metadata((int) $id);
+    $mw = (!empty($m['width']) && !empty($m['height'])) ? min((int) $m['width'], (int) round(640 * $m['width'] / $m['height'])) : 0;
+    return ' srcset="' . esc_attr($ss) . '" sizes="(max-width: 960px) 100vw, 960px"' . ($mw ? ' style="--mw:' . $mw . 'px"' : '');
 }
 function hnf_fig($id, $cap) {
     $u = wp_get_attachment_image_url((int) $id, 'large');
