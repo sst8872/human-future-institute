@@ -516,3 +516,11 @@ body.sub .header .logo .logo-img{
   .rg-doc{font-size:15px}
   .rg-items.deep{margin-left:1.4em}
 }
+/* 양식 및 일반: 파일 칸에 DOCX·PDF 두 개 (11-21) */
+.board td.files{white-space:nowrap}
+.board td.files .badge+.badge{margin-left:6px}
+.board .m-files{display:none}
+@media (max-width:640px){
+  .board .m-files{display:flex;gap:6px;margin-top:8px}
+  .board .m-files .badge{font-size:12px;flex:none;width:auto;min-width:0;padding:2px 8px}
+}
