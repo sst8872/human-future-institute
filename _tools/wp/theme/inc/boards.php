@@ -228,7 +228,8 @@ function hnf_cards($cfg, $posts) {
         echo '<a href="' . esc_url(get_permalink($p)) . '" class="p-card">';
         echo $img ? '<div class="thumb"><img src="' . esc_url($img) . '" alt="" loading="lazy"></div>' : '<div class="thumb noimg"><span>INSTITUTE FOR HUMAN &amp; FUTURE</span></div>';
         echo '<p class="meta">' . ($kid ? '<span class="badge ' . $cls . '">' . esc_html($kid) . '</span>' : '') . ($cfg['extra'] ?? '') . '</p>';
-        echo '<strong>' . esc_html(wp_strip_all_tags($p->post_title)) . '</strong><time>' . hnf_date($p) . '</time></a>';
+        $tg = hnf_post_board($p->ID) === 'pub-insight' ? array_slice(hnf_tags((get_post_meta($p->ID, 'hnf_f', true) ?: [])['tags'] ?? ''), 0, 3) : [];
+        echo '<strong>' . esc_html(wp_strip_all_tags($p->post_title)) . '</strong>' . ($tg ? '<span class="p-tags">' . implode(' ', array_map(fn($t) => '#' . esc_html($t), $tg)) . '</span>' : '') . '<time>' . hnf_date($p) . '</time></a>';
     }
     echo '</div>';
 }

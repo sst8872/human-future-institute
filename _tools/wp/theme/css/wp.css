@@ -85,3 +85,8 @@
 .tp-photos.n1 figure{aspect-ratio:auto}
 .tp-photos.n1 img{height:auto;max-height:640px;width:auto;max-width:100%;margin:0 auto;display:block}
 .tp-photos.n2{grid-template-columns:repeat(2,1fr)}
+/* 인사이트 키워드(해시태그) — 2026-11-21 */
+.tp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+.tp-tags a{padding:5px 12px;border-radius:20px;background:#eef2f8;color:var(--primary,#1d44d8);font-size:14px;font-weight:600}
+.tp-tags a:hover{background:var(--primary,#1d44d8);color:#fff}
+.p-card .p-tags{display:block;margin-top:6px;font-size:13px;color:var(--primary,#1d44d8);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}

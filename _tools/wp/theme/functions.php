@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261121w15');
+define('HNF_VER', '20261121w16');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -107,6 +107,11 @@ function hnf_notices_json() {
 }
 
 /* 첫 화면: 주간 인사이트 슬라이드 (예시 글이 아닌 실제 인사이트가 있을 때만) */
+function hnf_has_insight() {
+    $top = get_category_by_slug('pub-insight');
+    if (!$top) return false;
+    return (bool) get_posts(['cat' => $top->term_id, 'numberposts' => 1, 'fields' => 'ids', 'meta_query' => [['key' => 'hnf_sample', 'compare' => 'NOT EXISTS']]]);
+}
 function hnf_insight_slides() {
     $top = get_category_by_slug('pub-insight');
     if (!$top) return false;

@@ -37,6 +37,7 @@ function hnf_fields($slug) {
             ['thumb', '대표 사진', 'image', false, '목록 카드·첫 화면 그림'],
             $body, $photos,
             ['refs', '참고 문헌', 'area', false, '한 줄에 하나씩'],
+            ['tags', '키워드(해시태그)', 'line', false, '예: #생성형AI #교사교육 #지속가능성 (띄어 쓰면 여러 개, # 없이 써도 됨)'],
         ],
         'pub-reports' => [
             ['rep_no', '보고서 번호', 'line', false, '예: IHF 연구 보고서 2026-05'],
@@ -172,6 +173,16 @@ function hnf_img_html($id, $size = 'large', $cls = '') {
     $alt = get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id);
     return '<figure class="' . $cls . '"><a href="' . esc_url($full) . '" target="_blank"><img src="' . esc_url($u) . '" alt="' . esc_attr($alt) . '" loading="lazy"></a></figure>';
 }
+/* 인사이트 키워드: 「#가 #나」 또는 「가, 나」 → ['가','나'] */
+function hnf_tags($str) {
+    $t = preg_split('/[\s,]+/u', trim((string) $str), -1, PREG_SPLIT_NO_EMPTY);
+    $t = array_map(fn($x) => ltrim($x, '#＃'), $t);
+    return array_values(array_unique(array_filter($t, fn($x) => $x !== '')));
+}
+function hnf_tags_html($tags) {
+    if (!$tags) return '';
+    return '<p class="tp-tags">' . implode('', array_map(fn($t) => '<a href="' . esc_url(add_query_arg(['q' => $t, 'sf' => 'content'], HNF_H . '/pub-insight/')) . '">#' . esc_html($t) . '</a>', $tags)) . '</p>';
+}
 function hnf_tpl_html($slug, $f) {
     $g = fn($k) => trim((string) ($f[$k] ?? ''));
     $info = function ($pairs) use ($g) {
@@ -199,7 +210,8 @@ function hnf_tpl_html($slug, $f) {
         case 'pub-insight':
             $refs = array_filter(array_map('trim', explode("\n", $g('refs'))));
             return ($g('author') !== '' ? '<p class="tp-author">글 · ' . esc_html($g('author')) . '</p>' : '') . $sum() . $thumb() . hnf_txt2html($g('body')) . $photos()
-                . ($refs ? '<div class="tp-refs"><b>참고 문헌</b><ol>' . implode('', array_map(fn($r) => '<li>' . hnf_inline($r) . '</li>', $refs)) . '</ol></div>' : '');
+                . ($refs ? '<div class="tp-refs"><b>참고 문헌</b><ol>' . implode('', array_map(fn($r) => '<li>' . hnf_inline($r) . '</li>', $refs)) . '</ol></div>' : '')
+                . hnf_tags_html(hnf_tags($g('tags')));
         case 'pub-reports':
             return $info(['rep_no' => '보고서 번호', 'lead' => '연구책임자', 'team' => '참여 연구진']) . $sum() . $photos();
         case 'pub-rules':

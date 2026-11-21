@@ -207,7 +207,12 @@ def main():
             a = s.find('<div class="swiper rp-swiper"><div class="swiper-wrapper">')
             a = s.find('<div class="swiper-wrapper">', a) + len('<div class="swiper-wrapper">')
             b = s.find('</div></div>\n  </div>\n</section>', a)
-            s = s[:a] + '<?php if (!hnf_insight_slides()): ?>' + s[a:b] + '<?php endif; ?>' + s[b:]
+            s = s[:a] + '<?php hnf_insight_slides(); ?>' + s[b:]
+            # 인사이트 실제 글이 있을 때만 02 구역을 보임(예시 슬라이드는 쓰지 않음)
+            a = s.find('<section class="sec rp-sec" style="display:none">')
+            assert a >= 0, 'rp-sec'
+            b = s.find('</section>', a) + len('</section>')
+            s = s[:a] + '<?php if (hnf_has_insight()): ?><section class="sec rp-sec">' + s[a + len('<section class="sec rp-sec" style="display:none">'):b] + '<?php endif; ?>' + s[b:]
         open(os.path.join(TH, 'pages', slug + '.php'), 'w', encoding='utf-8').write(conv(s))
         if slug != 'index':
             pages.append({'slug': slug, 'title': html.unescape(title.group(1)) if title else slug})
