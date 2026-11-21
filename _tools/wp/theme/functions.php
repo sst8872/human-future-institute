@@ -53,12 +53,12 @@ function hnf_og() {
         if ($t !== '') $desc = mb_substr(preg_replace('/\s+/u', ' ', preg_replace('/[#*\-]+ ?/u', '', $t)), 0, 110);
     }
     $url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . strtok($_SERVER['REQUEST_URI'], '?');
-    $img = HNF_T . '/images/og-image.jpg?v=1';
+    $img = HNF_T . '/images/og-home.jpg';
     $m = [
         ['property', 'og:type', is_singular('post') ? 'article' : 'website'], ['property', 'og:site_name', $site],
         ['property', 'og:title', $title], ['property', 'og:description', $desc], ['property', 'og:url', $url],
         ['property', 'og:image', $img], ['property', 'og:image:width', '1200'], ['property', 'og:image:height', '630'],
-        ['property', 'og:image:alt', '인간과미래연구소 로고'], ['property', 'og:locale', 'ko_KR'],
+        ['property', 'og:image:alt', '인간과미래연구소 홈페이지 첫 화면'], ['property', 'og:locale', 'ko_KR'],
         ['name', 'twitter:card', 'summary_large_image'], ['name', 'twitter:image', $img],
     ];
     foreach ($m as [$k, $n, $v]) echo '<meta ' . $k . '="' . $n . '" content="' . esc_attr(html_entity_decode($v, ENT_QUOTES, 'UTF-8')) . "\">\n";
