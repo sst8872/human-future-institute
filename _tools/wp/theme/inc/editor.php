@@ -75,7 +75,7 @@ add_action('wp_footer', function () {
 
 /* 바닥글 「관리자」 링크 */
 function hnf_admin_link() {
-    if (is_user_logged_in() && current_user_can('edit_posts')) echo '<li class="f-admin"><a href="' . esc_url(admin_url('admin.php?page=hnf-home')) . '">연구소 관리</a></li>';
+    if (is_user_logged_in() && current_user_can('edit_posts')) echo '<li class="f-admin"><a href="' . esc_url(admin_url('admin.php?page=hnf-home')) . '">관리자</a></li>';
     else echo '<li class="f-admin"><a href="' . esc_url(wp_login_url(admin_url('admin.php?page=hnf-home'))) . '">관리자</a></li>';
 }
 
