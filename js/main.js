@@ -296,7 +296,7 @@
     dlg.className = 'er-dialog';
     dlg.setAttribute('aria-labelledby', 'erTitle');
     dlg.innerHTML = `
-      <div class="er-head"><h2 id="erTitle">춘천교육대학교 이메일무단수집거부</h2><button type="button" class="er-close" aria-label="닫기">&times;</button></div>
+      <div class="er-head"><h2 id="erTitle" class="blind">이메일무단수집거부</h2><button type="button" class="er-close" aria-label="닫기">&times;</button></div>
       <div class="er-body">
         <p class="er-lead">본 웹사이트에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며,이를 위반시 정보통신망법에 의해 형사 처벌됨을 유념하시기 바랍니다.</p>
         <h3>정보통신망이용촉진 및 정보보호등에 관한 법률 <small>[일부개정 2002.12.18 법률 제06797호]</small></h3>
@@ -311,7 +311,7 @@
         <ol>
           <li>제 50조 제4항의 규정을 위반하여 기술적 조치를 한 자</li>
           <li>제50조 제6항의 규정을 위반하여 영리목적의 공고성 정보를 전송한 자</li>
-          <li>제 50조의2의 규정을 위반하여 전자우편주소를 수집,판매,유통 또는 정보전송에 이용한 자</li>
+          <li>제 50조의2의 규정을 위반하여 전자우편주소를 수집,판매,유통 또는 정보전송에 이용한 자.</li>
         </ol>
       </div>`;
     document.body.appendChild(dlg);

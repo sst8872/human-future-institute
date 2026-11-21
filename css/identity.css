@@ -466,3 +466,6 @@ body.sub .header .logo .logo-img{
   .pv-tbl th,.pv-tbl td{padding:12px 6px;font-size:13px}
 }
 .privacy .pv-title .nw{white-space:nowrap}
+/* 이메일무단수집거부 창: 제목은 화면에서 숨기고(원문 그대로) 닫기 버튼만 오른쪽 위에 */
+.er-head{justify-content:flex-end;padding:10px 14px 0;border-bottom:0}
+.er-body{padding-top:6px}
