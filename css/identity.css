@@ -126,7 +126,7 @@
   .section_title h2{font-size:28px}
 }
 
-/* ---------- 01 공지와 행사: 종이빛 바탕 ---------- */
+/* ---------- 01 공지사항과 행사안내: 종이빛 바탕 ---------- */
 .ne-sec .ne-band{background:var(--paper);border-color:var(--paper-line)}
 .ne-col+.ne-col,.ne-col.events{border-color:var(--paper-line)!important}
 .col-hd h3{font-family:var(--head);color:var(--ink)}
