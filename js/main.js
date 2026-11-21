@@ -240,7 +240,10 @@
   /* 8-3. 슬라이드 (Swiper) — 가톨릭대와 같은 설정: 4초 자동, 무한 반복 */
   if (window.Swiper) {
     const auto = { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true };
-    new Swiper('.ev-swiper', { slidesPerView: 1, spaceBetween: 10, loop: true, speed: 500, autoplay: auto,
+    // 행사가 하나뿐이면 넘기기 단추를 숨기고 반복·자동 넘김을 끔
+    const evOne = document.querySelectorAll('.ev-swiper .swiper-slide').length < 2;
+    if (evOne) document.querySelectorAll('.ev-prev, .ev-next').forEach(b => { b.style.display = 'none'; });
+    if (!evOne) new Swiper('.ev-swiper', { slidesPerView: 1, spaceBetween: 10, loop: true, speed: 500, autoplay: auto,
       navigation: { prevEl: '.ev-prev', nextEl: '.ev-next' } });
     new Swiper('.rp-swiper', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 5, loop: true, speed: 300, autoplay: auto, grabCursor: false });
     const rpWrap = $('.rp-wrap'), rpCursor = $('.rp-cursor');
