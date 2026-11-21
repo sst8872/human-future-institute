@@ -80,12 +80,17 @@ function hnf_inline($s) {
     return $s;
 }
 const HNF_FIG_RE = '/^\\[\\s*사진\\s*(\\d+)\\s*(?:\\|\\s*(.*?))?\\s*\\]$/u';
+/* 고해상도 화면에서도 선명하게: 여러 크기(srcset)를 함께 넣는다 */
+function hnf_srcset($id, $size = 'large') {
+    $ss = wp_get_attachment_image_srcset((int) $id, $size);
+    return $ss ? ' srcset="' . esc_attr($ss) . '" sizes="(max-width: 960px) 100vw, 960px"' : '';
+}
 function hnf_fig($id, $cap) {
     $u = wp_get_attachment_image_url((int) $id, 'large');
     if (!$u) return '';
     $full = wp_get_attachment_image_url((int) $id, 'full');
     $alt = $cap !== '' ? $cap : (get_post_meta($id, '_wp_attachment_image_alt', true) ?: '');
-    return '<figure class="tp-fig"><a href="' . esc_url($full) . '" target="_blank"><img src="' . esc_url($u) . '" alt="' . esc_attr($alt) . '" loading="lazy"></a>' . ($cap !== '' ? '<figcaption>' . hnf_inline($cap) . '</figcaption>' : '') . '</figure>';
+    return '<figure class="tp-fig"><a href="' . esc_url($full) . '" target="_blank"><img src="' . esc_url($u) . '"' . hnf_srcset($id) . ' alt="' . esc_attr($alt) . '" loading="lazy"></a>' . ($cap !== '' ? '<figcaption>' . hnf_inline($cap) . '</figcaption>' : '') . '</figure>';
 }
 function hnf_txt_block($lines) {
     $out = '';
@@ -171,7 +176,7 @@ function hnf_img_html($id, $size = 'large', $cls = '') {
     if (!$u) return '';
     $full = wp_get_attachment_image_url($id, 'full');
     $alt = get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id);
-    return '<figure class="' . $cls . '"><a href="' . esc_url($full) . '" target="_blank"><img src="' . esc_url($u) . '" alt="' . esc_attr($alt) . '" loading="lazy"></a></figure>';
+    return '<figure class="' . $cls . '"><a href="' . esc_url($full) . '" target="_blank"><img src="' . esc_url($u) . '"' . hnf_srcset($id, $size) . ' alt="' . esc_attr($alt) . '" loading="lazy"></a></figure>';
 }
 /* 인사이트 키워드: 「#가 #나」 또는 「가, 나」 → ['가','나'] */
 function hnf_tags($str) {
