@@ -35,7 +35,30 @@ add_action('wp_enqueue_scripts', function () {
 
 function hnf_head() {
     echo '<link rel="stylesheet" href="' . HNF_T . '/css/wp.css?v=' . HNF_VER . "\">\n";
+    hnf_og();
     wp_head();
+}
+
+/* 링크 미리보기(카카오톡·문자·SNS) — 대표 이미지는 남색 가로형 로고 (2026-11-21) */
+function hnf_og() {
+    $site  = '인간과미래연구소';
+    $title = hnf_title(get_bloginfo('name'));
+    $desc  = '기술 변혁의 시대, 인간의 가치를 중심에 둔 미래 담론을 선도하는 춘천교육대학교 인간과미래연구소';
+    if (is_singular('post')) {
+        $f = get_post_meta(get_the_ID(), 'hnf_f', true);
+        $t = is_array($f) ? trim(wp_strip_all_tags((string) ($f['summary'] ?? $f['body'] ?? ''))) : '';
+        if ($t !== '') $desc = mb_substr(preg_replace('/\s+/u', ' ', preg_replace('/[#*\-]+ ?/u', '', $t)), 0, 110);
+    }
+    $url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . strtok($_SERVER['REQUEST_URI'], '?');
+    $img = HNF_T . '/images/og-image.jpg?v=1';
+    $m = [
+        ['property', 'og:type', is_singular('post') ? 'article' : 'website'], ['property', 'og:site_name', $site],
+        ['property', 'og:title', $title], ['property', 'og:description', $desc], ['property', 'og:url', $url],
+        ['property', 'og:image', $img], ['property', 'og:image:width', '1200'], ['property', 'og:image:height', '630'],
+        ['property', 'og:image:alt', '인간과미래연구소 로고'], ['property', 'og:locale', 'ko_KR'],
+        ['name', 'twitter:card', 'summary_large_image'], ['name', 'twitter:image', $img],
+    ];
+    foreach ($m as [$k, $n, $v]) echo '<meta ' . $k . '="' . $n . '" content="' . esc_attr(html_entity_decode($v, ENT_QUOTES, 'UTF-8')) . "\">\n";
 }
 
 function hnf_title($orig) {
