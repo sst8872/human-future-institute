@@ -13,7 +13,7 @@ body{font-family:P,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoo
 .poster{position:relative;width:1240px;height:1754px;overflow:hidden;color:#fff;background:radial-gradient(1200px 900px at 95% 8%,rgba(64,120,230,.45),rgba(64,120,230,0) 60%),radial-gradient(900px 700px at 0% 40%,rgba(20,60,160,.35),rgba(20,60,160,0) 70%),linear-gradient(180deg,#0a1a46 0%,#0b1f5a 40%,#071233 100%)}.poster::after{content:"";position:absolute;right:-260px;top:-180px;width:900px;height:900px;border-radius:50%;border:1px solid rgba(180,210,255,.18);box-shadow:0 0 120px rgba(90,150,255,.18) inset;pointer-events:none}
 /* 아래 지구 사진 띠 */
 .earth{position:absolute;left:0;right:0;bottom:0;height:620px;background:url(nasa_hi.jpg) 40% -300px/1500px auto no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.35) 14%,#000 34%);mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.35) 14%,#000 34%)}
-.earth::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,80,200,.25) 0%,rgba(7,18,51,0) 45%,rgba(7,18,51,.45) 80%,rgba(7,18,51,.85) 100%)}
+.earth::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,80,200,.25) 0%,rgba(7,18,51,0) 35%,rgba(7,18,51,.55) 55%,rgba(7,18,51,.82) 72%,rgba(7,18,51,.92) 100%)}
 .pad{position:absolute;left:96px;right:96px}
 /* 머리 */
 .top{top:72px;display:flex;align-items:center;justify-content:space-between}
@@ -36,13 +36,13 @@ h1 em{font-style:normal;color:#f2c75c;position:relative}
 .row dd .t{font-weight:500;color:#a9c4ff;margin-left:14px}
 /* 아래 신청 */
 .foot{bottom:150px;display:flex;gap:28px}
-.card{flex:1;display:flex;align-items:center;gap:26px;padding:24px 28px;background:rgba(255,255,255,.96);border-radius:6px}
-.card .qr{width:150px;height:150px;flex:none}
+.card{flex:1;display:flex;align-items:center;gap:28px;padding:0;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.card .qr{width:168px;height:168px;flex:none;padding:12px;background:#fff;border-radius:4px}
 .card .qr img{width:100%;height:100%;display:block}
-.card b{display:block;font-size:28px;font-weight:800;color:var(--ink);letter-spacing:-.5px}
-.card b i{font-style:normal;color:var(--gold)}
-.card p{margin-top:10px;font-size:17px;line-height:1.55;font-weight:500;color:#3d4659;word-break:keep-all}
-.card p span{display:block;font-family:P;color:var(--navy);font-weight:600;letter-spacing:.2px}
+.card b{display:block;font-size:30px;font-weight:800;color:#fff;letter-spacing:-.5px}
+.card b i{font-style:normal;color:#f2c75c}
+.card p{margin-top:10px;font-size:18px;line-height:1.55;font-weight:500;color:rgba(255,255,255,.88);word-break:keep-all}
+.card p span{display:block;font-family:P;color:#f2c75c;font-weight:600;letter-spacing:.2px}
 .host{bottom:64px;display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.88);font-size:18px;font-weight:500;letter-spacing:.5px}
 .host b{font-weight:700;color:#fff;margin-left:10px}
 .host span{color:var(--gold2);letter-spacing:3px;font-size:15px;font-weight:600}
@@ -71,7 +71,7 @@ h1 em{font-style:normal;color:#f2c75c;position:relative}
   <div class="pad foot">
     <div class="card">
       <div class="qr"><img src="qr_apply.svg" alt=""></div>
-      <div><b><i>①</i> 참여 신청</b><p>사전 신청하신 분께 발표 자료를 보내 드립니다.<span>inshnf.com/event-apply</span></p></div>
+      <div><b><i>①</i> 참여 신청</b><p>사전 신청하신 분께<br>발표 자료를 보내 드립니다.<span>inshnf.com/event-apply</span></p></div>
     </div>
     <div class="card">
       <div class="qr"><img src="qr_zoom.svg" alt=""></div>
