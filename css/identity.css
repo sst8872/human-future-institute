@@ -486,3 +486,33 @@ body.sub .header .logo .logo-img{
   .pv-doc .tbl-scroll .pv-officer{min-width:0}
 }
 .pv-doc .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* 게시글 보기 (규정 및 요람 — pub-rules-01.html, 11-21) */
+.b-view{border-top:2px solid var(--ink)}
+.bv-head{padding:34px 10px 28px;border-bottom:1px solid #ddd}
+.bv-title{margin-top:14px;font-size:30px;font-weight:700;line-height:1.4;color:#111;letter-spacing:-.5px}
+.bv-meta{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:14px;font-size:14px;color:#888}
+.bv-meta span{color:#444;font-weight:600}
+.bv-body{padding:44px 10px 60px;border-bottom:1px solid #ddd}
+.bv-foot{display:flex;justify-content:center;margin-top:40px}
+.bv-list{display:inline-flex;align-items:center;justify-content:center;min-width:150px;height:52px;padding:0 30px;background:var(--ink);color:#fff;font-weight:600}
+.bv-list:hover{background:var(--primary)}
+/* 규정 본문: 조 · 항(①) · 호(1.) */
+.rg-doc{font-size:16px;line-height:1.85;color:#333;word-break:keep-all;overflow-wrap:anywhere}
+.rg-meta{margin-bottom:26px;color:#777;font-size:15px}
+.rg-art{margin-top:24px}
+.rg-art .rg-p b{color:var(--deep);font-weight:700}
+.rg-para,.rg-items li{position:relative;padding-left:1.6em}
+.rg-para{margin-top:6px;margin-left:.6em}
+.rg-para>span,.rg-items li>span{position:absolute;left:0;top:0}
+.rg-items{margin:4px 0 0 .6em;list-style:none}
+.rg-items.deep{margin-left:2.2em}
+.rg-items li{list-style:none;margin-top:2px}
+.rg-sup{margin-top:40px;padding-top:24px;border-top:1px dashed #ccc}
+@media (max-width:640px){
+  .bv-head{padding:26px 0 22px}
+  .bv-title{font-size:22px}
+  .bv-body{padding:30px 0 44px}
+  .rg-doc{font-size:15px}
+  .rg-items.deep{margin-left:1.4em}
+}
