@@ -181,7 +181,10 @@
   .inst-btns svg,.inst-links strong svg{width:36px;height:36px}
   .inst-links{flex-wrap:wrap;gap:18px 26px}
   .inst-tabs{top:64px;bottom:auto;right:auto;left:max(40px,calc((100% - 1600px)/2 + 40px));gap:28px}
-  .inst-pane .inner{padding-top:40px}
+  /* 두 탭 모두 탭 밑줄 아래 같은 자리(78px)에서 제목 시작 — 글이 많은 탭에 맞춰 구역 높이 자동 (11-21) */
+  .inst-sec{display:grid;height:auto;min-height:680px}
+  .inst-pane{position:relative;inset:auto;grid-area:1/1;align-items:flex-start}
+  .inst-pane .inner{padding-top:182px;padding-bottom:70px}
 }
 .inst-pane h3{font-family:var(--head);font-weight:700}
 .inst-tag{color:var(--gold-soft)}
