@@ -395,3 +395,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .sm-group h4{font-size:19px}
   .sm-no{font-size:24px}
 }
+
+/* 로고: 흰색 원본 로고(투명 배경)를 그대로 쓰고, 흰 머리글에서도 보이도록 진한 남색 원판을 뒤에 깐다 */
+.logo-img{background:var(--deep);border-radius:50%;padding:3px;box-sizing:border-box;object-fit:contain}
