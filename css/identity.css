@@ -532,3 +532,6 @@ body.sub .header .logo .logo-img{
   .lnb .dep{padding:0 6px 0 14px}
   .lnb .dep>button .chev{margin-left:8px}
 }
+
+/* 서브 페이지 머리 바: 메뉴별 사진을 색 빼고 은은하게 (2026-11-21) — 각 페이지 <section class="sub-visual" style="--sv:url(...)"> */
+.sub-visual::before{background:var(--sv,none) center/cover no-repeat;filter:grayscale(1);opacity:var(--svop,.16)}
