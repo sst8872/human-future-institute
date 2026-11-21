@@ -32,6 +32,7 @@ function hnf_fields($slug) {
             ['body', '설명', 'text', false, '짧게 (비워도 됨)'],
         ],
         'pub-insight' => [
+            ['issue', '호수', 'line', true, '숫자만 쓰세요. 예: 1 → 「제1호」로 목록·글·첫 화면에 나옵니다'],
             ['author', '필자', 'line', true, '예: 윤회정 (인간과미래연구소 소장)'],
             ['summary', '요약', 'area', true, '2~3문장. 첫 화면 「주간 인사이트」와 목록에 나옵니다(「핵심 문구」가 없으면 글 맨 위 상자에도)'],
             ['quote', '핵심 문구', 'area', false, '본문에서 가장 핵심적인 문장을 그대로 옮겨 쓰세요. 글 맨 위에 따옴표 상자로 나옵니다'],
@@ -182,6 +183,12 @@ function hnf_img_html($id, $size = 'large', $cls = '') {
     $full = wp_get_attachment_image_url($id, 'full');
     $alt = get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id);
     return '<figure class="' . $cls . '"><a href="' . esc_url($full) . '" target="_blank"><img src="' . esc_url($u) . '"' . hnf_srcset($id, $size) . ' alt="' . esc_attr($alt) . '" loading="lazy"></a></figure>';
+}
+/* 인사이트 호수: hnf_f['issue'] → 「제1호」 (없으면 빈 문자열) */
+function hnf_issue($pid) {
+    $n = trim((string) ((get_post_meta($pid, 'hnf_f', true) ?: [])['issue'] ?? ''));
+    $n = preg_replace('/^제\s*|\s*호$/u', '', $n);
+    return $n === '' ? '' : '제' . $n . '호';
 }
 /* 인사이트 키워드: 「#가 #나」 또는 「가, 나」 → ['가','나'] */
 function hnf_tags($str) {

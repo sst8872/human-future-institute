@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261121w24');
+define('HNF_VER', '20261121w25');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -148,7 +148,7 @@ function hnf_insight_slides() {
         $img = get_the_post_thumbnail_url($p, 'large') ?: HNF_T . '/images/research01.jpg';
         $desc = has_excerpt($p) ? get_the_excerpt($p) : wp_trim_words(wp_strip_all_tags(strip_shortcodes($p->post_content)), 60, '…');
         printf('<div class="swiper-slide"><div class="rp-img"><img src="%s" alt=""></div><div class="rp-cont"><a href="%s" class="rp-label">%s<i></i></a><p class="rp-title">%s</p><div class="rp-desc">%s</div><a href="%s" class="rp-more">자세히보기</a></div></div>',
-            esc_url($img), esc_url(HNF_H . '/pub-insight/'), esc_html(hnf_post_kid_name($p->ID) ?: 'Insight'),
+            esc_url($img), esc_url(HNF_H . '/pub-insight/'), esc_html(trim((hnf_post_kid_name($p->ID) ?: 'Insight') . ' ' . hnf_issue($p->ID))),
             esc_html(wp_strip_all_tags($p->post_title)), esc_html($desc), esc_url(get_permalink($p)));
     }
     return true;
