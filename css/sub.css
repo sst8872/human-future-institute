@@ -649,7 +649,8 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
   .lnb .dep{flex:0 1 auto}
   .sub-content{padding:40px 0 70px}
   .sub-tabs{grid-auto-flow:row;grid-template-columns:1fr 1fr}
-  .card-grid,.cover-grid{grid-template-columns:1fr 1fr}
+  .card-grid{grid-template-columns:1fr;gap:36px}
+  .cover-grid{grid-template-columns:1fr 1fr}
   .vod-grid,.nl-grid,.stats,.fee,.account,.traffic,.ex-top,.weeks,.flow,.steps,.strategy .cols,.ethics,.motto-3{grid-template-columns:1fr}
   .hi{grid-template-columns:1fr;gap:16px}.hi.r .ph{order:0}.hi:not(.r) .tx{text-align:left}.hist-line::before,.hist-line::after{display:none}
   .gal{columns:2}
