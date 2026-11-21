@@ -526,7 +526,7 @@ body.sub .header .logo .logo-img{
   .board .m-files{display:flex;gap:6px;margin-top:8px}
   .board .m-files .badge{font-size:12px;flex:none;width:auto;min-width:0;padding:2px 8px}
 }
-/* 휴대폰 경로 막대: 메뉴 이름이 길어도 두 줄로 꺾이지 않게 (11-21, 「연구소 비전 및 설립 목적」) */
+/* 휴대폰 경로 막대: 메뉴 이름이 길어도 두 줄로 꺾이지 않게 (11-21, 「연구소 비전」) */
 @media (max-width:640px){
   .lnb .dep>button{white-space:nowrap;font-size:15px}
   .lnb .dep{padding:0 6px 0 14px}
