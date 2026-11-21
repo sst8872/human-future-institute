@@ -195,7 +195,8 @@ add_action('admin_enqueue_scripts', function () {
     wp_enqueue_style('hnf-admin', HNF_T . '/css/hnf-admin.css', [], HNF_VER);
 });
 add_action('login_enqueue_scripts', function () {
-    echo '<style>body.login{background:#0b1633}.login h1 a{background:url(' . esc_url(HNF_T . '/images/logo.png') . ') center/contain no-repeat;width:96px;height:96px;background-color:#0c2e86;border-radius:50%}.login #nav a,.login #backtoblog a{color:#c9d3ea!important}.wp-core-ui .button-primary{background:#0c2e86;border-color:#0c2e86}</style>';
+    // 'login' 다음에 읽혀야 WordPress 기본 W 로고·사각 상자를 덮는다
+    wp_enqueue_style('hnf-login', HNF_T . '/css/hnf-login.css', ['login'], HNF_VER);
 });
 add_filter('login_headerurl', fn() => HNF_H . '/');
 add_filter('login_headertext', fn() => '인간과미래연구소');
