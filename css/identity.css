@@ -469,3 +469,20 @@ body.sub .header .logo .logo-img{
 /* 이메일무단수집거부 창: 제목은 화면에서 숨기고(원문 그대로) 닫기 버튼만 오른쪽 위에 */
 .er-head{justify-content:flex-end;padding:10px 14px 0;border-bottom:0}
 .er-body{padding-top:6px}
+/* 개인정보처리방침 전문 (11-21): 맨 윗줄 안내, 넓은 표, 책임자 표, 개정이력 */
+.privacy .pv-notice{margin-bottom:28px;padding:16px 22px;background:var(--deep);color:#fff;font-weight:600;line-height:1.6}
+.privacy .pv-wide td,.privacy .pv-wide th{font-size:13.5px;padding:14px 8px;line-height:1.6;word-break:keep-all}
+.privacy .pv-officer ul{list-style:none}
+.privacy .pv-officer li{list-style:none}
+.privacy .tbl td.l{text-align:left}
+.privacy .tbl a{color:inherit}
+.privacy .tbl-scroll{margin-bottom:16px}
+.pv-hist{padding-top:40px}
+.pv-hist p{margin:0!important;font-size:15px;color:#555}
+@media (max-width:640px){
+  .privacy .pv-notice{padding:14px 16px;font-size:14.5px}
+  .privacy .tbl-scroll .pv-wide{min-width:860px}
+  .privacy .tbl-scroll .pv-tbl:not(.pv-wide){min-width:520px}
+  .privacy .tbl-scroll .pv-officer{min-width:0}
+}
+.privacy .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
