@@ -15,7 +15,7 @@
     install -m600 _tools/wp/.ssh/inshnf_laptop $HOME/k && bash _tools/wp/deploy_wp.sh $HOME/k
     ```
   - 랩탑 폴더에서 git을 쓰려면 세션마다 device_request_delete_permission으로 삭제 권한을 받아야 함(안 받으면 .git에 잠금 파일이 남음)
-- 반영 전에 무엇을 바꾸는지 사용자에게 확인받고, 반영 뒤 inshnf.com을 1440·1100·iPhone 13으로 확인
+- **고친 뒤 확인 질문 없이 바로 inshnf.com에 반영한다**(2026-11-21 18:41 사용자 지시: 「진행이라고 말하지 않아도 그냥 진행」). 반영 뒤 inshnf.com을 1440·1100·iPhone 13으로 확인
 - SSH가 안 될 때의 대안: Chrome(Claude in Chrome) 관리 화면 → 외모 → 테마 파일 편집기(작은 수정) 또는 `build_wp.py`로 만든 `inshnf.zip`을 테마 업로드 → 「현재 테마를 업로드한 것으로 교체」
 - WordPress 로그인은 사용자가 직접 한다(비밀번호를 읽거나 입력하지 않음)
 - 랩탑 Chrome은 프로필이 둘이라 Claude 확장이 두 개(「Browser 1」「Browser 2」)로 잡힌다. **inshnf.com에 로그인된 쪽은 Browser 2**(2026-11-21 확인). 관리 화면이 로그인 화면(`reauth=1`)으로 튕기면 사용자에게 다시 로그인을 부탁하기 전에 `list_connected_browsers`로 다른 프로필을 쓰고 있지 않은지부터 확인
@@ -24,6 +24,10 @@
 1. `add_repo(sst8872/human-future-institute, push)` → 클라우드에 clone해서 고치고 Claude가 직접 push
 2. 랩탑 폴더 연결(device_request_folder_access) → 삭제 권한 → `git pull --ff-only`
 3. 프로젝트 문서 **「claude/inshnf_WordPress_이전.md」**의 「0. 인수인계」를 읽고 이어서 작업
+
+## 참여 신청 (11-21)
+- 화면 `event-apply.html`(WP 페이지 slug `event-apply`, ID 164) → `admin-post.php?action=hnf_apply`. 처리 `_tools/wp/theme/inc/apply.php`: 글 종류 `hnf_apply`(비공개) meta `hnf_a`, 같은 행사·같은 이메일 중복 막기, 관리자 이메일 알림, 관리 화면 「연구소 관리 → 참여 신청」(목록·CSV·삭제)
+- 새 행사 신청을 열려면 `hnf_apply_events()`에 키 추가 + 신청 화면 `<input name="event">` 값
 
 ## 기본 규칙
 - 사이트: https://inshnf.com (WordPress, 테마 `inshnf`) · 옛 사이트 https://sst8872.github.io/human-future-institute/
