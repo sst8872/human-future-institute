@@ -78,6 +78,8 @@ def strip_tags(x):
 def filtermap(s):
     m = re.search(r'<div class="filter[^"]*"[^>]*>(.*?)</div>', s, re.S)
     out = []
+    if not m:   # 분류 단추가 없는 게시판(예: 인사이트)
+        return out
     for f, t in re.findall(r'data-f="([^"]+)">([^<]+)</button>', m.group(1)):
         if f != 'all':
             out.append((f, html.unescape(t)))
