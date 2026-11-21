@@ -425,7 +425,7 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 .yt-hero ul b{display:block;font-family:var(--en);font-size:36px;font-weight:300;color:var(--on-dark-title)}
 .yt-hero .ph{background:url(../images/news06.jpg) center/cover}
 .yt-hero .ph::before{content:"";position:absolute;inset:0 520px 0 0}
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .flow li{position:relative;padding:30px 22px;background:var(--bg-soft);text-align:center}
 .flow li:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;width:10px;height:10px;margin-top:-5px;border-top:2px solid var(--primary);border-right:2px solid var(--primary);transform:rotate(45deg);z-index:1}
 .flow b{font-family:var(--en);font-size:12px;letter-spacing:2px;color:var(--accent)}
