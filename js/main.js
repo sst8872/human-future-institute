@@ -11,6 +11,15 @@
     const layout = () => {
       let max = 0;
       const base = $('.inner', bottom).getBoundingClientRect().left;
+      /* 각 메뉴 칸을 하위 메뉴 글자 폭 이상으로 — 하위 메뉴끼리 겹치지 않게 */
+      $$('.gnb>ul>li', gnb).forEach(li => {
+        const d = $('.depth2', li);
+        li.style.minWidth = '';
+        if (!d || !li.offsetParent) return;
+        d.style.minWidth = ''; d.style.width = 'max-content';
+        li.style.minWidth = Math.ceil(d.getBoundingClientRect().width) + 'px';
+        d.style.width = '';
+      });
       $$('.gnb>ul>li', gnb).forEach(li => {
         const d = $('.depth2', li);
         if (!d) return;
@@ -58,7 +67,9 @@
   const all = $('#allmenu');
   if (all && gnb) {
     $('.allmenu-body', all).innerHTML = $$('.gnb>ul>li', gnb).map(li =>
-      `<div><h4>${$('a', li).textContent}</h4>${$('.depth2', li) ? $('.depth2', li).innerHTML : ''}</div>`).join('');
+      $('.depth2', li)
+        ? `<div><h4>${$('a', li).textContent}</h4>${$('.depth2', li).innerHTML}</div>`
+        : `<div><h4><a href="${$('a', li).getAttribute('href')}">${$('a', li).textContent}</a></h4></div>`).join('');
   }
   const dim = $('.dim');
   const openLayer = el => { el.classList.add('on'); el.setAttribute('aria-hidden', 'false'); dim?.classList.add('on'); document.body.classList.add('lock'); };

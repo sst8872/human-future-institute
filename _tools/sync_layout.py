@@ -6,7 +6,8 @@
   1. about-greeting.html 의 헤더나 푸터를 먼저 고칩니다.
      (헤더 = 파일 처음부터 <main id="main"> 앞까지, 푸터 = </main> 뒤부터 끝까지)
   2. 이 폴더에서 실행합니다:  python _tools/sync_layout.py
-  3. 나머지 서브페이지(about-*, research-*, event-*, future-*, pub-*, news-*)에
+  3. 나머지 서브페이지(about-*, research-*, event-*, future-*, pub-*, news-*, sitemap.html)
+     ※ 오시는 길(about-location)은 body class가 sub-location 이라 별도 메뉴로 표시됩니다.에
      같은 헤더·푸터가 들어갑니다. 각 페이지의 <title>, body class, 현재 메뉴 표시는 그대로 둡니다.
 
 index.html(메인)은 헤더 모양이 달라 건드리지 않습니다. 메인의 메뉴를 고쳤다면 직접 같이 고쳐 주세요.
@@ -15,7 +16,7 @@ import re, glob, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'about-greeting.html')
-GROUPS = ['about', 'research', 'event', 'future', 'pub', 'news']
+GROUPS = ['about', 'research', 'event', 'future', 'pub', 'news', 'location', 'sitemap']
 
 
 def split(text):
@@ -30,7 +31,10 @@ def mark_menu(head, group):
     if not nav or group not in GROUPS:
         return head
     block = nav.group(0)
-    lis = list(re.finditer(r'\n\s*<li(?: class="on")?><a href="[^"]+">[^<]+</a>\n', block))
+    # 상단 메뉴 항목만 (하위 메뉴 depth2 안의 항목은 건너뜀)
+    subs = [m.span() for m in re.finditer(r'<div class="depth2">.*?</div>', block, re.S)]
+    lis = [m for m in re.finditer(r'\n\s*<li(?: class="on")?><a href="[^"]+">[^<]+</a>', block)
+           if not any(a <= m.start() < b for a, b in subs)]
     new = block
     for i, m in enumerate(lis):
         s = m.group(0)
@@ -45,8 +49,8 @@ def main():
     src = open(SRC, encoding='utf-8').read()
     s_head, _, s_foot = split(src)
     changed = 0
-    for path in sorted(glob.glob(os.path.join(ROOT, '*-*.html'))):
-        if os.path.samefile(path, SRC):
+    for path in sorted(glob.glob(os.path.join(ROOT, '*-*.html')) + [os.path.join(ROOT, 'sitemap.html')]):
+        if not os.path.exists(path) or os.path.samefile(path, SRC):
             continue
         text = open(path, encoding='utf-8').read()
         if '<main id="main">' not in text:
