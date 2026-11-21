@@ -11,6 +11,8 @@ function hnf_apply_events() {
         'forum-01' => '제1차 주간 포럼 「인간과 미래 담론에 대한 연구소의 역할」 (2026. 11. 30.)',
     ];
 }
+/* 신청 알림 받는 주소 (연구소 메일, 2026-11-21 사용자 지시) */
+function hnf_apply_notify_to() { return 'hjyoon@cnue.ac.kr'; }
 function hnf_apply_fields() {
     return ['org' => '소속', 'position' => '직위', 'major' => '전공', 'name' => '성명', 'email' => '이메일', 'phone' => '전화번호'];
 }
@@ -52,7 +54,7 @@ function hnf_apply_submit() {
     $body = hnf_apply_events()[$event] . " 참여 신청이 들어왔습니다.\n\n";
     foreach (hnf_apply_fields() as $k => $lb) $body .= $lb . ': ' . $a[$k] . "\n";
     $body .= "\n신청 목록: " . admin_url('admin.php?page=hnf-apply');
-    wp_mail(get_option('admin_email'), '[인간과미래연구소] 참여 신청 — ' . $a['name'], $body);
+    wp_mail(hnf_apply_notify_to(), '[인간과미래연구소] 참여 신청 — ' . $a['name'], $body);
     $go('sent');
 }
 
@@ -92,7 +94,7 @@ function hnf_apply_page() {
         echo '<td><a href="' . esc_url($del) . '" onclick="return confirm(\'이 신청을 지울까요? 되돌릴 수 없습니다.\')" style="color:#b32d2e">삭제</a></td></tr>';
     }
     echo '</tbody></table>';
-    echo '<p style="color:#666;margin-top:14px">개인정보이므로 행사가 끝나고 발표 자료를 보낸 뒤에는 지워 주세요. 새 신청이 들어오면 ' . esc_html(get_option('admin_email')) . ' 로 알림 메일이 갑니다.</p></div>';
+    echo '<p style="color:#666;margin-top:14px">개인정보이므로 행사가 끝나고 발표 자료를 보낸 뒤에는 지워 주세요. 새 신청이 들어오면 ' . esc_html(hnf_apply_notify_to()) . ' 로 알림 메일이 갑니다.</p></div>';
 }
 
 add_action('admin_post_hnf_apply_csv', function () {

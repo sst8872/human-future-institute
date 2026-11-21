@@ -780,3 +780,16 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
   .apply-ptbl td{border-bottom:1px solid #e2e6ee}
   .apply-submit .btn{width:100%}
 }
+
+/* 주간 포럼 「이번 주」 오른쪽: 길쭉한 사진 (2026-11-21, 동그라미 이름표 대신) */
+.next:has(.sp-photo){grid-template-columns:260px 1fr 200px}
+.next .sp.sp-photo{padding:0;min-height:320px;background:linear-gradient(180deg,rgba(11,22,51,.05) 50%,rgba(11,22,51,.45)),var(--bg) 62% center/cover}
+@media (max-width:1280px){
+  .next:has(.sp-photo){grid-template-columns:200px 1fr 150px}
+  .next .sp.sp-photo{grid-column:auto}
+  .next .date em{font-size:12px;letter-spacing:2px}
+}
+@media (max-width:640px){
+  .next:has(.sp-photo){grid-template-columns:1fr}
+  .next .sp.sp-photo{min-height:150px;background-position:center 60%}
+}
