@@ -11,20 +11,20 @@
     const layout = () => {
       let max = 0;
       const base = $('.inner', bottom).getBoundingClientRect().left;
-      /* 각 메뉴 칸을 하위 메뉴 글자 폭 이상으로 — 하위 메뉴끼리 겹치지 않게 */
-      $$('.gnb>ul>li', gnb).forEach(li => {
+      /* 메뉴 8칸을 모두 같은 너비로 (가장 긴 메뉴 이름 기준, 자리가 모자라면 나눠 가짐) — 11-21 */
+      const items = $$('.gnb>ul>li', gnb);
+      items.forEach(li => { li.style.minWidth = ''; li.style.width = ''; });
+      if (items.length && items[0].offsetParent) {
+        const label = Math.max(...items.map(li => Math.ceil($('a', li).getBoundingClientRect().width)));
+        const room = Math.floor((gnb.getBoundingClientRect().width - 48) / items.length); // 로고와 48px 띄움
+        const W = Math.min(Math.max(label, room), 150); // 메뉴 영역을 8칸이 똑같이 나눔 (한 칸 최대 150px)
+        items.forEach(li => { li.style.width = W + 'px'; });
+      }
+      items.forEach(li => {
         const d = $('.depth2', li);
-        li.style.minWidth = '';
         if (!d || !li.offsetParent) return;
-        d.style.minWidth = ''; d.style.width = 'max-content';
-        li.style.minWidth = Math.ceil(d.getBoundingClientRect().width) + 'px';
-        d.style.width = '';
-      });
-      $$('.gnb>ul>li', gnb).forEach(li => {
-        const d = $('.depth2', li);
-        if (!d) return;
         d.style.left = (li.getBoundingClientRect().left - base) + 'px';
-        d.style.minWidth = li.offsetWidth + 'px';
+        d.style.minWidth = ''; d.style.width = li.offsetWidth + 'px';
         max = Math.max(max, d.scrollHeight);
       });
       header.style.setProperty('--menu-h', max + 'px');

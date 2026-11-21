@@ -31,8 +31,10 @@
   .gnb>ul>li>a{line-height:88px;padding:0 18px;font-size:17px;letter-spacing:-.2px}
   .gnb>ul>li>a::after{left:50%;right:auto;width:6px;height:6px;margin-left:-3px;bottom:22px;border-radius:50%;background:var(--gold);transform:scale(0)}
   .gnb>ul>li:hover>a::after,body.sub .gnb>ul>li.on>a::after{transform:scale(1)}
-  .gnb>ul>li{min-width:0} /* 칸 너비는 main.js가 하위 메뉴 폭에 맞춤 (메뉴 8개, 11-21) */
-  .depth2{top:88px;white-space:nowrap}
+  .gnb>ul>li{min-width:0;flex:none} /* 8칸 같은 너비는 main.js가 맞춤 (11-21) */
+  .gnb>ul>li>a{text-align:center;white-space:nowrap}
+  .depth2 li a{text-align:center;white-space:normal;word-break:keep-all;padding-left:6px!important;padding-right:6px!important}
+  .depth2{top:88px}
   .depth2 li a{padding:6px 18px}
   .gnb-bg{top:88px;background:var(--paper);border-top-color:var(--paper-line)}
   .kw{display:none}
