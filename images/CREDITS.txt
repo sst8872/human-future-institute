@@ -33,3 +33,7 @@ res-collaboration   photo-1758873269276-9518d0cb4a0b  Vitaly Gariev  (PBL 논문
 res-teacher         photo-1509062522246-3755977927d7  Quilia         (초등교사 전문성 논문, research05와 같은 사진)
 res-diversity       photo-1763982811982-e4901b18bbe3  ika ika        (다양성 인성교육 논문)
 meeting01 photo-1573167507387-6b4b98cb7c13  Christina @ wocintechchat.com  (간담회 — 제1차 학제 간 연구자 간담회 카드, 2026-11-21)
+[WordPress 미디어 — 연구소 소식 대표 사진, 2026-11-21, Unsplash 라이선스]
+news-meeting1  photo-1616531770192-6eaea74c2456  Compagnons        (신설추진위원회 제1차 회의)
+news-meeting2  photo-1588196749597-9ff075ee6b5b  Chris Montgomery  (신설추진위원회 제2차 회의)
+news-opening   photo-1495616811223-4d98c6e9c869  Johannes Plenio   (연구소 신설·개소 예정)
