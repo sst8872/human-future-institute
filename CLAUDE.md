@@ -44,3 +44,5 @@
 - 원본 글은 `_tools/en/make_en.py` → 실행하면 `en*.html` 생성 → 평소처럼 build·배포. `page.php`가 하위 페이지를 `부모-자식` 틀(en-greeting.php)로 그림
 - 국문 머리글 사이트맵 옆 KOR|ENG(모든 컴퓨터 폭), 휴대폰 전체 메뉴 머리의 ENG(컴퓨터 화면은 감춤), 바닥글 English. 게시판(공지·소식)은 국문만
 - 이름 로마자·직위·소속 영문, 연구 과제 영문 제목은 연구소 확인 필요
+- 11-22 추가: 영문 Organization(/en/organization/)·Members' Research(/en/results/). Members' Research는 「구성원 연구 성과」 게시판 글을 그대로 가져와 영문 칸(영문 제목·영문 저자·영문 게재지, 글쓰기 화면에 있음)을 보여 줌(`inc/en.php` `hnf_en_results`). 새 글을 올릴 때 영문 칸을 채우면 영문 사이트에도 나옴
+- 발전전략 표는 영문만 휴대폰에서 칸을 위아래로 쌓음(`.en-matrix`)

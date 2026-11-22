@@ -17,21 +17,24 @@ PAGES = [
     ('en-greeting', 'about', 'Greeting', 'inst01.jpg', 'sv-about.jpg', 'ABOUT US'),
     ('en-vision', 'about', 'Vision', 'inst01.jpg', 'sv-about.jpg', 'ABOUT US'),
     ('en-strategy', 'about', 'Development Strategy', 'inst01.jpg', 'sv-about.jpg', 'ABOUT US'),
+    ('en-organization', 'about', 'Organization', 'inst01.jpg', 'sv-about.jpg', 'ABOUT US'),
     ('en-people', 'about', 'People', 'inst01.jpg', 'sv-about.jpg', 'ABOUT US'),
     ('en-research', 'research', 'Research Areas', 'hero02.jpg', 'sv-research.jpg', 'RESEARCH'),
     ('en-projects', 'research', 'Research Projects', 'hero02.jpg', 'sv-research.jpg', 'RESEARCH'),
+    ('en-results', 'research', 'Members&rsquo; Research', 'hero02.jpg', 'sv-research.jpg', 'RESEARCH'),
     ('en-contact', 'contact', 'Contact', 'inst01.jpg', 'sv-location.jpg', 'CONTACT'),
 ]
 GROUPS = [
-    ('about', 'About', [('en-greeting', 'Greeting'), ('en-vision', 'Vision'), ('en-strategy', 'Strategy'), ('en-people', 'People')]),
-    ('research', 'Research', [('en-research', 'Research Areas'), ('en-projects', 'Research Projects')]),
+    ('about', 'About', [('en-greeting', 'Greeting'), ('en-vision', 'Vision'), ('en-strategy', 'Strategy'), ('en-organization', 'Organization'), ('en-people', 'People')]),
+    ('research', 'Research', [('en-research', 'Research Areas'), ('en-projects', 'Research Projects'), ('en-results', 'Members&rsquo; Research')]),
     ('contact', 'Contact', []),
 ]
 GROUP_HREF = {'about': 'en-greeting', 'research': 'en-research', 'contact': 'en-contact'}
 # 각 영문 페이지와 짝이 되는 국문 페이지(KOR 단추)
 KO = {'en': 'index', 'en-greeting': 'about-greeting', 'en-vision': 'about-vision', 'en-strategy': 'about-history',
       'en-people': 'about-people', 'en-research': 'research-fields', 'en-projects': 'research-projects',
-      'en-contact': 'about-location'}
+      'en-contact': 'about-location', 'en-organization': 'about-organization',
+      'en-results': 'research-results'}
 
 CUR = ' class="cur"'
 PRINT_SVG = '<svg viewBox="0 0 24 24"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M7 14h10v7H7z"/><circle cx="17.5" cy="12" r=".6"/></svg>'
@@ -189,14 +192,16 @@ BODY = {}
 BODY['en'] = '''
 <p class="c-lead">The Institute for Human &amp; Future is an interdisciplinary research institute<br>based at Chuncheon National University of Education, Korea.</p>
 <div class="v-banner en-banner"><strong>Leading future discourse centered on human values<br>in an era of technological transformation</strong></div>
-<p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, humanity and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
+<p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, the humanities and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
 <ul class="en-links">
   <li><a href="en-greeting.html"><small>ABOUT</small><strong>Greeting</strong><span>A message from the Director</span><i class="chev r"></i></a></li>
   <li><a href="en-vision.html"><small>ABOUT</small><strong>Vision</strong><span>Our vision, purposes, and main projects</span><i class="chev r"></i></a></li>
   <li><a href="en-strategy.html"><small>ABOUT</small><strong>Development Strategy</strong><span>The first 10-year cycle, 2026&ndash;2035</span><i class="chev r"></i></a></li>
+  <li><a href="en-organization.html"><small>ABOUT</small><strong>Organization</strong><span>Divisions and their roles</span><i class="chev r"></i></a></li>
+  <li><a href="en-people.html"><small>ABOUT</small><strong>People</strong><span>Our researchers</span><i class="chev r"></i></a></li>
   <li><a href="en-research.html"><small>RESEARCH</small><strong>Research Areas</strong><span>Four areas of inquiry</span><i class="chev r"></i></a></li>
   <li><a href="en-projects.html"><small>RESEARCH</small><strong>Research Projects</strong><span>Current projects and progress</span><i class="chev r"></i></a></li>
-  <li><a href="en-people.html"><small>ABOUT</small><strong>People</strong><span>Our researchers</span><i class="chev r"></i></a></li>
+  <li><a href="en-results.html"><small>RESEARCH</small><strong>Members&rsquo; Research</strong><span>Articles, reports, and presentations</span><i class="chev r"></i></a></li>
 </ul>
 <p class="tbl-note en-note">News and notices are published in Korean. For inquiries in English, please contact us at <a href="mailto:hjyoon@cnue.ac.kr">hjyoon@cnue.ac.kr</a>.</p>
 '''
@@ -261,7 +266,7 @@ ORD = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th']
 def strategy():
     rows = ''
     for i, (sid, name, yrs) in enumerate(STAGES):
-        cells = ''.join(f'<td><span class="yr">{2026 + i * 3 + j} · {ORD[i * 3 + j]}</span><b>{THEMES[i * 3 + j]}</b></td>' for j in range(3))
+        cells = ''.join(f'<td><span class="badge {PERS[j][0]} m-only">{PERS[j][1]}</span><span class="yr">{2026 + i * 3 + j} · {ORD[i * 3 + j]}</span><b>{THEMES[i * 3 + j]}</b></td>' for j in range(3))
         rows += f'<tr><th><b>{name}</b><span>{yrs}</span></th>{cells}</tr>'
     rows += f'<tr class="last"><th><b>Synthesis</b><span>2035</span></th><td colspan="3"><span class="yr">2035 · 10th</span><b>{FINAL}</b></td></tr>'
     line = ''
@@ -289,8 +294,8 @@ def strategy():
         <li>In 2035, synthesize and evaluate the results of the first cycle and set the theme and research directions for the second cycle</li>
       </ul>
       <h4 class="c-tit" style="margin-top:60px"><small>THE 1ST 10-YEAR CYCLE</small>Academic Theme of the First 10-Year Cycle: &ldquo;Human &amp; Future&rdquo;</h4>
-      <div class="tbl-scroll"><table class="tbl matrix"><colgroup><col style="width:190px"><col><col><col></colgroup>
-        <thead><tr><th>Stage</th><th><span class="badge p-tech">Technology</span></th><th><span class="badge p-hum">Humanities &amp; Society</span></th><th><span class="badge p-env">Environment</span></th></tr></thead>
+      <div class="tbl-scroll"><table class="tbl matrix en-matrix"><colgroup><col style="width:190px"><col><col><col></colgroup>
+        <thead class="pc-only"><tr><th>Stage</th><th><span class="badge p-tech">Technology</span></th><th><span class="badge p-hum">Humanities &amp; Society</span></th><th><span class="badge p-env">Environment</span></th></tr></thead>
         <tbody>{rows}</tbody></table></div>
     </div>
     <div class="hist-head"><strong>HUMAN &amp; FUTURE</strong><span>2026 — 2035</span></div>
@@ -334,6 +339,79 @@ def people():
 
 
 BODY['en-people'] = people()
+
+DIVS = [
+    ('Planning &amp; Operations Division', ['Vision and mid- to long-term development planning', 'Project planning and budgeting',
+                                           'Performance management', 'External cooperation and public relations']),
+    ('Future Innovation Division', ['Analysis of future trends and scenario building', 'Policy recommendations',
+                                    'Partnership programs with local communities and institutions', 'Open lectures and dissemination of research findings']),
+    ('Research &amp; Development Division', ['Research on human values and the role of the humanities and social sciences',
+                                             'Future education research', 'Research on the social impact of technology', 'Academic events']),
+]
+
+
+def organization():
+    cols = ''.join(f'<div class="o-col"><h5>{h}</h5><ul>' + ''.join(f'<li>{x}</li>' for x in li) + '</ul></div>' for h, li in DIVS)
+    rows = ''.join(f'<tr><td class="strong">{pos}</td><td>{n}</td><td class="l">{aff}</td></tr>' for n, pos, aff, *_r in PEOPLE)
+    return f'''
+<div class="org rv">
+  <div class="o-box o-top">Director</div>
+  <div class="o-stem"></div>
+  <div class="o-branch">{cols}</div>
+</div>
+<h4 class="c-tit">Members</h4>
+<div class="tbl-scroll"><table class="tbl en-ppl en-org"><colgroup><col style="width:260px"><col style="width:170px"><col></colgroup>
+<thead><tr><th>Position</th><th>Name</th><th class="l">Affiliation</th></tr></thead><tbody>{rows}</tbody></table></div>
+'''
+
+
+BODY['en-organization'] = organization()
+
+# 「구성원 연구 성과」 게시판 글의 영문 표기 (WordPress에는 글마다 영문 칸으로 넣어 둠. 여기는 정적 사이트용 같은 내용)
+# (WP 글 ID, 종류, 연도, 영문 제목, 영문 저자, 영문 게재지, 링크)
+RESULTS = [
+    (288, 'report', 2026, 'Development of a Subject Competency Framework for Competency-Based Instruction and Assessment (I): Focusing on Social Studies and Science',
+     'Jiyoung Kim et al.', 'Korea Institute for Curriculum and Evaluation, Research Report RRC 2026-2', ''),
+    (179, 'article', 2026, 'Exploring University Students&rsquo; Integrated Perceptions of Sustainability: A Case Study of University A in Gyeonggi Province',
+     'Dami Bang, Heojeong Yoon', 'School Science Journal 20(1), 61&ndash;76', ''),
+    (180, 'article', 2025, 'An Analysis of Elementary Pre-service Teachers&rsquo; Noticing Before and After Science Teaching Demonstrations',
+     'Heojeong Yoon, Dami Bang', 'Journal of Korean Elementary Science Education 44(4), 666&ndash;681', 'https://doi.org/10.15267/keses.2025.44.4.666'),
+    (286, 'report', 2025, 'Training for High School Administrators on Achievement-Based Assessment in Connection with Digital-Based Educational Innovation',
+     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2025-9', ''),
+    (284, 'report', 2024, 'Training for Lead Middle School Teachers on Achievement-Based Assessment in Connection with Digital-Based Educational Innovation',
+     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2024-124, 125', ''),
+    (181, 'article', 2024, 'An Analysis of Research Trends on Problem-Based Learning (PBL) in Korea',
+     'Dami Bang, Heojeong Yoon', 'Journal of Research in Curriculum &amp; Instruction 28(6), 466&ndash;476', 'https://doi.org/10.24231/rici.2024.28.6.466'),
+    (282, 'report', 2024, 'Training for Lead High School Teachers on Achievement-Based Assessment in Connection with Digital-Based Educational Innovation',
+     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2024-75', ''),
+    (182, 'article', 2023, 'An Analysis of Research Trends on Elementary Teacher Professionalism in Korea',
+     'Dami Bang, Heojeong Yoon', 'Journal of Educational Research (Seoul Women&rsquo;s University) 88, 73&ndash;92', 'https://doi.org/10.17253/swueri.2023.88..004'),
+    (264, 'article', 2023, 'Design and Implementation of an Issue-Centered Character Education Curriculum in a University General Education Course',
+     'Dami Bang et al.', 'Korean Journal of General Education 17(6)', 'https://scholar.kyobobook.co.kr/article/detail/4010068298316'),
+    (183, 'article', 2023, 'A Proposal for Character Education for University Students Based on &lsquo;Diversity&rsquo;',
+     'Heojeong Yoon', 'Journal of Human Studies 49, 121&ndash;143', 'https://doi.org/10.21738/JHS.2023.4.49.121'),
+]
+TYPE = {'article': ('Article', ''), 'report': ('Report', ' gold'), 'presentation': ('Presentation', ' green')}
+
+
+def results():
+    items = ''
+    for _id, t, y, ti, au, ve, lk in RESULTS:
+        link = f'<p class="lk"><a href="{lk}" target="_blank" rel="noopener">{lk.split("//", 1)[-1]}</a></p>' if lk else ''
+        items += (f'<li data-cat="{t}"><p class="yr"><b>{y}</b></p><div><span class="badge{TYPE[t][1]}">{TYPE[t][0]}</span>'
+                  f'<h5>{ti}</h5><p class="by">{au} · <i>{ve}</i></p>{link}</div></li>')
+    return f'''
+<p class="c-lead en-res-lead">Selected publications by members of the Institute.</p>
+<p class="tbl-note en-res-note">Most of these works are published in Korean; English titles are translations.</p>
+<!--HNF:en-results-->
+<div class="filter" data-target="#enRes"><button type="button" class="on" data-f="all">All</button><button type="button" data-f="article">Articles</button><button type="button" data-f="report">Reports</button><button type="button" data-f="presentation">Presentations</button></div>
+<ul class="en-res" id="enRes">{items}</ul>
+<style>.en-res .hide{{display:none}}</style>
+<!--/HNF:en-results-->
+'''
+
+
+BODY['en-results'] = results()
 
 FIELDS = [
     ('research03', 'Human Values', 'Asking what human nature and values mean in an era of technological transformation',
