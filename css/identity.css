@@ -233,14 +233,13 @@
 .f-emblem b{white-space:nowrap}
 .f-emblem em{display:block;white-space:nowrap;width:max-content;letter-spacing:0;font-size:8px;transform:scaleX(var(--em-fit,.8));transform-origin:center;opacity:.6}
 @media (max-width:1024px){
-  .f-emblem{display:grid;grid-template-columns:auto auto;justify-content:start;column-gap:12px;row-gap:2px;align-items:center}
-  .f-emblem .logo-img{grid-row:1 / span 2}
-  .f-emblem b{align-self:end}
-  .f-emblem em{align-self:start;transform-origin:left center}
-  /* 11-22: 휴대폰에서 로고만 커 보이던 것 — 엠블럼(36px)을 글자 두 줄 높이(약 34px)·상단 로고 비율에 맞추고, 이름 칸이 영문 폭만큼 늘어나 가운데로 밀리던 것을 막음 */
-  .f-emblem{text-align:left;column-gap:10px}
-  .f-emblem .logo-img{width:36px;height:36px}
-  .f-emblem b{justify-self:start;font-size:15px}
+  /* 휴대폰·태블릿 (11-22): 엠블럼을 국문·영문 두 줄 높이와 똑같이 맞춰 옆에 바로 붙임
+     - 글자 줄높이를 글자 크기에 딱 맞춰(빈 위아래 여백 제거) 두 줄 합계 = 엠블럼 높이 34px
+     - 엠블럼 뒤 남색 원판 여백(padding)을 없애 보이는 원 = 34px, 글자와 간격 8px */
+  .f-emblem{display:grid;grid-template-columns:34px auto;grid-template-rows:20px 10px;row-gap:4px;column-gap:9px;justify-content:start;align-items:center;text-align:left}
+  .f-emblem .logo-img{grid-row:1 / span 2;width:34px;height:34px;padding:0;align-self:center}
+  .f-emblem b{justify-self:start;align-self:start;font-size:17px;line-height:20px;margin-top:-1px}
+  .f-emblem em{align-self:end;line-height:10px;font-size:9px;transform-origin:left center;margin-bottom:-1px}
 }
 
 /* =========================================================
