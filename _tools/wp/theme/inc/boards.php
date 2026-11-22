@@ -231,7 +231,7 @@ function hnf_cards($cfg, $posts) {
         $img = hnf_thumb($p);
         echo '<a href="' . esc_url(get_permalink($p)) . '" class="p-card">';
         echo $img ? '<div class="thumb"><img src="' . esc_url($img) . '" alt="" loading="lazy"></div>' : '<div class="thumb noimg"><span>INSTITUTE FOR HUMAN &amp; FUTURE</span></div>';
-        echo '<p class="meta">' . ($kid ? '<span class="badge ' . $cls . '">' . esc_html($kid) . '</span>' : '') . (hnf_post_board($p->ID) === 'pub-insight' ? '<span class="badge gray">Insight' . (($n = hnf_issue($p->ID)) ? ' ' . $n : '') . '</span>' : ($cfg['extra'] ?? '')) . '</p>';
+        echo '<p class="meta">' . ($kid ? '<span class="badge ' . $cls . '">' . esc_html($kid) . '</span>' : '') . (hnf_post_board($p->ID) === 'pub-insight' ? '<span class="badge gray">인사이트' . (($n = hnf_issue($p->ID)) ? ' ' . $n : '') . '</span>' : ($cfg['extra'] ?? '')) . '</p>';
         $tg = hnf_post_board($p->ID) === 'pub-insight' ? array_slice(hnf_tags((get_post_meta($p->ID, 'hnf_f', true) ?: [])['tags'] ?? ''), 0, 3) : [];
         echo '<strong>' . esc_html(wp_strip_all_tags($p->post_title)) . '</strong>' . ($tg ? '<span class="p-tags">' . implode(' ', array_map(fn($t) => '#' . esc_html($t), $tg)) . '</span>' : '') . '<time>' . hnf_date($p) . '</time></a>';
     }
@@ -275,7 +275,7 @@ function hnf_single_view($slug, $p) {
     $img = get_the_post_thumbnail_url($p, 'large');
     echo '<article class="b-view">';
     echo '<header class="bv-head">' . ($kid ? '<span class="badge ' . esc_attr($cfg['badge'][$kid->name] ?? '') . '">' . esc_html($kid->name) . '</span>' : '');
-    if ($slug === 'pub-insight') echo '<span class="badge gray">Insight' . (($n = hnf_issue($p->ID)) ? ' ' . $n : '') . '</span>';
+    if ($slug === 'pub-insight') echo '<span class="badge gray">인사이트' . (($n = hnf_issue($p->ID)) ? ' ' . $n : '') . '</span>';
     echo '<h4 class="bv-title">' . esc_html(wp_strip_all_tags($p->post_title)) . '</h4>';
     echo '<p class="bv-meta"><span>작성 ' . esc_html(hnf_writer($p)) . '</span><time>' . hnf_date($p) . '</time>';
     if ($cfg['type'] === 'table') echo '<span class="bv-views">조회 ' . number_format(hnf_views($p->ID)) . '</span>';
