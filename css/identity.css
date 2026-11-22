@@ -711,3 +711,10 @@ body.lang-en .org .o-col ul li{padding-left:12px;text-indent:-12px}
 @media (min-width:1025px) and (max-width:1280px){.en-group .en-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:1024px){.en-group{grid-template-columns:1fr;gap:18px}.en-group .en-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.en-group .en-links{grid-template-columns:minmax(0,1fr)}}
+/* 바닥글(컴퓨터): 로고 세트 맨 아래 줄(영문 이름)을 저작권 줄과 같은 높이에 */
+@media (min-width:1025px){
+  .f-row2{align-items:flex-end}
+  .f-emblem{margin-bottom:9px}
+  .f-emblem em{line-height:10px}
+  .copy{line-height:18px}
+}
