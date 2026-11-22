@@ -630,3 +630,9 @@ body.lang-en .circles .cc strong{line-height:1.3}
   .hd-right .search-box button{width:34px}
   .hd-bottom .inner>.btn-menu{margin-left:8px}
 }
+
+/* KOR|ENG 글자색: 어두운 머리글에선 계란색, 흰 머리글에선 같은 계열의 진한 금색(흰 바탕에서 읽히게) (2026-11-22) */
+.lang,.am-lang{color:#f3e2a9}
+.am-lang{border-color:rgba(243,226,169,.55)}
+.lang a{opacity:.7}
+body.sub .header .lang,.header.open .lang,.m-lang{color:var(--gold)}
