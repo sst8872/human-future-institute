@@ -26,7 +26,7 @@
 3. 프로젝트 문서 **「claude/inshnf_WordPress_이전.md」**의 「0. 인수인계」를 읽고 이어서 작업
 
 ## 참여 신청 (11-21)
-- 화면 `event-apply.html`(WP 페이지 slug `event-apply`, ID 164) → `admin-post.php?action=hnf_apply`. 처리 `_tools/wp/theme/inc/apply.php`: 글 종류 `hnf_apply`(비공개) meta `hnf_a`, 같은 행사·같은 이메일 중복 막기, 관리자 이메일 알림, 관리 화면 「연구소 관리 → 참여 신청」(목록·CSV·삭제)
+- 화면 `event-apply.html`(WP 페이지 slug `event-apply`, ID 164) → `admin-post.php?action=hnf_apply`. 처리 `_tools/wp/theme/inc/apply.php`: 글 종류 `hnf_apply`(비공개) meta `hnf_a`, 같은 행사·같은 이메일 중복 막기, 관리자 이메일 알림, 관리 화면 「연구소 관리 → 참여·집필 신청」(신청 종류별 탭·건수, 처음엔 최근 신청이 들어온 탭, 목록·CSV·삭제)
 - 새 행사 신청을 열려면 `hnf_apply_events()`에 키 추가 + 신청 화면 `<input name="event">` 값
 - 인사이트 집필 신청(11-22): 화면 `insight-apply.html`(WP 페이지 ID 327), event 키 `insight-writer`, 칸은 `hnf_apply_fields('insight-writer')`(제목·개요 포함, 개요는 여러 줄 600자). 안내 공지는 공지사항 › 일반 글 ID 328(작성 연구개발부)
 - 글 본문에 한 줄로 `[단추 글자 | 주소]`를 쓰면 가운데 단추가 된다(write.php `HNF_BTN_RE`)

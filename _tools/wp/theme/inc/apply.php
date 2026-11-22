@@ -4,7 +4,7 @@
  * - 신청서: 원본 HTML event-apply.html · insight-apply.html 의 form.apply-form → admin-post.php?action=hnf_apply
  * - 신청 종류(event)마다 칸이 다름: hnf_apply_fields($event)
  * - 저장: 글 종류 hnf_apply(공개 안 함), 칸은 meta hnf_a
- * - 관리: 연구소 관리 → 참여 신청 (목록 · CSV 내려받기 · 삭제)
+ * - 관리: 연구소 관리 → 참여·집필 신청 (종류별 탭 · 목록 · CSV 내려받기 · 삭제)
  */
 
 function hnf_apply_events() {
@@ -70,7 +70,7 @@ function hnf_apply_submit() {
 
 /* 관리 화면 */
 add_action('admin_menu', function () {
-    add_submenu_page('hnf-home', '참여 신청', '참여 신청', 'edit_posts', 'hnf-apply', 'hnf_apply_page');
+    add_submenu_page('hnf-home', '참여·집필 신청', '참여·집필 신청', 'edit_posts', 'hnf-apply', 'hnf_apply_page');
 }, 20);
 
 function hnf_apply_rows($event) {
@@ -82,15 +82,23 @@ function hnf_apply_rows($event) {
 function hnf_apply_page() {
     if (!current_user_can('edit_posts')) return;
     $events = hnf_apply_events();
-    $event = sanitize_key($_GET['event'] ?? array_key_first($events));
-    if (!isset($events[$event])) $event = array_key_first($events);
+    // 처음 열 때는 가장 최근에 신청이 들어온 목록을 보여 줌
+    $last = get_posts(['post_type' => 'hnf_apply', 'post_status' => 'private', 'numberposts' => 1, 'orderby' => 'date', 'order' => 'DESC']);
+    $def = $last ? get_post_meta($last[0]->ID, 'hnf_event', true) : '';
+    if (!isset($events[$def])) $def = array_key_first($events);
+    $event = sanitize_key($_GET['event'] ?? $def);
+    if (!isset($events[$event])) $event = $def;
     $rows = hnf_apply_rows($event);
     $F = hnf_apply_fields($event);
-    echo '<div class="wrap hnf-wrap"><h1 class="hnf-h1">참여 신청</h1>';
+    echo '<div class="wrap hnf-wrap"><h1 class="hnf-h1">참여·집필 신청</h1>';
     if (!empty($_GET['deleted'])) echo '<div class="notice notice-success"><p>신청 1건을 지웠습니다.</p></div>';
-    echo '<form method="get" style="margin:16px 0"><input type="hidden" name="page" value="hnf-apply"><select name="event" onchange="this.form.submit()">';
-    foreach ($events as $k => $lb) echo '<option value="' . esc_attr($k) . '"' . selected($k, $event, false) . '>' . esc_html($lb) . '</option>';
-    echo '</select></form>';
+    // 신청 종류를 탭으로 (괄호 안은 건수)
+    echo '<nav class="nav-tab-wrapper" style="margin:18px 0 16px">';
+    foreach ($events as $k => $lb) {
+        $n = count(hnf_apply_rows($k));
+        echo '<a class="nav-tab' . ($k === $event ? ' nav-tab-active' : '') . '" href="' . esc_url(admin_url('admin.php?page=hnf-apply&event=' . $k)) . '">' . esc_html($lb) . ' (' . $n . ')</a>';
+    }
+    echo '</nav>';
     echo '<p><b>' . count($rows) . '건</b> 신청 &nbsp; <a class="button button-primary" href="' . esc_url(wp_nonce_url(admin_url('admin-post.php?action=hnf_apply_csv&event=' . $event), 'hnf_apply_csv')) . '">엑셀(CSV)로 내려받기</a></p>';
     echo '<table class="widefat striped"><thead><tr><th>번호</th><th>신청 일시</th>';
     foreach ($F as $lb) echo '<th>' . esc_html($lb) . '</th>';
