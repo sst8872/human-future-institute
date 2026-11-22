@@ -105,7 +105,8 @@ def page(fn, group, title, img, sv, svg_group, body):
 <meta name="description" content="Institute for Human &amp; Future — human-centered research on the future in an era of technological transformation">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
-<link rel="icon" href="images/favicon.png">
+<link rel="icon" href="images/favicon-hnf.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="stylesheet" href="lib/swiper-bundle.min.css">
 <link rel="stylesheet" href="css/style.css?v={V_STYLE}">
 <link rel="stylesheet" href="css/sub.css?v={V_SUB}">
