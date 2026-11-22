@@ -99,7 +99,7 @@
 .tp-quote::before,.tp-quote::after{content:"";position:absolute;width:30px;height:23px;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 36%22%3E%3Cpath fill=%22%23b8913a%22 d=%22M0 36V22C0 9 6 2 18 0l2 5c-7 2-10 6-10 12h9v19H0zm27 0V22C27 9 33 2 45 0l2 5c-7 2-10 6-10 12h9v19H27z%22/%3E%3C/svg%3E") center/contain no-repeat}
 .tp-quote::before{left:26px;top:26px}
 .tp-quote::after{right:26px;bottom:24px;transform:rotate(180deg)}
-.tp-quote blockquote{margin:0;padding:0;border:0}
+.wp-content .tp-quote blockquote{margin:0;padding:0;border:0;background:none;border-radius:0;font-size:inherit;line-height:inherit}
 .wp-content .tp-quote blockquote p{margin:0;font-size:21px;font-weight:600;line-height:1.65;color:#0c2e86;letter-spacing:-.02em;word-break:keep-all}
 @media (max-width:768px){
   .tp-quote{padding:46px 22px 44px}
