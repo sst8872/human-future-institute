@@ -658,7 +658,7 @@ body.lang-en .org .o-col ul{grid-template-columns:1fr;font-size:15px;line-height
 body.lang-en .org .o-col h5{padding:0 10px;text-align:center;font-size:17px}
 body.lang-en .org .o-col ul li{padding-left:12px;text-indent:-12px}
 /* 구성원 연구 성과 목록 */
-.en-res-lead{margin-bottom:6px}
+.en-res-lead{margin-bottom:28px}
 .en-res-note{margin:0 0 28px}
 .en-res{display:grid;gap:14px}
 .en-res li{display:grid;grid-template-columns:100px 1fr;gap:26px;padding:26px 30px;border:1px solid #e3e3e3;transition:.25s}

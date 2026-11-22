@@ -414,7 +414,6 @@ def results():
                   f'<h5>{ti}</h5><p class="by">{au} · <i>{ve}</i></p>{link}</div></li>')
     return f'''
 <p class="c-lead en-res-lead">Selected publications by members of the Institute.</p>
-<p class="tbl-note en-res-note">Most of these works are published in Korean. English titles of journal articles are those given by the journals.</p>
 <!--HNF:en-results-->
 <div class="filter" data-target="#enRes"><button type="button" class="on" data-f="all">All</button><button type="button" data-f="article">Articles</button><button type="button" data-f="report">Reports</button><button type="button" data-f="presentation">Presentations</button></div>
 <ul class="en-res" id="enRes">{items}</ul>
