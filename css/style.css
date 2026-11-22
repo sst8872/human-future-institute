@@ -703,3 +703,7 @@ body.lock{overflow:hidden}
   .hl-prev,.hl-next{top:110px}
   .hl-swiper .swiper-slide{width:100%}
 }
+/* 03 연구소 소식: 왼쪽 제목 상자 없이 게시글 카드만 */
+.hl-grid.hl-only{grid-template-columns:minmax(0,1fr)}
+.hl-only .hl-right{padding:0 72px}
+@media (max-width:640px){ .hl-only .hl-right{padding:0 50px} }
