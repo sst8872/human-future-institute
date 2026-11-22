@@ -149,7 +149,6 @@
 .rp-img{position:relative}
 .rp-img::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:4px;background:var(--gold)}
 .rp-cont{position:relative}
-.rp-cont::before{content:"\201C";position:absolute;right:0;top:-6px;font-family:var(--en);font-size:150px;line-height:1;color:var(--paper-line)}
 .rp-label{position:relative;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:0}
 .rp-label i{border-color:var(--ink)}
 .rp-title{position:relative;font-family:var(--head);font-size:27px;line-height:1.35;font-weight:700;color:var(--ink)}
