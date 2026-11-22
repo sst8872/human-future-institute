@@ -188,7 +188,7 @@ BODY = {}
 
 BODY['en'] = '''
 <p class="c-lead">The Institute for Human &amp; Future is an interdisciplinary research institute<br>based at Chuncheon National University of Education, Korea.</p>
-<div class="v-banner en-banner"><strong>Leading human-centered discourse on the future<br>in an era of technological transformation</strong></div>
+<div class="v-banner en-banner"><strong>Leading future discourse centered on human values<br>in an era of technological transformation</strong></div>
 <p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, humanity and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
 <ul class="en-links">
   <li><a href="en-greeting.html"><small>ABOUT</small><strong>Greeting</strong><span>A message from the Director</span><i class="chev r"></i></a></li>
@@ -206,7 +206,7 @@ BODY['en-greeting'] = '''
   <div class="grt">
     <div class="grt-l">
       <h4 class="grt-q">Shaping a human-centered discourse on the future</h4>
-      <p class="grt-lead">Technology has continually expanded the possibilities of human life. Yet today&rsquo;s technological transformation asks us not only what humans can do, but what it means to be human. The Institute for Human &amp; Future was founded to take up this question as a subject of scholarly inquiry.</p>
+      <p class="grt-lead">Technology has continually expanded the possibilities of human life. Yet today&rsquo;s technological transformation goes beyond the question of what humans can do and asks us anew what it is to be human. The Institute for Human &amp; Future was founded to take up this question as a subject of scholarly inquiry.</p>
       <div class="grt-box"><h5>Why the humanities and social sciences matter more than ever</h5><p>The future is something we choose before it is something we predict. Deciding what kind of future is desirable cannot rest on technological efficiency alone; it calls for reflection on human dignity, justice in our communities, and coexistence with nature. This is why the humanities and social sciences are needed all the more in an age of technology.</p></div>
       <div class="grt-box"><h5>An interdisciplinary research community</h5><p>The Institute aims to be an interdisciplinary community in which researchers from science education, the humanities, the social sciences, education, and science and technology work together. Where different disciplinary perspectives meet, we seek a balanced understanding of the future and alternatives that can be put into practice.</p></div>
       <div class="grt-box"><h5>To schools and to society</h5><p>Building on rigorous research and open scholarly exchange, the Institute will return its findings to classrooms and to society, and contribute to shaping a human-centered discourse on the future.</p><p style="margin-top:14px">Thank you.</p></div>
@@ -218,39 +218,39 @@ BODY['en-greeting'] = '''
 
 BODY['en-vision'] = '''
 <div class="vrow rv"><h4>Vision</h4>
-  <div class="v-banner"><strong>Leading human-centered discourse on the future<br>in an era of technological transformation</strong></div></div>
-<div class="vrow rv"><h4>Purposes</h4>
+  <div class="v-banner"><strong>Leading future discourse centered on human values<br>in an era of technological transformation</strong></div></div>
+<div class="vrow rv"><h4>Founding Purposes</h4>
   <ol class="goal">
     <li><span class="n">01</span><strong>Exploring enduring human values</strong><p>In an age when technology is reshaping human capabilities and boundaries, we explore the values that make us human, such as dignity and autonomy, relationships and empathy.</p></li>
-    <li><span class="n">02</span><strong>Setting directions for education and society</strong><p>Reading changes in technology, humanity and society, and the environment together, we propose concrete directions for education and the tasks society must prepare for.</p></li>
-    <li><span class="n">03</span><strong>Renewing and sharing the value of the humanities and social sciences</strong><p>In debates about the future that center on technology, we reaffirm the academic and social significance of the humanities and social sciences, and share our research with schools, local communities, and civil society.</p></li>
+    <li><span class="n">02</span><strong>Setting future directions for education and society</strong><p>Reading changes in technology, the humanities and society, and the environment together, we propose concrete directions for education and the tasks society must prepare for.</p></li>
+    <li><span class="n">03</span><strong>Reappraising and disseminating the value of the humanities and social sciences</strong><p>In debates about the future that center on technology, we reaffirm the academic and social significance of the humanities and social sciences, and disseminate our research to schools, local communities, and civil society.</p></li>
   </ol></div>
 <div class="vrow rv"><h4>Three Perspectives</h4>
   <div>
-    <p style="text-align:center;margin-bottom:10px"><b style="font-size:18px;color:#111;box-shadow:inset 0 -9px 0 #f3e8c9">Reading technology, humanity &amp; society, and the environment together</b></p>
+    <p style="text-align:center;margin-bottom:10px"><b style="font-size:18px;color:#111;box-shadow:inset 0 -9px 0 #f3e8c9">Reading technology, the humanities and society, and the environment together</b></p>
     <div class="circles">
       <div class="cc"><svg viewBox="0 0 56 56" stroke="#1d44d8"><rect x="16" y="16" width="24" height="24" rx="3"/><rect x="23" y="23" width="10" height="10"/><path d="M22 10v6M28 10v6M34 10v6M22 40v6M28 40v6M34 40v6M10 22h6M10 28h6M10 34h6M40 22h6M40 28h6M40 34h6"/></svg><strong>Technology</strong></div><span class="plus">+</span>
-      <div class="cc"><svg viewBox="0 0 56 56" stroke="#c9a24a"><circle cx="20" cy="20" r="6"/><circle cx="36" cy="20" r="6"/><path d="M8 44c1-9 6-13 12-13s11 4 12 13M24 44c1-9 6-13 12-13s11 4 12 13"/></svg><strong>Humanity &amp;<br>Society</strong></div><span class="plus">+</span>
+      <div class="cc"><svg viewBox="0 0 56 56" stroke="#c9a24a"><circle cx="20" cy="20" r="6"/><circle cx="36" cy="20" r="6"/><path d="M8 44c1-9 6-13 12-13s11 4 12 13M24 44c1-9 6-13 12-13s11 4 12 13"/></svg><strong>Humanities &amp;<br>Society</strong></div><span class="plus">+</span>
       <div class="cc"><svg viewBox="0 0 56 56" stroke="#1c7a45"><path d="M12 44C12 22 26 10 46 10c0 22-12 34-34 34z"/><path d="M12 44L32 24"/></svg><strong>Environment</strong></div>
     </div>
   </div></div>
 <h4 class="c-tit rv" style="margin-top:90px"><small>MAIN PROJECTS</small>Main Projects</h4>
-<ul class="biz rv"><li><b>01</b><p>Humanities research on human nature and values in an era of technological transformation</p></li><li><b>02</b><p>Research on the directions and methods of education in response to social change</p></li><li><b>03</b><p>Social science research on how AI and other emerging technologies affect individuals and communities</p></li><li><b>04</b><p>Research on human-centered technology ethics and education for future citizenship</p></li><li><b>05</b><p>Identifying policy issues and offering recommendations to prepare for the future</p></li><li><b>06</b><p>Conferences, forums, and lectures, and exchange with research institutions in Korea and abroad</p></li><li><b>07</b><p>Translating, publishing, and collecting books and materials on humanity and the future</p></li></ul>
+<ul class="biz rv"><li><b>01</b><p>Humanities research on human nature and values in an era of technological transformation</p></li><li><b>02</b><p>Research on the directions and methods of education in response to changes in future society</p></li><li><b>03</b><p>Social science research on how AI and other emerging technologies affect individuals and communities</p></li><li><b>04</b><p>Research on human-centered technology ethics and education for future citizenship</p></li><li><b>05</b><p>Identifying policy agendas and making policy recommendations to prepare for future society</p></li><li><b>06</b><p>Conferences, forums, and lectures, and exchange with research institutions in Korea and abroad</p></li><li><b>07</b><p>Translating, publishing, and collecting books and materials on humanity and the future</p></li></ul>
 <p style="text-align:center;margin-top:50px"><a href="en-strategy.html" class="btn">Development Strategy <i class="chev r"></i></a></p>
 '''
 
 STAGES = [('st1', 'Forecasting Future Change', '2026 ~ 2028'), ('st2', 'Exploring Future Challenges', '2029 ~ 2031'),
           ('st3', 'Transition to the Future', '2032 ~ 2034')]
-PERS = [('p-tech', 'Technology'), ('p-hum', 'Humanity &amp; Society'), ('p-env', 'Environment')]
+PERS = [('p-tech', 'Technology'), ('p-hum', 'Humanities &amp; Society'), ('p-env', 'Environment')]
 THEMES = [
-    'Redefining the Concept of the Human in the Age of AI and Emerging Technologies',
-    'Technology Gaps and New Inequalities',
+    'AI and Other Emerging Technologies: Redefining the Concept of the Human',
+    'The Technology Divide and New Inequalities',
     'The End of the Anthropocene and Reflections on Anthropocentrism',
     'Coexistence of Humans and Machines',
     'Inclusion and Solidarity beyond Divides',
-    'Human Life and the Tasks of Ecological Community',
+    'Human Life and the Challenges of the Ecological Community',
     'Human-Centered Technology and Ethical Design',
-    'Just Transition and the Future of Education',
+    'Fair Transition and Future Education',
     'Ecological Justice and a Sustainable Society',
 ]
 FINAL = 'Evaluation of the First 10-Year Cycle and Planning for the Next Decade'
@@ -281,16 +281,16 @@ def strategy():
   <ul class="hist-nav"><li><a href="#hist-top">Strategy<i class="chev r"></i></a></li><li><a href="#st1">Forecasting</a></li><li><a href="#st2">Exploring</a></li><li><a href="#st3">Transition</a></li><li><a href="#st4">Synthesis · 2035</a></li></ul>
   <div>
     <div id="hist-top">
-      <p class="c-lead">From 2026 to 2035, our first cycle, we set an annual theme<br>under the overarching theme &ldquo;Human &amp; Future&rdquo; and continue research and forums.</p>
+      <p class="c-lead">From 2026 to 2035, our first cycle, we set a specific theme each year<br>under the academic theme &ldquo;Human &amp; Future&rdquo; and carry on research and academic forums.</p>
       <ul class="dot-list c-txt" style="margin-top:24px">
-        <li>Systematically explore, from the perspective of the humanities and social sciences, the changes technological transformation brings to the human condition, social structures, and the relationship between humans and nature</li>
+        <li>Systematically explore, from the perspective of the humanities and social sciences, the changes technological transformation brings to the human mode of existence, social structures, and the relationship between humans and nature</li>
         <li>Build up research in three stages: Forecasting Future Change (2026&ndash;2028), Exploring Future Challenges (2029&ndash;2031), and Transition to the Future (2032&ndash;2034)</li>
-        <li>Apply a spiral research structure in which each stage cycles through three perspectives &mdash; technology, humanity and society, and the environment &mdash; year by year, deepening our questions layer by layer</li>
+        <li>Apply a spiral research structure in which each stage cycles through three perspectives &mdash; technology, the humanities and society, and the environment &mdash; year by year, deepening our questions layer by layer</li>
         <li>In 2035, synthesize and evaluate the results of the first cycle and set the theme and research directions for the second cycle</li>
       </ul>
-      <h4 class="c-tit" style="margin-top:60px"><small>THE 1ST 10-YEAR CYCLE</small>The First 10-Year Cycle: &ldquo;Human &amp; Future&rdquo;</h4>
+      <h4 class="c-tit" style="margin-top:60px"><small>THE 1ST 10-YEAR CYCLE</small>Academic Theme of the First 10-Year Cycle: &ldquo;Human &amp; Future&rdquo;</h4>
       <div class="tbl-scroll"><table class="tbl matrix"><colgroup><col style="width:190px"><col><col><col></colgroup>
-        <thead><tr><th>Stage</th><th><span class="badge p-tech">Technology</span></th><th><span class="badge p-hum">Humanity &amp; Society</span></th><th><span class="badge p-env">Environment</span></th></tr></thead>
+        <thead><tr><th>Stage</th><th><span class="badge p-tech">Technology</span></th><th><span class="badge p-hum">Humanities &amp; Society</span></th><th><span class="badge p-env">Environment</span></th></tr></thead>
         <tbody>{rows}</tbody></table></div>
     </div>
     <div class="hist-head"><strong>HUMAN &amp; FUTURE</strong><span>2026 — 2035</span></div>
@@ -339,8 +339,8 @@ FIELDS = [
     ('research03', 'Human Values', 'Asking what human nature and values mean in an era of technological transformation',
      'In an age when technology is reshaping human capabilities and boundaries, we explore from a humanities perspective the values that make us human, such as dignity and autonomy, relationships and empathy.',
      ['Human nature', 'Dignity &amp; autonomy', 'Relationships &amp; empathy', 'Humanities research']),
-    ('research01', 'Future of Education', 'Researching education that responds to social change',
-     'Reading changes in technology, humanity and society, and the environment together, we study the directions and methods of education. Our findings are shared with schools and local communities.',
+    ('research01', 'Future Education', 'Researching education that responds to social change',
+     'Reading changes in technology, the humanities and society, and the environment together, we study the directions and methods of education. Our findings are shared with schools and local communities.',
      ['Directions of education', 'Teaching methods', 'Future education', 'Schools &amp; classrooms']),
     ('research02', 'Technology &amp; Society', 'Examining how emerging technologies affect individuals and communities',
      'We study the impact of AI and other emerging technologies on individuals and communities from a social science perspective, and identify policy issues and recommendations to prepare for the future.',
@@ -360,7 +360,7 @@ def research():
                  f'  <p class="team"><span>Lead <b>Research &amp; Development Division</b></span></p></div></div>')
     return f'''
 <div class="f-intro rv">
-  <div class="ring"><div class="a">Human Values<small>HUMAN VALUES</small></div><div class="b">Education<small>EDUCATION</small></div><div class="c">Society<small>SOCIETY</small></div><div class="core">Ethics<small style="font-family:Roboto;font-size:10px;font-weight:400">ETHICS</small></div></div>
+  <div class="ring"><div class="a">Human<br>Values</div><div class="b">Future<br>Education</div><div class="c">Technology<br>&amp; Society</div><div class="core">Technology<br>Ethics</div></div>
   <div><h4 class="c-tit" style="margin:0 0 20px"><small>RESEARCH FIELDS</small>Researching humans and society<br>in an age of technology</h4>
   <p class="c-txt">Deciding what kind of future is desirable cannot rest on technological efficiency alone. The Institute pursues four areas of research that together ask about human dignity, justice in our communities, and coexistence with nature.</p>
   <a href="en-strategy.html" class="btn" style="margin-top:26px">Development Strategy <i class="chev r"></i></a></div>
@@ -372,13 +372,13 @@ def research():
 BODY['en-research'] = research()
 
 PROJECTS = [
-    ('University-funded', 80,
-     'The Effect of Elementary Pre-service Teachers&rsquo; Epistemological Beliefs about Science on Their Perceptions of Generative AI Use in Science Education',
+    ('University-funded research', 80,
+     'The Effects of Pre-service Elementary Teachers&rsquo; Scientific Epistemological Beliefs on Their Perceptions of Generative AI Use in Science Education',
      'Survey of elementary pre-service teachers · Institute researchers'),
-    ('Independent', 20,
-     'Differences in Dependence on Generative AI and Its Use for Assignments among University Students by Level of Need for Cognition',
+    ('In-house research', 20,
+     'An Analysis of Differences in Generative AI Dependence and Patterns of Its Use for Assignments among University Students by Level of Need for Cognition',
      'Survey of university students · Advised by the Institute · External researchers'),
-    ('Independent', 50,
+    ('In-house research', 50,
      'Redefining the Concept of the Human in the Age of AI: Fundamental Questions on Technology, Society, and Education',
      'Literature review · Institute researchers'),
 ]

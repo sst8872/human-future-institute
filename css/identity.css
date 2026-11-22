@@ -640,3 +640,10 @@ body.sub .header .lang,.header.open .lang{color:#e0c473}
 .m-lang{color:#e0c473}
 /* 전체 메뉴 머리의 ENG: 컴퓨터 화면은 머리글에 KOR|ENG가 있으니 감춤, 휴대폰만 보임 (2026-11-22) */
 @media (min-width:1025px){.am-lang{display:none}}
+/* 영문 연구 분야 고리: 글자를 가운데 흰 원에서 조금 비켜 놓기 */
+body.lang-en .f-intro .ring>div{font-size:15px;line-height:1.25;box-sizing:border-box}
+body.lang-en .f-intro .ring .a{padding-bottom:16%}
+body.lang-en .f-intro .ring .b{padding-right:12%}
+body.lang-en .f-intro .ring .c{padding-left:12%}
+body.lang-en .f-intro .ring .core{font-size:13px;line-height:1.3}
+@media (max-width:640px){body.lang-en .f-intro .ring>div{font-size:12.5px}body.lang-en .f-intro .ring .core{font-size:11px}}
