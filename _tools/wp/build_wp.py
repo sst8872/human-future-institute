@@ -15,6 +15,7 @@ T = '<?=HNF_T?>'
 
 BOARDS = ['news-notice', 'news-stories', 'news-gallery', 'pub-insight',
           'pub-reports', 'pub-rules', 'pub-archive', 'research-results']
+EN = lambda slug: slug == 'en' or slug.startswith('en-')   # 영문 페이지(/en/…)
 SKIP = {'pub-rules-01'}   # 글로 옮김
 
 
@@ -29,6 +30,9 @@ def is_redirect(s):
 def conv(s):
     """링크·자원 주소를 WordPress 주소로."""
     s = re.sub(r'(href|src)="index\.html(#[^"]*)?"', lambda m: f'{m.group(1)}="{H}/{m.group(2) or ""}"', s)
+    # 영문 페이지: en.html → /en/, en-x.html → /en/x/
+    s = re.sub(r'href="en(?:-([a-z0-9-]+))?\.html(#[^"]*)?"',
+               lambda m: f'href="{H}/en/' + (m.group(1) + '/' if m.group(1) else '') + (m.group(2) or '') + '"', s)
     s = re.sub(r'(href|src)="([a-z0-9-]+)\.html(#[^"]*)?"',
                lambda m: f'{m.group(1)}="{H}/{m.group(2)}/{m.group(3) or ""}"', s)
     s = re.sub(r'(href|src)="(images|files|lib|css|js)/', lambda m: f'{m.group(1)}="{T}/{m.group(2)}/', s)
@@ -198,7 +202,7 @@ def main():
             c0 = s.find('    <!-- 콘텐츠 담당부서 -->')
             c1 = s.find(END_INNER, c0)
             s = s[:c0] + region('charge', slug, s[c0:c1]) + s[c1:]
-        elif slug not in ('index',):
+        elif slug not in ('index',) and not EN(slug):
             a0 = s.find('</div>', s.find('<div class="sub-title">')) + len('</div>')
             a1 = s.find(END_INNER, a0)
             assert a1 > a0, slug
@@ -226,8 +230,11 @@ def main():
             assert a >= 0, 'hl-sec'
             b = s.find('</section>', a) + len('</section>')
             s = s[:a] + '<?php if (hnf_has_stories()): ?>' + s[a:b] + '<?php endif; ?>' + s[b:]
-        open(os.path.join(TH, 'pages', slug + '.php'), 'w', encoding='utf-8').write(conv(s))
-        if slug != 'index':
+        out = conv(s)
+        if EN(slug):
+            out = out.replace('<?php hnf_admin_link(); ?>', '')
+        open(os.path.join(TH, 'pages', slug + '.php'), 'w', encoding='utf-8').write(out)
+        if slug != 'index' and not EN(slug):
             pages.append({'slug': slug, 'title': html.unescape(title.group(1)) if title else slug})
     sample['pages'] = pages
     json.dump(sample, open(os.path.join(OUT, 'sample.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
