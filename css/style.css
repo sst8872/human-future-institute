@@ -223,7 +223,7 @@ body.lock{overflow:hidden}
 /* ---------- 2. Research & People — 가톨릭대 측정값 ---------- */
 .rp-sec{padding-bottom:85px}
 .rp-wrap{position:relative}
-.rp-swiper{overflow:hidden;cursor:none}
+.rp-swiper{overflow:hidden}
 .rp-swiper .swiper-slide{width:1220px;height:525px;display:flex;padding:40px;border-radius:2px;background:#e7f0f9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='620' height='520' viewBox='0 0 620 520'%3E%3Cg fill='none' stroke='%23dbe7f4' stroke-width='22'%3E%3Ccircle cx='430' cy='200' r='170'/%3E%3Ccircle cx='430' cy='130' r='48'/%3E%3Cpath d='M330 330c20-70 55-100 100-100s80 30 100 100'/%3E%3C/g%3E%3C/svg%3E") no-repeat 100% -6px}
 .rp-img{flex:none;width:660px;height:445px;overflow:hidden}
 .rp-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
@@ -678,3 +678,28 @@ body.lock{overflow:hidden}
 .logo .logo-img{width:52px;height:52px;flex:none}
 .f-emblem .logo-img{width:64px;height:64px}
 @media (max-width:1024px){.logo .logo-img{width:40px;height:40px}}
+
+/* 좌우 넘김 단추 < > (02 인사이트·03 연구소 소식) */
+.side-arr{position:absolute;top:50%;z-index:6;width:52px;height:52px;margin-top:-26px;border-radius:50%;border:1px solid #d5dbe5;background:#fff;color:var(--deep,#0c2e86);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,16,58,.12);cursor:pointer;transition:.2s}
+.side-arr .chev{width:12px;height:12px;border-width:2px;margin:0}
+.side-arr .chev.l{transform:translateX(2px) rotate(135deg)}
+.side-arr .chev.r{transform:translateX(-2px) rotate(-45deg)}
+.side-arr:hover{background:var(--primary);border-color:var(--primary);color:#fff}
+.side-arr.swiper-button-disabled,.side-arr[disabled]{opacity:.35;pointer-events:none}
+.side-arr.light{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.45);color:#fff;box-shadow:none}
+.side-arr.light:hover{background:#fff;border-color:#fff;color:var(--deep,#0c2e86)}
+.rp-wrap{--rp-w:1220px}
+.rp-prev{left:calc(50% - var(--rp-w) / 2);transform:translateX(-50%)}
+.rp-next{left:calc(50% + var(--rp-w) / 2);transform:translateX(-50%)}
+.hl-right{position:relative;padding:0 72px}
+.hl-prev{left:0;top:122px}
+.hl-next{right:0;top:122px}
+@media (max-width:1500px){ .rp-wrap{--rp-w:1040px} }
+@media (max-width:1280px){ .rp-wrap{--rp-w:86vw} }
+@media (max-width:640px){
+  .side-arr{width:40px;height:40px;margin-top:-20px}
+  .side-arr .chev{width:9px;height:9px}
+  .hl-right{padding:0 50px}
+  .hl-prev,.hl-next{top:110px}
+  .hl-swiper .swiper-slide{width:100%}
+}

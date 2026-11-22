@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261121w25');
+define('HNF_VER', '20261122a');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -152,6 +152,27 @@ function hnf_insight_slides() {
             esc_html(wp_strip_all_tags($p->post_title)), esc_html($desc), esc_url(get_permalink($p)));
     }
     return true;
+}
+
+/* 첫 화면 03: 연구소 소식 게시글 제목 카드 (예시 글 제외) */
+function hnf_stories_query() {
+    $top = get_category_by_slug('news-stories');
+    if (!$top) return null;
+    return new WP_Query(['cat' => $top->term_id, 'posts_per_page' => 9, 'ignore_sticky_posts' => 1, 'no_found_rows' => true,
+        'meta_query' => [['key' => 'hnf_sample', 'compare' => 'NOT EXISTS']]]);
+}
+function hnf_has_stories() {
+    $q = hnf_stories_query();
+    return $q && $q->have_posts();
+}
+function hnf_stories_slides() {
+    $q = hnf_stories_query();
+    if (!$q) return;
+    foreach ($q->posts as $p) {
+        printf('<div class="swiper-slide"><a href="%s" class="hl-card"><span class="hl-cate">%s</span><p class="hl-title">%s</p><div class="hl-meta"><time>%s</time><span class="hl-media">자세히 보기<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></div>',
+            esc_url(get_permalink($p)), esc_html(hnf_post_kid_name($p->ID) ?: '연구소 소식'),
+            esc_html(wp_strip_all_tags($p->post_title)), esc_html(get_the_date('Y.m.d', $p)));
+    }
 }
 
 /* 조회수 */

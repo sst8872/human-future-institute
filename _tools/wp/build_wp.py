@@ -215,6 +215,17 @@ def main():
             assert a >= 0, 'rp-sec'
             b = s.find('</section>', a) + len('</section>')
             s = s[:a] + '<?php if (hnf_has_insight()): ?><section class="sec rp-sec">' + s[a + len('<section class="sec rp-sec" style="display:none">'):b] + '<?php endif; ?>' + s[b:]
+            # 03 연구소 소식: 실제 글 제목 카드, 글이 있을 때만 구역을 보임
+            a = s.find('<div class="swiper hl-swiper"><div class="swiper-wrapper">')
+            assert a >= 0, 'hl-swiper'
+            a += len('<div class="swiper hl-swiper"><div class="swiper-wrapper">')
+            b = s.find('</div></div>\n        <button type="button" class="side-arr light hl-next"', a)
+            assert b > a, 'hl-next'
+            s = s[:a] + '<?php hnf_stories_slides(); ?>' + s[b:]
+            a = s.find('<section class="sec hl-sec">')
+            assert a >= 0, 'hl-sec'
+            b = s.find('</section>', a) + len('</section>')
+            s = s[:a] + '<?php if (hnf_has_stories()): ?>' + s[a:b] + '<?php endif; ?>' + s[b:]
         open(os.path.join(TH, 'pages', slug + '.php'), 'w', encoding='utf-8').write(conv(s))
         if slug != 'index':
             pages.append({'slug': slug, 'title': html.unescape(title.group(1)) if title else slug})

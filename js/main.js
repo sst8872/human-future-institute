@@ -245,20 +245,19 @@
     if (evOne) document.querySelectorAll('.ev-prev, .ev-next').forEach(b => { b.style.display = 'none'; });
     if (!evOne) new Swiper('.ev-swiper', { slidesPerView: 1, spaceBetween: 10, loop: true, speed: 500, autoplay: auto,
       navigation: { prevEl: '.ev-prev', nextEl: '.ev-next' } });
-    new Swiper('.rp-swiper', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 5, loop: true, speed: 300, autoplay: auto, grabCursor: false });
-    const rpWrap = $('.rp-wrap'), rpCursor = $('.rp-cursor');
-    if (rpWrap && rpCursor && matchMedia('(hover:hover)').matches) {
-      const sw = $('.rp-swiper', rpWrap);
-      sw.addEventListener('mousemove', e => {
-        const r = rpWrap.getBoundingClientRect();
-        rpCursor.style.left = (e.clientX - r.left) + 'px'; rpCursor.style.top = (e.clientY - r.top) + 'px';
-        rpWrap.classList.add('hover');
-      });
-      sw.addEventListener('mouseleave', () => rpWrap.classList.remove('hover'));
-    }
-    new Swiper('.hl-swiper', { slidesPerView: 'auto', spaceBetween: 6, loop: true, speed: 500, autoplay: auto,
-      pagination: { el: '.hl-progress', type: 'progressbar' },
-      navigation: { prevEl: '.hl-prev', nextEl: '.hl-next' } });
+    // 02 인사이트·03 연구소 소식: 끌어 넘기기 대신 양쪽 < > 단추로 넘김
+    // 글이 적으면(반복에 모자라면) 끝에서 처음으로 되돌아가게(rewind), 하나뿐이면 단추를 흐리게
+    const arrows = (sel, prev, next, opt, loopMin) => {
+      const n = document.querySelectorAll(sel + ' .swiper-slide').length;
+      if (!n || !$(sel)) return;
+      if (n < 2) { document.querySelectorAll(prev + ',' + next).forEach(b => { b.disabled = true; }); return; }
+      new Swiper(sel, Object.assign({ loop: n >= loopMin, rewind: n < loopMin, simulateTouch: false,
+        autoplay: auto, navigation: { prevEl: prev, nextEl: next } }, opt));
+    };
+    arrows('.rp-swiper', '.rp-prev', '.rp-next', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 5, speed: 400 }, 3);
+    arrows('.hl-swiper', '.hl-prev', '.hl-next', { slidesPerView: 1, spaceBetween: 6, speed: 500,
+      breakpoints: { 641: { slidesPerView: 2 } },
+      pagination: { el: '.hl-progress', type: 'progressbar' } }, 6);
     new Swiper('.nw-swiper', { slidesPerView: 1, spaceBetween: 20, loop: true, speed: 500, autoplay: auto,
       breakpoints: { 700: { slidesPerView: 2, spaceBetween: 30 }, 1100: { slidesPerView: 3, spaceBetween: 55 } },
       navigation: { prevEl: '.nw-prev', nextEl: '.nw-next' } });
