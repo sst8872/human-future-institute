@@ -257,9 +257,13 @@
         navigation: n > 1 ? { prevEl: prev, nextEl: next } : false }, opt));
     };
     arrows('.rp-swiper', '.rp-prev', '.rp-next', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 5, speed: 400 }, 3);
+    // 03 연구소 소식: 옛 글 → 최근 글 순(최근 글이 맨 오른쪽). 처음엔 최근 글이 보이게 끝에서 시작,
+    // < 를 누르면 이전 글. 반복·자동 넘김 없음
+    const hlN = document.querySelectorAll('.hl-swiper .swiper-slide').length;
     arrows('.hl-swiper', '.hl-prev', '.hl-next', { slidesPerView: 1, spaceBetween: 6, speed: 500,
-      breakpoints: { 641: { slidesPerView: 2 } },
-      pagination: { el: '.hl-progress', type: 'progressbar' } }, 6);
+      loop: false, rewind: false, autoplay: false, initialSlide: Math.max(hlN - 1, 0),
+      breakpoints: { 641: { slidesPerView: 2 }, 1025: { slidesPerView: 3 } },
+      pagination: { el: '.hl-progress', type: 'progressbar' } }, 999);
     new Swiper('.nw-swiper', { slidesPerView: 1, spaceBetween: 20, loop: true, speed: 500, autoplay: auto,
       breakpoints: { 700: { slidesPerView: 2, spaceBetween: 30 }, 1100: { slidesPerView: 3, spaceBetween: 55 } },
       navigation: { prevEl: '.nw-prev', nextEl: '.nw-next' } });

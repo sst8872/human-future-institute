@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261122c');
+define('HNF_VER', '20261122e');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -168,7 +168,8 @@ function hnf_has_stories() {
 function hnf_stories_slides() {
     $q = hnf_stories_query();
     if (!$q) return;
-    foreach ($q->posts as $p) {
+    // 최근 9편을 옛 글 → 최근 글 순으로(최근 글이 맨 오른쪽)
+    foreach (array_reverse($q->posts) as $p) {
         printf('<div class="swiper-slide"><a href="%s" class="hl-card"><span class="hl-cate">%s</span><p class="hl-title">%s</p><div class="hl-meta"><time>%s</time><span class="hl-media">자세히 보기<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></div>',
             esc_url(get_permalink($p)), esc_html(hnf_post_kid_name($p->ID) ?: '연구소 소식'),
             esc_html(wp_strip_all_tags($p->post_title)), esc_html(get_the_date('Y.m.d', $p)));

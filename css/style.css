@@ -707,3 +707,6 @@ body.lock{overflow:hidden}
 .hl-grid.hl-only{grid-template-columns:minmax(0,1fr)}
 .hl-only .hl-right{padding:0 72px}
 @media (max-width:640px){ .hl-only .hl-right{padding:0 50px} }
+/* 글이 한 화면에 다 들어가도 < > 단추는 흐리게 남김 */
+.side-arr.swiper-button-lock{display:flex!important;opacity:.35;pointer-events:none}
+.hl-ctrl .more{flex:none;margin-left:auto}
