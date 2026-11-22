@@ -687,3 +687,15 @@ body.lang-en .org .o-col ul li{padding-left:12px;text-indent:-12px}
   .en-matrix td .yr{display:inline-block}
   .en-matrix td b{display:block;font-size:15px}
 }
+/* 영문 첫 화면 큰 그림: 영문은 글자가 길어 크기를 줄임 */
+.en-visual .big{font-size:clamp(40px,6vw,108px);line-height:1.1}
+.en-visual .lead{max-width:900px;margin-left:auto;margin-right:auto;font-size:clamp(20px,2.4vw,38px);line-height:1.35}
+.en-home .sub-content{padding-top:90px}
+
+/* 바닥글 로고 세트: 컴퓨터 화면에서 저작권 줄 크기에 맞춰 줄임 (2026-11-22) */
+@media (min-width:1025px){
+  .f-emblem{width:auto;gap:5px}
+  .f-emblem .logo-img{width:44px;height:44px}
+  .f-emblem b{font-size:13px;line-height:1.2}
+  .f-emblem em{font-size:7px}
+}

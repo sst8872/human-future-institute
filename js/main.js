@@ -113,7 +113,7 @@
         5초마다 넘김(DELAY), 넘어가는 시간 1.2초(css/identity.css 의 .track.anim).
         슬라이드에 data-delay="6000" 을 넣으면 그 슬라이드만 더 오래 보여 줍니다. */
   const visual = $('.visual');
-  if (visual) {
+  if (visual && !visual.hasAttribute('data-static')) {   // data-static: 한 장짜리(영문 첫 화면)는 넘기지 않음
     const DELAY = 5000;
     const track = $('.track', visual);
     const real = $$('.slide', track);

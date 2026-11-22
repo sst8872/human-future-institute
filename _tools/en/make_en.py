@@ -79,6 +79,21 @@ def lnb(fn, group, title):
 </nav>'''
 
 
+SUBVIS = '''<section class="sub-visual" style="--img:url(../images/{img});--dim:0.55;--sv:url(../images/{sv})">
+  <p class="sv-en">INSTITUTE FOR HUMAN &amp; FUTURE</p>
+  <p class="sv-group">{svg_group}</p>
+</section>'''
+# 국문 첫 화면 첫 장(지구 그림)과 같은 틀, 한 장만(data-static: 넘김 없음)
+HERO = '''<section class="visual en-visual" data-static aria-label="Vision">
+  <div class="track">
+    <div class="slide sa t-center on" style="--img:url(../images/hero01.jpg);--dim:0.22">
+      <div class="txt"><p class="eyebrow">VISION</p><p class="lead">In an era of technological transformation, centered on human values</p><h2 class="big"><em>Leading</em> Future Discourse</h2><a href="en-vision.html" class="hv-link hv-small">VIEW MORE <i class="chev r"></i></a></div>
+    </div>
+  </div>
+  <div class="hv-axis" aria-hidden="true"><span>HUMAN</span><i><b></b></i><span>FUTURE</span></div>
+</section>'''
+
+
 def page(fn, group, title, img, sv, svg_group, body):
     ko = KO[fn] + '.html'
     return f'''<!DOCTYPE html>
@@ -96,7 +111,7 @@ def page(fn, group, title, img, sv, svg_group, body):
 <link rel="stylesheet" href="css/sub.css?v={V_SUB}">
 <link rel="stylesheet" href="css/identity.css?v={V_ID}">
 </head>
-<body class="sub sub-about lang-en">
+<body class="{'en-home lang-en' if fn == 'en' else 'sub sub-about lang-en'}">
 
 <a class="skip" href="#main">Skip to content</a>
 
@@ -138,10 +153,7 @@ def page(fn, group, title, img, sv, svg_group, body):
 </div>
 
 <main id="main">
-<section class="sub-visual" style="--img:url(../images/{img});--dim:0.55;--sv:url(../images/{sv})">
-  <p class="sv-en">INSTITUTE FOR HUMAN &amp; FUTURE</p>
-  <p class="sv-group">{svg_group}</p>
-</section>
+{HERO if fn == 'en' else SUBVIS.format(img=img, sv=sv, svg_group=svg_group)}
 {lnb(fn, group, title)}
 <section class="sub-content">
   <div class="sub-inner">
@@ -371,24 +383,24 @@ BODY['en-organization'] = organization()
 # (WP 글 ID, 종류, 연도, 영문 제목, 영문 저자, 영문 게재지, 링크)
 RESULTS = [
     (288, 'report', 2026, 'Development of a Subject Competency Framework for Competency-Based Instruction and Assessment (I): Focusing on Social Studies and Science',
-     'Jiyoung Kim et al.', 'Korea Institute for Curriculum and Evaluation, Research Report RRC 2026-2', ''),
-    (179, 'article', 2026, 'Exploring University Students&rsquo; Integrated Perceptions of Sustainability: A Case Study of University A in Gyeonggi Province',
-     'Dami Bang, Heojeong Yoon', 'School Science Journal 20(1), 61&ndash;76', ''),
-    (180, 'article', 2025, 'An Analysis of Elementary Pre-service Teachers&rsquo; Noticing Before and After Science Teaching Demonstrations',
+     'Jiyoung Kim et al.', 'Korea Institute for Curriculum and Evaluation, Research Report RRC 2026-2 (in Korean)', ''),
+    (179, 'article', 2026, 'An Integrated Exploration of University Students&rsquo; Perceptions of Sustainability: The Case of A University in Gyeonggi Province',
+     'Dami Bang, Heojeong Yoon', 'School Science Journal 20(1), 61&ndash;76', 'https://doi.org/10.15737/ssj.20.1.202602.61'),
+    (180, 'article', 2025, 'An Analysis of noticing patterns before and after science lesson demonstrations by pre-service elementary teachers',
      'Heojeong Yoon, Dami Bang', 'Journal of Korean Elementary Science Education 44(4), 666&ndash;681', 'https://doi.org/10.15267/keses.2025.44.4.666'),
     (286, 'report', 2025, 'Training for High School Administrators on Achievement-Based Assessment in Connection with Digital-Based Educational Innovation',
-     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2025-9', ''),
+     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2025-9 (in Korean)', ''),
     (284, 'report', 2024, 'Training for Lead Middle School Teachers on Achievement-Based Assessment in Connection with Digital-Based Educational Innovation',
-     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2024-124, 125', ''),
-    (181, 'article', 2024, 'An Analysis of Research Trends on Problem-Based Learning (PBL) in Korea',
-     'Dami Bang, Heojeong Yoon', 'Journal of Research in Curriculum &amp; Instruction 28(6), 466&ndash;476', 'https://doi.org/10.24231/rici.2024.28.6.466'),
+     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2024-124, 125 (in Korean)', ''),
+    (181, 'article', 2024, 'Analysis of Domestic Research Trends related to Problem Based Learning (PBL)',
+     'Dami Bang, Heojeong Yoon', 'Journal of Research in Curriculum Instruction 28(6), 466&ndash;476', 'https://doi.org/10.24231/rici.2024.28.6.466'),
     (282, 'report', 2024, 'Training for Lead High School Teachers on Achievement-Based Assessment in Connection with Digital-Based Educational Innovation',
-     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2024-75', ''),
-    (182, 'article', 2023, 'An Analysis of Research Trends on Elementary Teacher Professionalism in Korea',
-     'Dami Bang, Heojeong Yoon', 'Journal of Educational Research (Seoul Women&rsquo;s University) 88, 73&ndash;92', 'https://doi.org/10.17253/swueri.2023.88..004'),
-    (264, 'article', 2023, 'Design and Implementation of an Issue-Centered Character Education Curriculum in a University General Education Course',
-     'Dami Bang et al.', 'Korean Journal of General Education 17(6)', 'https://scholar.kyobobook.co.kr/article/detail/4010068298316'),
-    (183, 'article', 2023, 'A Proposal for Character Education for University Students Based on &lsquo;Diversity&rsquo;',
+     'Sunhee Kim, Jiyoung Kim et al.', 'Ministry of Education &amp; Korea Institute for Curriculum and Evaluation, ORM 2024-75 (in Korean)', ''),
+    (182, 'article', 2023, 'The Research Trend Analysis Related to Professionalism of Primary School Teachers',
+     'Dami Bang, Heojeong Yoon', 'Educational Research 88, 73&ndash;92', 'https://doi.org/10.17253/swueri.2023.88..004'),
+    (264, 'article', 2023, 'Design of Issue-Centered Character Curriculum and Application on the Liberal Arts Course of University',
+     'Sooyeon Lee, Dami Bang, Youngmin Choi, Sangmin Lee', 'Korean Journal of General Education 17(6), 413&ndash;425', 'https://doi.org/10.46392/kjge.2023.17.6.413'),
+    (183, 'article', 2023, 'A personality education plan on diversity for university student',
      'Heojeong Yoon', 'Journal of Human Studies 49, 121&ndash;143', 'https://doi.org/10.21738/JHS.2023.4.49.121'),
 ]
 TYPE = {'article': ('Article', ''), 'report': ('Report', ' gold'), 'presentation': ('Presentation', ' green')}
@@ -402,7 +414,7 @@ def results():
                   f'<h5>{ti}</h5><p class="by">{au} · <i>{ve}</i></p>{link}</div></li>')
     return f'''
 <p class="c-lead en-res-lead">Selected publications by members of the Institute.</p>
-<p class="tbl-note en-res-note">Most of these works are published in Korean; English titles are translations.</p>
+<p class="tbl-note en-res-note">Most of these works are published in Korean. English titles of journal articles are those given by the journals.</p>
 <!--HNF:en-results-->
 <div class="filter" data-target="#enRes"><button type="button" class="on" data-f="all">All</button><button type="button" data-f="article">Articles</button><button type="button" data-f="report">Reports</button><button type="button" data-f="presentation">Presentations</button></div>
 <ul class="en-res" id="enRes">{items}</ul>
