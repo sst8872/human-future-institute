@@ -9,7 +9,7 @@ const HNF_DEPTS = ['기획운영부', '미래혁신부', '연구개발부', '인
 
 /* 게시판별 칸 */
 function hnf_fields($slug) {
-    $body = ['body', '본문', 'text', true, '빈 줄로 문단을 나눕니다. 「## 소제목」, 「- 항목」, 「1. 항목」, 「**굵게**」, 단추는 한 줄에 「[단추 글자 | 주소]」를 쓸 수 있습니다.'];
+    $body = ['body', '본문', 'text', true, '빈 줄로 문단을 나눕니다. 「## 소제목」, 「- 항목」, 「1. 항목」, 「**굵게**」, 링크는 「[글자](주소)」, 단추는 한 줄에 「[단추 글자 | 주소]」를 쓸 수 있습니다.'];
     $files = ['files', '첨부 파일', 'files', false, 'PDF·HWP·HWPX·DOCX·XLSX 등. 여러 개 가능, 끌어서 순서 바꾸기'];
     $photos = ['photos', '사진', 'images', false, '글 아래에 나옵니다(한 장이면 크게, 여러 장이면 나란히). 본문 중간에 넣으려면 본문 위 「본문에 사진 넣기」'];
     $F = [
@@ -78,6 +78,8 @@ function hnf_fields($slug) {
 function hnf_inline($s) {
     $s = esc_html($s);
     $s = preg_replace('/\*\*(.+?)\*\*/u', '<b>$1</b>', $s);
+    // 「[글자](주소)」 → 색 글자 링크 (같은 창)
+    $s = preg_replace_callback('#\[([^\]]+)\]\(((?:https?://|/)[^\s)]+)\)#u', fn($m) => '<a class="tx-link" href="' . esc_url(html_entity_decode($m[2])) . '">' . $m[1] . '</a>', $s);
     $s = preg_replace('#(?<!["\'=])(https?://[^\s<]+[^\s<.,)」』])#u', '<a href="$1" target="_blank" rel="noopener">$1</a>', $s);
     return $s;
 }
@@ -210,7 +212,7 @@ function hnf_tpl_html($slug, $f) {
     $info = function ($pairs) use ($g) {
         $h = '';
         foreach ($pairs as $k => $lb) if ($g($k) !== '') {
-            $v = $k === 'link' ? '<a href="' . esc_url($g($k)) . '" target="_blank" rel="noopener">' . esc_html($g($k)) . '</a>' : esc_html($g($k));
+            $v = $k === 'link' ? '<a href="' . esc_url($g($k)) . '" target="_blank" rel="noopener">' . esc_html($g($k)) . '</a>' : hnf_inline($g($k));
             $h .= '<dt>' . $lb . '</dt><dd>' . $v . '</dd>';
         }
         return $h ? '<dl class="tp-info">' . $h . '</dl>' : '';

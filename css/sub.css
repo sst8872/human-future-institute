@@ -841,3 +841,6 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 .apply-grid textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(29,68,216,.12)}
 .apply-grid textarea::placeholder{color:#aab}
 .apply-grid small{font-size:13.5px;color:#888;font-weight:400}
+/* 글 속 색 글자 링크 「[글자](주소)」 */
+.tx-link{color:#1d4fd8;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.tx-link:hover{color:var(--primary)}
