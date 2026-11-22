@@ -206,19 +206,19 @@ BODY['en'] = '''
 <div class="v-banner en-banner"><strong>Leading future discourse centered on human values<br>in an era of technological transformation</strong></div>
 <p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, the humanities and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
 <div class="en-groups">
-  <section class="en-group"><h4><small>ABOUT</small>About</h4><ul class="en-links">
+  <section class="en-group"><h4>About</h4><ul class="en-links">
     <li><a href="en-greeting.html"><strong>Greeting</strong><span>A message from the Director</span><i class="chev r"></i></a></li>
     <li><a href="en-vision.html"><strong>Vision</strong><span>Our vision, purposes, and main projects</span><i class="chev r"></i></a></li>
     <li><a href="en-strategy.html"><strong>Development Strategy</strong><span>The first 10-year cycle, 2026&ndash;2035</span><i class="chev r"></i></a></li>
     <li><a href="en-organization.html"><strong>Organization</strong><span>Divisions and their roles</span><i class="chev r"></i></a></li>
     <li><a href="en-people.html"><strong>People</strong><span>Our researchers</span><i class="chev r"></i></a></li>
   </ul></section>
-  <section class="en-group"><h4><small>RESEARCH</small>Research</h4><ul class="en-links">
+  <section class="en-group"><h4>Research</h4><ul class="en-links">
     <li><a href="en-research.html"><strong>Research Areas</strong><span>Four areas of inquiry</span><i class="chev r"></i></a></li>
     <li><a href="en-projects.html"><strong>Research Projects</strong><span>Current projects and progress</span><i class="chev r"></i></a></li>
     <li><a href="en-results.html"><strong>Members&rsquo; Research</strong><span>Articles, reports, and presentations</span><i class="chev r"></i></a></li>
   </ul></section>
-  <section class="en-group"><h4><small>CONTACT</small>Contact</h4><ul class="en-links">
+  <section class="en-group"><h4>Contact</h4><ul class="en-links">
     <li><a href="en-contact.html"><strong>Contact</strong><span>Address, phone, email, and directions</span><i class="chev r"></i></a></li>
   </ul></section>
 </div>
