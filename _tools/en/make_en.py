@@ -250,7 +250,7 @@ THEMES = [
     'Inclusion and Solidarity beyond Divides',
     'Human Life and the Challenges of the Ecological Community',
     'Human-Centered Technology and Ethical Design',
-    'Fair Transition and Future Education',
+    'Just Transition and Future Education',
     'Ecological Justice and a Sustainable Society',
 ]
 FINAL = 'Evaluation of the First 10-Year Cycle and Planning for the Next Decade'
@@ -308,9 +308,9 @@ PEOPLE = [
     ('Eunmi Park', 'Head, Planning &amp; Operations Division', 'Department of Science Education, Chuncheon National University of Education', '#2a4aa8', '#0c2e86', '박은미'),
     ('Jiyoung Kim', 'Head, Future Innovation Division', 'Education Policy Research Institute, Seoul Education Research &amp; Information Institute', '#1d6fa8', '#0c3e66', '김지영'),
     ('Dami Bang', 'Head, Research &amp; Development Division', 'Catholic College, The Catholic University of Korea', '#3a3f55', '#00103a', '방담이'),
-    ('Jiyeon Na', 'Member', 'Department of Science Education, Chuncheon National University of Education', '#5b4a9a', '#2e2470', '나지연'),
-    ('Soomin Lim', 'Member', 'Faculty of Creative Convergence, Chonnam National University', '#1c7a6a', '#0d4a40', '임수민'),
-    ('Sunhee Kim', 'Member', 'Department of Mathematics Education, Kangwon National University', '#a8452a', '#6a2410', '김선희'),
+    ('Jiyeon Na', 'Research Fellow', 'Department of Science Education, Chuncheon National University of Education', '#5b4a9a', '#2e2470', '나지연'),
+    ('Soomin Lim', 'Research Fellow', 'Faculty of Creative Convergence, Chonnam National University', '#1c7a6a', '#0d4a40', '임수민'),
+    ('Sunhee Kim', 'Research Fellow', 'Department of Mathematics Education, Kangwon National University', '#a8452a', '#6a2410', '김선희'),
 ]
 
 
