@@ -1,7 +1,8 @@
 <?php
 /**
- * 행사 참여 신청 (주간 포럼 등)
- * - 신청서: 원본 HTML event-apply.html 의 form.apply-form → admin-post.php?action=hnf_apply
+ * 행사 참여 신청 (주간 포럼 등) · 인사이트 집필 희망
+ * - 신청서: 원본 HTML event-apply.html · insight-apply.html 의 form.apply-form → admin-post.php?action=hnf_apply
+ * - 신청 종류(event)마다 칸이 다름: hnf_apply_fields($event)
  * - 저장: 글 종류 hnf_apply(공개 안 함), 칸은 meta hnf_a
  * - 관리: 연구소 관리 → 참여 신청 (목록 · CSV 내려받기 · 삭제)
  */
@@ -9,13 +10,19 @@
 function hnf_apply_events() {
     return [
         'forum-01' => '제1차 주간 포럼 「인간과 미래 담론에 대한 연구소의 역할」 (2026. 11. 28.)',
+        'insight-writer' => '인사이트 집필 희망',
     ];
 }
 /* 신청 알림 받는 주소 (연구소 메일, 2026-11-21 사용자 지시) */
 function hnf_apply_notify_to() { return 'hjyoon@cnue.ac.kr'; }
-function hnf_apply_fields() {
+function hnf_apply_fields($event = '') {
+    if ($event === 'insight-writer')
+        return ['org' => '소속', 'position' => '직위', 'name' => '성명', 'phone' => '전화번호', 'email' => '이메일',
+            'title' => '인사이트 제목', 'outline' => '개요'];
     return ['org' => '소속', 'position' => '직위', 'major' => '전공', 'name' => '성명', 'email' => '이메일', 'phone' => '전화번호'];
 }
+/* 여러 줄로 받는 칸과 최대 글자 수 */
+function hnf_apply_long() { return ['outline' => 600]; }
 
 add_action('init', function () {
     register_post_type('hnf_apply', ['public' => false, 'show_ui' => false, 'label' => '참여 신청', 'supports' => ['title']]);
@@ -33,9 +40,11 @@ function hnf_apply_submit() {
     $event = sanitize_key($_POST['event'] ?? '');
     if (!isset(hnf_apply_events()[$event])) $go('err');
     $a = [];
-    foreach (hnf_apply_fields() as $k => $lb) {
-        $a[$k] = trim(sanitize_text_field(wp_unslash($_POST[$k] ?? '')));
-        if ($a[$k] === '' || mb_strlen($a[$k]) > 100) $go('err');
+    $long = hnf_apply_long();
+    foreach (hnf_apply_fields($event) as $k => $lb) {
+        $raw = wp_unslash($_POST[$k] ?? '');
+        $a[$k] = trim(isset($long[$k]) ? sanitize_textarea_field($raw) : sanitize_text_field($raw));
+        if ($a[$k] === '' || mb_strlen($a[$k]) > ($long[$k] ?? 100)) $go('err');
     }
     $a['email'] = sanitize_email($a['email']);
     if (!is_email($a['email']) || !preg_match('/^[0-9+\-\s()]{8,20}$/', $a['phone']) || empty($_POST['agree'])) $go('err');
@@ -51,10 +60,11 @@ function hnf_apply_submit() {
     update_post_meta($id, 'hnf_event', $event);
     update_post_meta($id, 'hnf_email', strtolower($a['email']));
 
-    $body = hnf_apply_events()[$event] . " 참여 신청이 들어왔습니다.\n\n";
-    foreach (hnf_apply_fields() as $k => $lb) $body .= $lb . ': ' . $a[$k] . "\n";
-    $body .= "\n신청 목록: " . admin_url('admin.php?page=hnf-apply');
-    wp_mail(hnf_apply_notify_to(), '[인간과미래연구소] 참여 신청 — ' . $a['name'], $body);
+    $kind = $event === 'insight-writer' ? '인사이트 집필 희망' : '참여 신청';
+    $body = hnf_apply_events()[$event] . ($event === 'insight-writer' ? ' 신청' : ' 참여 신청') . "이 들어왔습니다.\n\n";
+    foreach (hnf_apply_fields($event) as $k => $lb) $body .= $lb . ': ' . $a[$k] . "\n";
+    $body .= "\n신청 목록: " . admin_url('admin.php?page=hnf-apply&event=' . $event);
+    wp_mail(hnf_apply_notify_to(), '[인간과미래연구소] ' . $kind . ' — ' . $a['name'], $body);
     $go('sent');
 }
 
@@ -75,13 +85,13 @@ function hnf_apply_page() {
     $event = sanitize_key($_GET['event'] ?? array_key_first($events));
     if (!isset($events[$event])) $event = array_key_first($events);
     $rows = hnf_apply_rows($event);
-    $F = hnf_apply_fields();
+    $F = hnf_apply_fields($event);
     echo '<div class="wrap hnf-wrap"><h1 class="hnf-h1">참여 신청</h1>';
     if (!empty($_GET['deleted'])) echo '<div class="notice notice-success"><p>신청 1건을 지웠습니다.</p></div>';
     echo '<form method="get" style="margin:16px 0"><input type="hidden" name="page" value="hnf-apply"><select name="event" onchange="this.form.submit()">';
     foreach ($events as $k => $lb) echo '<option value="' . esc_attr($k) . '"' . selected($k, $event, false) . '>' . esc_html($lb) . '</option>';
     echo '</select></form>';
-    echo '<p><b>' . count($rows) . '명</b> 신청 &nbsp; <a class="button button-primary" href="' . esc_url(wp_nonce_url(admin_url('admin-post.php?action=hnf_apply_csv&event=' . $event), 'hnf_apply_csv')) . '">엑셀(CSV)로 내려받기</a></p>';
+    echo '<p><b>' . count($rows) . '건</b> 신청 &nbsp; <a class="button button-primary" href="' . esc_url(wp_nonce_url(admin_url('admin-post.php?action=hnf_apply_csv&event=' . $event), 'hnf_apply_csv')) . '">엑셀(CSV)로 내려받기</a></p>';
     echo '<table class="widefat striped"><thead><tr><th>번호</th><th>신청 일시</th>';
     foreach ($F as $lb) echo '<th>' . esc_html($lb) . '</th>';
     echo '<th></th></tr></thead><tbody>';
@@ -89,18 +99,18 @@ function hnf_apply_page() {
     foreach ($rows as $n => $p) {
         $a = get_post_meta($p->ID, 'hnf_a', true) ?: [];
         echo '<tr><td>' . ($n + 1) . '</td><td>' . esc_html(get_the_date('Y.m.d H:i', $p)) . '</td>';
-        foreach ($F as $k => $lb) echo '<td>' . esc_html($a[$k] ?? '') . '</td>';
+        foreach ($F as $k => $lb) echo '<td>' . nl2br(esc_html($a[$k] ?? '')) . '</td>';
         $del = wp_nonce_url(admin_url('admin-post.php?action=hnf_apply_del&id=' . $p->ID . '&event=' . $event), 'hnf_apply_del_' . $p->ID);
         echo '<td><a href="' . esc_url($del) . '" onclick="return confirm(\'이 신청을 지울까요? 되돌릴 수 없습니다.\')" style="color:#b32d2e">삭제</a></td></tr>';
     }
     echo '</tbody></table>';
-    echo '<p style="color:#666;margin-top:14px">개인정보이므로 행사가 끝나고 발표 자료를 보낸 뒤에는 지워 주세요. 새 신청이 들어오면 ' . esc_html(hnf_apply_notify_to()) . ' 로 알림 메일이 갑니다.</p></div>';
+    echo '<p style="color:#666;margin-top:14px">개인정보이므로 쓸 일이 끝나면 지워 주세요(행사는 발표 자료를 보낸 뒤, 인사이트 집필 희망은 게재 여부를 알려 드린 뒤). 새 신청이 들어오면 ' . esc_html(hnf_apply_notify_to()) . ' 로 알림 메일이 갑니다.</p></div>';
 }
 
 add_action('admin_post_hnf_apply_csv', function () {
     if (!current_user_can('edit_posts') || !check_admin_referer('hnf_apply_csv')) wp_die('권한이 없습니다.');
     $event = sanitize_key($_GET['event'] ?? '');
-    $F = hnf_apply_fields();
+    $F = hnf_apply_fields($event);
     header('Content-Type: text/csv; charset=UTF-8');
     header('Content-Disposition: attachment; filename="apply-' . $event . '-' . date('Ymd') . '.csv"');
     $o = fopen('php://output', 'w');

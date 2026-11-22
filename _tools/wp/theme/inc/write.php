@@ -9,7 +9,7 @@ const HNF_DEPTS = ['기획운영부', '미래혁신부', '연구개발부', '인
 
 /* 게시판별 칸 */
 function hnf_fields($slug) {
-    $body = ['body', '본문', 'text', true, '빈 줄로 문단을 나눕니다. 「## 소제목」, 「- 항목」, 「1. 항목」, 「**굵게**」를 쓸 수 있습니다.'];
+    $body = ['body', '본문', 'text', true, '빈 줄로 문단을 나눕니다. 「## 소제목」, 「- 항목」, 「1. 항목」, 「**굵게**」, 단추는 한 줄에 「[단추 글자 | 주소]」를 쓸 수 있습니다.'];
     $files = ['files', '첨부 파일', 'files', false, 'PDF·HWP·HWPX·DOCX·XLSX 등. 여러 개 가능, 끌어서 순서 바꾸기'];
     $photos = ['photos', '사진', 'images', false, '글 아래에 나옵니다(한 장이면 크게, 여러 장이면 나란히). 본문 중간에 넣으려면 본문 위 「본문에 사진 넣기」'];
     $F = [
@@ -82,6 +82,8 @@ function hnf_inline($s) {
     return $s;
 }
 const HNF_FIG_RE = '/^\\[\\s*사진\\s*(\\d+)\\s*(?:\\|\\s*(.*?))?\\s*\\]$/u';
+/* 본문 한 줄에 「[단추 인사이트 집필 희망 | https://inshnf.com/insight-apply/]」 → 가운데 단추 */
+const HNF_BTN_RE = '/^\\[\\s*단추\\s+(.+?)\\s*\\|\\s*((?:https?:\\/\\/|\\/)\\S+)\\s*\\]$/u';
 /* 고해상도 화면에서도 선명하게: 여러 크기(srcset)를 함께 넣는다 */
 function hnf_srcset($id, $size = 'large') {
     $ss = wp_get_attachment_image_srcset((int) $id, $size);
@@ -121,7 +123,10 @@ function hnf_txt2html($t) {
         $lines = array_values(array_filter(array_map('rtrim', explode("\n", $blk)), 'strlen'));
         $buf = [];
         foreach ($lines as $l) {
-            if (preg_match(HNF_FIG_RE, trim($l), $m)) {
+            if (preg_match(HNF_BTN_RE, trim($l), $m)) {
+                if ($buf) { $out .= hnf_txt_block($buf); $buf = []; }
+                $out .= '<p class="tp-btn"><a href="' . esc_url($m[2]) . '" class="btn">' . esc_html($m[1]) . ' <i class="chev r"></i></a></p>';
+            } elseif (preg_match(HNF_FIG_RE, trim($l), $m)) {
                 if ($buf) { $out .= hnf_txt_block($buf); $buf = []; }
                 $out .= hnf_fig($m[1], trim($m[2] ?? ''));
             } else $buf[] = $l;
