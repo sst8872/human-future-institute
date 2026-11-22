@@ -95,7 +95,9 @@ function hnf_srcset($id, $size = 'large') {
     if (!$ss) return '';
     // --mw: 이 그림이 커질 수 있는 최대 폭(원래 크기, 세로 640px 제한 반영). CSS가 width:100%와 함께 쓴다
     $m = wp_get_attachment_metadata((int) $id);
-    $mw = (!empty($m['width']) && !empty($m['height'])) ? min((int) $m['width'], (int) round(640 * $m['width'] / $m['height'])) : 0;
+    // hnf_dpr: 2배 해상도로 만든 그림(도표 등)은 파일 폭의 절반으로 보여 줌 → 그림 속 글자가 본문 글자 크기와 비슷해짐
+    $d = max(1, (int) get_post_meta((int) $id, 'hnf_dpr', true));
+    $mw = (!empty($m['width']) && !empty($m['height'])) ? min((int) round($m['width'] / $d), (int) round(640 * $m['width'] / $m['height'])) : 0;
     return ' srcset="' . esc_attr($ss) . '" sizes="(max-width: 960px) 100vw, 960px"' . ($mw ? ' style="--mw:' . $mw . 'px"' : '');
 }
 function hnf_fig($id, $cap) {
