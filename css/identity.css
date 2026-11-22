@@ -237,9 +237,9 @@
   .f-emblem .logo-img{grid-row:1 / span 2}
   .f-emblem b{align-self:end}
   .f-emblem em{align-self:start;transform-origin:left center}
-  /* 11-22: 휴대폰에서 로고만 커 보이던 것 — 엠블럼을 글자 두 줄 높이에 맞추고, 이름 칸이 영문 폭만큼 늘어나 가운데로 밀리던 것을 막음 */
+  /* 11-22: 휴대폰에서 로고만 커 보이던 것 — 엠블럼(36px)을 글자 두 줄 높이(약 34px)·상단 로고 비율에 맞추고, 이름 칸이 영문 폭만큼 늘어나 가운데로 밀리던 것을 막음 */
   .f-emblem{text-align:left;column-gap:10px}
-  .f-emblem .logo-img{width:46px;height:46px}
+  .f-emblem .logo-img{width:36px;height:36px}
   .f-emblem b{justify-self:start;font-size:15px}
 }
 
