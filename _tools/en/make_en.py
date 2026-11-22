@@ -210,7 +210,7 @@ BODY['en-greeting'] = '''
       <div class="grt-box"><h5>Why the humanities and social sciences matter more than ever</h5><p>The future is something we choose before it is something we predict. Deciding what kind of future is desirable cannot rest on technological efficiency alone; it calls for reflection on human dignity, justice in our communities, and coexistence with nature. This is why the humanities and social sciences are needed all the more in an age of technology.</p></div>
       <div class="grt-box"><h5>An interdisciplinary research community</h5><p>The Institute aims to be an interdisciplinary community in which researchers from science education, the humanities, the social sciences, education, and science and technology work together. Where different disciplinary perspectives meet, we seek a balanced understanding of the future and alternatives that can be put into practice.</p></div>
       <div class="grt-box"><h5>To schools and to society</h5><p>Building on rigorous research and open scholarly exchange, the Institute will return its findings to classrooms and to society, and contribute to shaping a human-centered discourse on the future.</p><p style="margin-top:14px">Thank you.</p></div>
-      <div class="grt-sign"><p>Director, Institute for Human &amp; Future <b>Hoejeong Yoon</b></p><img src="images/sign.png" alt="Signature of Hoejeong Yoon" class="sign-img"></div>
+      <div class="grt-sign"><p>Director, Institute for Human &amp; Future <b>Heojeong Yoon</b></p><img src="images/sign.png" alt="Signature of Heojeong Yoon" class="sign-img"></div>
     </div>
   </div>
 </div>
@@ -304,12 +304,12 @@ BODY['en-strategy'] = strategy()
 
 # 이름 로마자·직위·소속: 연구소 확인 필요
 PEOPLE = [
-    ('Hoejeong Yoon', 'Director', 'Department of Science Education, Chuncheon National University of Education', '#c9a24a', '#7a5a1d', '윤회정'),
+    ('Heojeong Yoon', 'Director', 'Department of Science Education, Chuncheon National University of Education', '#c9a24a', '#7a5a1d', '윤회정'),
     ('Eunmi Park', 'Head, Planning &amp; Operations Division', 'Department of Science Education, Chuncheon National University of Education', '#2a4aa8', '#0c2e86', '박은미'),
     ('Jiyoung Kim', 'Head, Future Innovation Division', 'Education Policy Research Institute, Seoul Education Research &amp; Information Institute', '#1d6fa8', '#0c3e66', '김지영'),
-    ('Dami Bang', 'Head, Research &amp; Development Division', 'University College, The Catholic University of Korea', '#3a3f55', '#00103a', '방담이'),
+    ('Dami Bang', 'Head, Research &amp; Development Division', 'Catholic College, The Catholic University of Korea', '#3a3f55', '#00103a', '방담이'),
     ('Jiyeon Na', 'Member', 'Department of Science Education, Chuncheon National University of Education', '#5b4a9a', '#2e2470', '나지연'),
-    ('Sumin Lim', 'Member', 'School of Creative Convergence, Chonnam National University', '#1c7a6a', '#0d4a40', '임수민'),
+    ('Soomin Lim', 'Member', 'Faculty of Creative Convergence, Chonnam National University', '#1c7a6a', '#0d4a40', '임수민'),
     ('Sunhee Kim', 'Member', 'Department of Mathematics Education, Kangwon National University', '#a8452a', '#6a2410', '김선희'),
 ]
 
