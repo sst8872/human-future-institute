@@ -845,3 +845,31 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 /* 글 속 색 글자 링크 「[글자](주소)」 */
 .tx-link,.wp-content a.tx-link,.tp-info a.tx-link{color:#1d4fd8;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .tx-link:hover,.wp-content a.tx-link:hover,.tp-info a.tx-link:hover{color:var(--primary)}
+
+/* 연구 분야 (11-22): 사진 때문에 너무 길던 것 줄임
+   - 넓은 화면(두 칸): 사진을 조금 납작하게(600×330)
+   - 1280px 이하(한 칸): 사진을 가로로 긴 띠로 만들고, 아래쪽 반투명 남색 음영 위에 분야 이름·제목을 얹음
+     (글 칸을 display:contents로 풀어 분야 이름·제목만 사진 위 칸에 배치, 설명·키워드는 바로 아래) */
+.f-row .ph img{aspect-ratio:600/330}
+@media (max-width:1280px){
+  .f-row,.f-row:nth-of-type(even){grid-template-columns:1fr;grid-template-rows:1fr auto;gap:0;padding:28px 0}
+  .f-row>div:not(.ph){display:contents}
+  .f-row .ph{grid-row:1 / 3;grid-column:1;order:0}
+  .f-row .ph img{aspect-ratio:3/1;display:block}
+  .f-row .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,16,58,.92) 0%,rgba(0,16,58,.72) 38%,rgba(0,16,58,0) 75%);pointer-events:none}
+  .f-row .ph b{z-index:1;padding:10px 16px;font-size:18px}
+  .f-row .badge{grid-row:1;grid-column:1;align-self:end;justify-self:start;position:relative;z-index:2;margin:0 28px 8px;background:var(--accent);color:var(--deep)}
+  .f-row h5{grid-row:2;grid-column:1;align-self:end;position:relative;z-index:2;margin:0 28px 22px;color:#fff;font-size:24px;line-height:1.35;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+  .f-row h5+p{margin-top:20px}
+  .f-row .kw{margin:16px 0}
+}
+@media (max-width:640px){
+  .f-row,.f-row:nth-of-type(even){padding:22px 0}
+  .f-row .ph img{aspect-ratio:16/9}
+  .f-row .badge{margin:0 16px 6px}
+  .f-row h5{font-size:19px;margin:0 16px 14px}
+  .f-row h5+p{margin-top:16px;font-size:15px;line-height:1.7}
+  .f-row .kw{gap:6px;margin:14px 0}
+  .f-row .kw span{padding:4px 11px;font-size:13px}
+  .f-row .team{padding-top:14px}
+}
