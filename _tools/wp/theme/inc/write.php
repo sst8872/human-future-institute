@@ -42,7 +42,7 @@ function hnf_fields($slug) {
             ['tags', '키워드(해시태그)', 'line', false, '예: #생성형AI #교사교육 #지속가능성 (띄어 쓰면 여러 개, # 없이 써도 됨)'],
         ],
         'pub-reports' => [
-            ['rep_no', '보고서 번호', 'line', false, '예: HNF 연구 보고서 2026-12'],
+            ['rep_no', '보고서 번호', 'line', false, '예: HNF 연구보고서 [2026-1호]'],
             ['lead', '연구책임자', 'line', false, ''],
             ['team', '참여 연구진', 'line', false, ''],
             ['summary', '요약', 'area', true, '보고서 내용을 3~5문장으로'],
