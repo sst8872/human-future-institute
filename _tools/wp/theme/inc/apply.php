@@ -71,7 +71,7 @@ function hnf_apply_submit() {
 /* 관리 화면 */
 add_action('admin_menu', function () {
     add_submenu_page('hnf-home', '참여·집필 신청', '참여·집필 신청', 'edit_posts', 'hnf-apply', 'hnf_apply_page');
-}, 20);
+}, 1000);   // 「연구소 관리」(admin.php, 999) 다음에 붙여야 주소가 admin.php?page=hnf-apply 로 바르게 생김
 
 function hnf_apply_rows($event) {
     $q = ['post_type' => 'hnf_apply', 'post_status' => 'private', 'numberposts' => -1, 'orderby' => 'date', 'order' => 'ASC'];
