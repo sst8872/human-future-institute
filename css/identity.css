@@ -572,8 +572,7 @@ body.sub .header .logo .logo-img{
 .lang span{opacity:.35;font-weight:300}
 .am-lang{margin-left:auto;margin-right:14px;padding:4px 11px;border:1px solid rgba(255,255,255,.45);border-radius:14px;font-family:Roboto,sans-serif;font-size:13px;font-weight:500;letter-spacing:.6px;color:#fff}
 .m-lang{display:none}
-/* 1025~1280: 국문 메뉴가 꽉 차서 머리글 전환은 감추고 전체 메뉴·바닥글의 ENG로 */
-@media (min-width:1025px) and (max-width:1280px){body:not(.lang-en) .hd-right .lang{display:none}}
+
 @media (max-width:1024px){
   .m-lang{display:flex;align-items:center;justify-content:center;width:44px;height:44px;font-family:Roboto,sans-serif;font-size:13px;font-weight:500;letter-spacing:.6px}
 }
@@ -611,4 +610,22 @@ body.lang-en .circles .cc strong{line-height:1.3}
 @media (max-width:640px){
   .en-ppl colgroup,.en-ppl th:first-child,.en-ppl td:first-child{display:none}
   .en-ppl th,.en-ppl td{padding-left:8px;padding-right:8px;font-size:14px}
+}
+
+/* ---------- 컴퓨터 화면 머리글 로고 줄이기 + 사이트맵 옆 KOR|ENG (2026-11-22) ---------- */
+@media (min-width:1025px){
+  .logo a{gap:8px}
+  .logo .logo-img{width:32px;height:32px}
+  .logo span{height:32px}
+  .logo b{font-size:16px;line-height:19px;margin-top:-1px}
+  .logo em{font-size:8.5px;line-height:10px;margin-bottom:-2px}
+  .hd-bottom .inner{padding-left:215px}
+}
+@media (min-width:1281px) and (max-width:1499px){.hd-bottom .inner{padding-left:205px}}
+@media (min-width:1025px) and (max-width:1280px){
+  .hd-bottom .inner{padding-left:206px}
+  .gnb>ul>li>a{padding:0 7px}
+  .lang{margin:0 0 0 4px;gap:5px;font-size:12px;letter-spacing:.3px}
+  .hd-right .search-box button{width:34px}
+  .hd-bottom .inner>.btn-menu{margin-left:8px}
 }
