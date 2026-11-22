@@ -250,9 +250,11 @@
     const arrows = (sel, prev, next, opt, loopMin) => {
       const n = document.querySelectorAll(sel + ' .swiper-slide').length;
       if (!n || !$(sel)) return;
-      if (n < 2) { document.querySelectorAll(prev + ',' + next).forEach(b => { b.disabled = true; }); return; }
-      new Swiper(sel, Object.assign({ loop: n >= loopMin, rewind: n < loopMin, simulateTouch: false,
-        autoplay: auto, navigation: { prevEl: prev, nextEl: next } }, opt));
+      // 글이 하나뿐이어도 자리(가운데 정렬)는 Swiper가 잡게 하고, 단추만 흐리게
+      if (n < 2) document.querySelectorAll(prev + ',' + next).forEach(b => { b.disabled = true; });
+      new Swiper(sel, Object.assign({ loop: n >= loopMin, rewind: n > 1 && n < loopMin, simulateTouch: false,
+        allowTouchMove: n > 1, autoplay: n > 1 ? auto : false,
+        navigation: n > 1 ? { prevEl: prev, nextEl: next } : false }, opt));
     };
     arrows('.rp-swiper', '.rp-prev', '.rp-next', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 5, speed: 400 }, 3);
     arrows('.hl-swiper', '.hl-prev', '.hl-next', { slidesPerView: 1, spaceBetween: 6, speed: 500,
