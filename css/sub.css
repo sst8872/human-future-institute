@@ -371,6 +371,7 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 .proj .yr b{display:block;font-size:30px;font-weight:300;color:var(--deep)}
 .proj h5{font-size:19px;color:#111;margin:8px 0 6px}
 .proj p{font-size:14px;color:#777}
+.proj p.en{margin:-2px 0 8px;font-size:14.5px;color:#666;line-height:1.5}
 .proj .bar{height:6px;background:#eef1f8;border-radius:3px;overflow:hidden}
 .proj .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),#1d44d8);transition:width 1.4s ease}
 .proj .pct{display:flex;justify-content:space-between;font-size:13px;color:#888;margin-bottom:8px}
