@@ -38,3 +38,9 @@
 - 고친 뒤 Playwright로 1440·1100·iPhone 13 확인(가로 넘침 0, 모바일 메뉴 실제 탭)
 - 커밋 메시지는 한국어로, 무엇을 고쳤는지
 - 비밀번호는 Claude가 읽거나 입력하지 않음
+
+## 영문 소개 사이트 (11-22)
+- 주소 inshnf.com/en/ (WP 부모 페이지 `en` ID 338, 하위 greeting·vision·strategy·people·research·projects·contact = 339~345)
+- 원본 글은 `_tools/en/make_en.py` → 실행하면 `en*.html` 생성 → 평소처럼 build·배포. `page.php`가 하위 페이지를 `부모-자식` 틀(en-greeting.php)로 그림
+- 국문 머리글 KOR|ENG(1025~1280은 자리가 좁아 감춤), 전체 메뉴 머리의 ENG, 바닥글 English. 게시판(공지·소식)은 국문만
+- 이름 로마자·직위·소속 영문, 연구 과제 영문 제목은 연구소 확인 필요
