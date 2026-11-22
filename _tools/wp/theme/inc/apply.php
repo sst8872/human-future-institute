@@ -1,6 +1,6 @@
 <?php
 /**
- * 행사 참여 신청 (주간 포럼 등) · 인사이트 집필 희망
+ * 행사 참여 신청 (주간 포럼 등) · 인사이트 집필 신청
  * - 신청서: 원본 HTML event-apply.html · insight-apply.html 의 form.apply-form → admin-post.php?action=hnf_apply
  * - 신청 종류(event)마다 칸이 다름: hnf_apply_fields($event)
  * - 저장: 글 종류 hnf_apply(공개 안 함), 칸은 meta hnf_a
@@ -10,7 +10,7 @@
 function hnf_apply_events() {
     return [
         'forum-01' => '제1차 주간 포럼 「인간과 미래 담론에 대한 연구소의 역할」 (2026. 11. 28.)',
-        'insight-writer' => '인사이트 집필 희망',
+        'insight-writer' => '인사이트 집필 신청',
     ];
 }
 /* 신청 알림 받는 주소 (연구소 메일, 2026-11-21 사용자 지시) */
@@ -60,8 +60,8 @@ function hnf_apply_submit() {
     update_post_meta($id, 'hnf_event', $event);
     update_post_meta($id, 'hnf_email', strtolower($a['email']));
 
-    $kind = $event === 'insight-writer' ? '인사이트 집필 희망' : '참여 신청';
-    $body = hnf_apply_events()[$event] . ($event === 'insight-writer' ? ' 신청' : ' 참여 신청') . "이 들어왔습니다.\n\n";
+    $kind = $event === 'insight-writer' ? '인사이트 집필 신청' : '참여 신청';
+    $body = hnf_apply_events()[$event] . ($event === 'insight-writer' ? '' : ' 참여 신청') . "이 들어왔습니다.\n\n";
     foreach (hnf_apply_fields($event) as $k => $lb) $body .= $lb . ': ' . $a[$k] . "\n";
     $body .= "\n신청 목록: " . admin_url('admin.php?page=hnf-apply&event=' . $event);
     wp_mail(hnf_apply_notify_to(), '[인간과미래연구소] ' . $kind . ' — ' . $a['name'], $body);
@@ -104,7 +104,7 @@ function hnf_apply_page() {
         echo '<td><a href="' . esc_url($del) . '" onclick="return confirm(\'이 신청을 지울까요? 되돌릴 수 없습니다.\')" style="color:#b32d2e">삭제</a></td></tr>';
     }
     echo '</tbody></table>';
-    echo '<p style="color:#666;margin-top:14px">개인정보이므로 쓸 일이 끝나면 지워 주세요(행사는 발표 자료를 보낸 뒤, 인사이트 집필 희망은 게재 여부를 알려 드린 뒤). 새 신청이 들어오면 ' . esc_html(hnf_apply_notify_to()) . ' 로 알림 메일이 갑니다.</p></div>';
+    echo '<p style="color:#666;margin-top:14px">개인정보이므로 쓸 일이 끝나면 지워 주세요(행사는 발표 자료를 보낸 뒤, 인사이트 집필 신청은 게재 여부를 알려 드린 뒤). 새 신청이 들어오면 ' . esc_html(hnf_apply_notify_to()) . ' 로 알림 메일이 갑니다.</p></div>';
 }
 
 add_action('admin_post_hnf_apply_csv', function () {
