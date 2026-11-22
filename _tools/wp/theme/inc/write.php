@@ -87,7 +87,7 @@ function hnf_inline($s) {
     return $s;
 }
 const HNF_FIG_RE = '/^\\[\\s*사진\\s*(\\d+)\\s*(?:\\|\\s*(.*?))?\\s*\\]$/u';
-/* 본문 한 줄에 「[단추 인사이트 집필 희망 | https://inshnf.com/insight-apply/]」 → 가운데 단추 */
+/* 본문 한 줄에 「[집필 신청서 | https://inshnf.com/insight-apply/]」 → 가운데 단추 */
 const HNF_BTN_RE = '/^\\[\\s*단추\\s+(.+?)\\s*\\|\\s*((?:https?:\\/\\/|\\/)\\S+)\\s*\\]$/u';
 /* 고해상도 화면에서도 선명하게: 여러 크기(srcset)를 함께 넣는다 */
 function hnf_srcset($id, $size = 'large') {

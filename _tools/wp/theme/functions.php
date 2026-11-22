@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261122zl');
+define('HNF_VER', '20261122zm');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';

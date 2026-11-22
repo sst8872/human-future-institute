@@ -34,7 +34,7 @@ function hnf_post_board($id) {
     }
     return null;
 }
-/* 글의 하위 분류(일반·학술행사 …) */
+/* 글의 하위 분류(일반·학술 행사 …) */
 function hnf_post_kid($id) {
     foreach (get_the_category($id) as $c) if ($c->parent) return $c;
     return null;
