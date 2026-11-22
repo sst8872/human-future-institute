@@ -538,3 +538,19 @@ body.sub .header .logo .logo-img{
 
 /* 서브 페이지 머리 바: 메뉴별 사진을 색 빼고 은은하게 (2026-11-21) — 각 페이지 <section class="sub-visual" style="--sv:url(...)"> */
 .sub-visual::before{background:var(--sv,none) center/cover no-repeat;filter:grayscale(1);opacity:var(--svop,.16)}
+
+/* 머리글 로고 (11-22): 푸터와 같은 방식으로 엠블럼 높이 = 국문·영문 두 줄 높이, 엠블럼 바로 옆에 붙임
+   컴퓨터 38px = 이름 22px + 간격 4px + 영문 12px / 휴대폰·태블릿 34px = 20 + 4 + 10
+   원판 여백(padding)을 없애 보이는 원 크기 = 칸 크기, 영문은 굵지 않게 */
+.logo a{display:flex;align-items:center;gap:9px}
+.logo .logo-img{width:38px;height:38px;padding:0;flex:none}
+.logo span{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;height:38px;line-height:1}
+.logo b{font-size:19px;line-height:22px;margin-top:-1px}
+.logo em{font-size:10px;line-height:12px;margin:0 0 -2.5px;font-weight:500}
+@media (max-width:1024px){
+  .logo .logo-img{width:34px;height:34px}
+  .logo span{height:34px}
+  .logo b{font-size:17px;line-height:20px}
+  .logo em{font-size:9px;line-height:10px}
+}
+@media (max-width:1024px){.logo em{margin-bottom:-1px}}
