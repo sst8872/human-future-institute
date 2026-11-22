@@ -25,7 +25,7 @@ PAGES = [
     ('en-contact', 'contact', 'Contact', 'inst01.jpg', 'sv-location.jpg', 'CONTACT'),
 ]
 GROUPS = [
-    ('about', 'About', [('en-greeting', 'Greeting'), ('en-vision', 'Vision'), ('en-strategy', 'Strategy'), ('en-organization', 'Organization'), ('en-people', 'People')]),
+    ('about', 'About', [('en-greeting', 'Greeting'), ('en-vision', 'Vision'), ('en-strategy', 'Development Strategy'), ('en-organization', 'Organization'), ('en-people', 'People')]),
     ('research', 'Research', [('en-research', 'Research Areas'), ('en-projects', 'Research Projects'), ('en-results', 'Members&rsquo; Research')]),
     ('contact', 'Contact', []),
 ]
@@ -295,7 +295,7 @@ def strategy():
              '<p class="c-txt">We will synthesize and evaluate the results of the first cycle and, on that basis, set the theme and research directions for the second cycle.</p></div></div>')
     return f'''
 <div class="hist">
-  <ul class="hist-nav"><li><a href="#hist-top">Strategy<i class="chev r"></i></a></li><li><a href="#st1">Forecasting</a></li><li><a href="#st2">Exploring</a></li><li><a href="#st3">Transition</a></li><li><a href="#st4">Synthesis · 2035</a></li></ul>
+  <ul class="hist-nav"><li><a href="#hist-top">Development Strategy<i class="chev r"></i></a></li><li><a href="#st1">Forecasting</a></li><li><a href="#st2">Exploring</a></li><li><a href="#st3">Transition</a></li><li><a href="#st4">Synthesis · 2035</a></li></ul>
   <div>
     <div id="hist-top">
       <p class="c-lead">From 2026 to 2035, our first cycle, we set a specific theme each year<br>under the academic theme &ldquo;Human &amp; Future&rdquo; and carry on research and academic forums.</p>
