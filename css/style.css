@@ -407,7 +407,7 @@ body.lock{overflow:hidden}
 
 
 /* =========================================================
-   글꼴 크기·굵기 (1920px 화면 기준)
+   글꼴 크기·굵기
    (섹션별 크기는 위 각 섹션 규칙에 같은 값으로 들어 있습니다)
    ========================================================= */
 .sites a{font-size:15px;font-weight:600;opacity:1}
@@ -587,7 +587,7 @@ body.lock{overflow:hidden}
 .md-lab,.md-banner .more{color:var(--on-dark-text)}
 
 /* =========================================================
-   오른쪽 아래 둥근 버튼 (QUICK 85px, 링크·맨위 52px)
+   오른쪽 아래 둥근 버튼
    ========================================================= */
 .float-btns{right:20px;bottom:30px;gap:10px}
 .float-btns>*,.f-link-wrap>.f-link{box-shadow:0 4px 14px rgba(0,0,0,.18)}

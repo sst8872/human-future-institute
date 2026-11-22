@@ -237,7 +237,7 @@
     renderCal(+b.dataset.m);
   }));
 
-  /* 8-3. 슬라이드 (Swiper) — 4초 자동, 무한 반복 */
+  /* 8-3. 슬라이드 (Swiper)  */
   if (window.Swiper) {
     const auto = { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true };
     // 행사가 하나뿐이면 넘기기 단추를 숨기고 반복·자동 넘김을 끔
