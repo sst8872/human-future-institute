@@ -18,7 +18,7 @@ function hnf_apply_notify_to() { return 'hjyoon@cnue.ac.kr'; }
 function hnf_apply_fields($event = '') {
     if ($event === 'insight-writer')
         return ['org' => '소속', 'position' => '직위', 'name' => '성명', 'phone' => '전화번호', 'email' => '이메일',
-            'title' => '인사이트 제목', 'outline' => '개요'];
+            'title' => '제목', 'outline' => '개요'];
     return ['org' => '소속', 'position' => '직위', 'major' => '전공', 'name' => '성명', 'email' => '이메일', 'phone' => '전화번호'];
 }
 /* 여러 줄로 받는 칸과 최대 글자 수 */
