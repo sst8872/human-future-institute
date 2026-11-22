@@ -699,3 +699,15 @@ body.lang-en .org .o-col ul li{padding-left:12px;text-indent:-12px}
   .f-emblem b{font-size:13px;line-height:1.2}
   .f-emblem em{font-size:7px}
 }
+/* 영문 첫 화면 바로가기: About · Research · Contact 묶음별로 (2026-11-22) */
+.en-groups{margin-top:60px;display:grid;gap:44px}
+.en-group{display:grid;grid-template-columns:170px minmax(0,1fr);gap:30px;align-items:start;padding-top:28px;border-top:1px solid #e3e6ee}
+.en-group h4{font-size:24px;color:#111;line-height:1.2}
+.en-group h4 small{display:block;margin-bottom:8px;font-family:Roboto,sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--gold,#b8913a)}
+.en-group .en-links{margin-top:0;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.en-group .en-links strong{margin-top:0;font-size:19px}
+.en-group .en-links a{padding:24px 44px 24px 22px}
+.en-group .en-links i{right:18px}
+@media (min-width:1025px) and (max-width:1280px){.en-group .en-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1024px){.en-group{grid-template-columns:1fr;gap:18px}.en-group .en-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.en-group .en-links{grid-template-columns:minmax(0,1fr)}}
