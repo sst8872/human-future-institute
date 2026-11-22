@@ -176,7 +176,7 @@
 .inst-pane{background:var(--ink)}
 @media (min-width:1025px){
   .inst-sec{height:680px}
-  .inst-pane::after{content:"";position:absolute;top:0;right:0;bottom:0;width:52%;background:var(--bg) center/cover}
+  .inst-pane::after{content:"";position:absolute;top:0;right:0;bottom:0;width:52%;background:var(--bg) var(--bgpos,center)/cover}
   .inst-pane .inner{max-width:none;padding-left:max(40px,calc((100% - 1600px)/2 + 40px));padding-right:calc(52% + 60px)}
   .inst-btns{gap:18px 40px;flex-wrap:wrap;margin:38px 0 44px}
   .inst-btns a,.inst-links strong{font-size:22px}
@@ -199,7 +199,7 @@
 .inst-tabs button.on::before{content:none}
 @media (max-width:1024px){
   .inst-pane{flex-direction:column;align-items:stretch;padding:90px 0 0}
-  .inst-pane::after{content:"";display:block;height:220px;margin-top:40px;background:var(--bg) center/cover}
+  .inst-pane::after{content:"";display:block;height:220px;margin-top:40px;background:var(--bg) var(--bgpos,center)/cover}
   .inst-tabs{gap:24px;padding:28px 24px 0;left:0;right:0}
   .inst-tabs button{flex:none;height:auto}
 }
