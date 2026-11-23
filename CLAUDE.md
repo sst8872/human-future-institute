@@ -72,3 +72,4 @@
 - 학술 주제 2029 「인류와 기계의 공존」(Coexistence of Humanity and Machines), 2031 「인류의 삶과 생태 공동체의 과제」(The Life of Humanity and the Challenges of the Ecological Community)
 - 인사이트 1호 핵심 문구: 앞으로는 인류가 무엇을 할 수 있는가보다 무엇을 소중히 여기고 어떻게 더불어 살아가는가를 함께 따져 보아야 합니다
 - 휴대폰에서 <br>이 감춰지는 곳(.c-lead·.grt-lead·.v-banner strong·.clm-title)은 <br> 앞에 띄어쓰기
+- **문구·이름을 바꾼 뒤 점검 범위(11-23 로그인 화면 옛 로고를 놓친 뒤 정함)**: ① 공개 페이지 전부를 캐시 피하는 주소와 **일반 주소** 둘 다 ② 로그인 화면(wp-login.php)·404·검색·/feed/·/wp-sitemap.xml ③ CSS가 불러오는 그림(`url(...)`)·테마 images 전체 OCR(tesseract kor+eng) ④ 같은 이름으로 덮어쓴 파일이 어디서 쓰이는지(쓰이면 새 이름으로) ⑤ 첨부 파일 글자(hwp·docx·pdf) ⑥ DB 전체 검색(`wp db search`, 수정 이력 revision은 공개 안 됨)
