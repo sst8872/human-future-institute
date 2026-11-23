@@ -63,3 +63,12 @@
 - DB는 `wp search-replace`로 바꿈(바꾸기 전 해당 행은 서버 `~/hnf_setup/before_rename.json`에 보관). `wp db export`는 서버에서 막혀 있음
 - 랩탑·PC 작업 폴더 이름(「인간과 미래 연구소」)은 경로라서 그대로
 - **파일을 같은 이름으로 덮어쓰면 사이트 앞단 캐시(CDN)가 예전 파일을 계속 내보낼 수 있다**(11-23 양식 한글 파일에서 확인). 첨부 파일·그림을 바꿀 때는 새 이름(예: `-v2`)으로 올리고 첨부 정보·본문 주소를 바꾼다(또는 사용자에게 hPanel → CDN → Flush cache 부탁)
+
+## 11-23 확정 문구 (국문 / 영문)
+- 비전: 기술 변혁의 시대, 인류의 내일을 묻는 미래 담론 선도 / Leading future discourse that asks what tomorrow holds for humanity in an era of technological transformation
+- 설립 목적 01: 기술이 인류의 능력과 삶의 경계를 바꾸는 시대에… / reshaping the capabilities of humanity and the boundaries of our lives · 02: …인류가 자연과 더불어 지속할 수 있는 미래를 위해… / toward a future in which humanity can live sustainably with nature
+- 인사말 제목·첫 화면 05(OUR BELIEF): 기술의 속도보다 방향을 묻습니다 / We ask about the direction of technology, not just its speed. 첫 화면 03: 2026 THEME 「인공지능 등 신기술과 / 인간 개념의 재정의」
+- 「인간」(본성·존엄·가치)과 「인류」(사람 전체의 삶·능력·미래·자연과의 공존)를 구분해 씀. 「인간 중심의 미래 담론」 「인간의 가치를 중심에 둔」은 쓰지 않음
+- 학술 주제 2029 「인류와 기계의 공존」(Coexistence of Humanity and Machines), 2031 「인류의 삶과 생태 공동체의 과제」(The Life of Humanity and the Challenges of the Ecological Community)
+- 인사이트 1호 핵심 문구: 앞으로는 인류가 무엇을 할 수 있는가보다 무엇을 소중히 여기고 어떻게 더불어 살아가는가를 함께 따져 보아야 합니다
+- 휴대폰에서 <br>이 감춰지는 곳(.c-lead·.grt-lead·.v-banner strong·.clm-title)은 <br> 앞에 띄어쓰기
