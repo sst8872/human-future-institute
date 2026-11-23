@@ -1,4 +1,3 @@
-# 인사이트 영문판 원고(1·2호). 고친 뒤 실행 → insight_en.json → hnf_f의 *_en 칸에 넣음([사진 FIG |]는 영문 그림 번호로 바꿈)
 import json
 
 E = {}
@@ -60,13 +59,13 @@ refs_en="""Cho, C.-W. (2025, August 4). AI textbooks become "educational materia
 Framework Act on the Development of Artificial Intelligence and the Creation of a Foundation for Trust, Act No. 21311 (2026) (Rep. of Korea). https://www.law.go.kr/LSW/lsRvsDocInfoR.do?lsiSeq=282791
 Hwang, Y.-R. (2026, August 5). Essay-type questions for the CSAT and a shift to absolute grading under review; public deliberation to begin in October [in Korean]. Money Today. https://www.mt.co.kr/policy/2026/08/05/2026080416393769572
 International Commission on the Futures of Education. (2021). Reimagining our futures together: A new social contract for education. UNESCO. https://doi.org/10.54675/ASRB4722
-IPCC. (2023). Climate change 2023: Synthesis report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change (H. Lee & J. Romero, Eds.). IPCC. https://doi.org/10.59327/IPCC/AR6-9789291691647
+IPCC. (2023). Climate change 2023: Synthesis report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change (Core Writing Team, H. Lee, & J. Romero, Eds.). IPCC. https://doi.org/10.59327/IPCC/AR6-9789291691647
 Miao, F., & Holmes, W. (2023). Guidance for generative AI in education and research. UNESCO. https://unesdoc.unesco.org/ark:/48223/pf0000386693
 Ministry of Education. (2022a, November 18). This is how the 2022 revised curriculum changes! (1) Korean, English, social studies, and science [in Korean]. Korea Policy Briefing. https://www.korea.kr/news/policyNewsView.do?newsId=148908450
 Ministry of Education. (2022b). General guidelines for the elementary and secondary school curriculum (Ministry of Education Notice No. 2022-33, Separate Volume 1) [in Korean]. Ministry of Education.
 Ministry of Education. (2023). Realizing personalized education for all: Digital-based education innovation plan [in Korean]. https://educator.edunet.net/sub/sub1/digital_down_001.pdf
 Ministry of Education. (2026a). 2026 implementation plan for the program supporting the development of basic AI curricula at universities [in Korean]. https://www.kcue.or.kr/_upload/news/2026/02/24/application_42700dc16bdc32822c7e93d1d2759cfe.pdf
-Ministry of Education. (2026b). Leaping toward a nation of irreplaceable talent through "education for everyone's future" (Work plan for the second half of 2026) [in Korean]. https://eiec.kdi.re.kr/policy/materialView.do?num=285117
+Ministry of Education. (2026b, August 5). Leaping toward a nation of irreplaceable talent through "education for everyone's future" (Work plan for the second half of 2026) [in Korean]. https://eiec.kdi.re.kr/policy/materialView.do?num=285117
 OECD. (2019). OECD future of education and skills 2030: OECD learning compass 2030: A series of concept notes. OECD. https://www.oecd.org/education/2030-project/
 World Economic Forum. (2025). The future of jobs report 2025. https://www.weforum.org/publications/the-future-of-jobs-report-2025/""",
 )
