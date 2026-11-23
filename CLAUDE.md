@@ -48,3 +48,5 @@
 - 이름 로마자·직위·소속 영문, 연구 과제 영문 제목은 연구소 확인 필요
 - 11-22 추가: 영문 Organization(/en/organization/)·Members' Research(/en/results/). Members' Research는 「구성원 연구 성과」 게시판 글을 그대로 가져와 영문 칸(영문 제목·영문 저자·영문 게재지, 글쓰기 화면에 있음)을 보여 줌(`inc/en.php` `hnf_en_results`). 새 글을 올릴 때 영문 칸을 채우면 영문 사이트에도 나옴
 - 발전전략 표는 영문만 휴대폰에서 칸을 위아래로 쌓음(`.en-matrix`)
+- 11-23 영문 Insight: /en/insight/(WP 페이지 ID 366, 부모 en) 목록, /en/insight/<글 번호>/ 글 보기(`inc/en.php` `hnf_en_insight`, 재작성 규칙 → 바꾸면 `wp rewrite flush`). 국문 인사이트 글의 영문 칸(title_en·author_en·summary_en·quote_en·thumb_en·body_en·refs_en·tags_en, 글쓰기 화면 아래쪽)에 영문 제목·본문이 있으면 나옴. 1·2호 번역 완료(영문 표지 371·369, 영문 그림 368·370은 `hnf_dpr`=2)
+- 도표 그림은 폭 640×2배로 만들고 첨부 meta `hnf_dpr`=2 → 화면에서 640으로 보여 그림 속 글자가 본문(15px)과 비슷해짐
