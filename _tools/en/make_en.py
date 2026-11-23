@@ -222,7 +222,7 @@ BODY['en'] = '''
     <li><a href="en-results.html"><strong>Members&rsquo; Research</strong><span>Articles, reports, and presentations</span><i class="chev r"></i></a></li>
   </ul></section>
   <section class="en-group"><h4>Insight</h4><ul class="en-links">
-    <li><a href="en-insight.html"><strong>Insight</strong><span>Essays on humans and the future by our researchers</span><i class="chev r"></i></a></li>
+    <li><a href="en-insight.html"><strong>Insight</strong><span>Essays by researchers, practitioners, and educators</span><i class="chev r"></i></a></li>
   </ul></section>
   <section class="en-group"><h4>Contact</h4><ul class="en-links">
     <li><a href="en-contact.html"><strong>Contact</strong><span>Address, phone, email, and directions</span><i class="chev r"></i></a></li>
@@ -439,7 +439,7 @@ BODY['en-results'] = results()
 
 # Insight: 국문 인사이트 글 가운데 영문 칸을 채운 글만 WordPress가 그때그때 보여 줌(inc/en.php hnf_en_insight)
 BODY['en-insight'] = '''
-<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series, in which our researchers share their reflections and proposals on humans and the future.<br>Issues are published in Korean and also made available in English.</p>
+<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series of reflections and proposals on humans and the future.<br>It is written by the Institute&rsquo;s researchers together with researchers from a wide range of related disciplines, activists and practitioners in the field, and educators.<br>Issues are published in Korean and also made available in English.</p>
 <!--HNF:en-insight-->
 <p class="tbl-note">English editions are listed here as they become available.</p>
 <!--/HNF:en-insight-->
