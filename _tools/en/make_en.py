@@ -351,7 +351,7 @@ def people():
     rows = ''.join(f'<tr><td>{i}</td><td>{pos}</td><td class="strong">{n}</td><td class="l">{aff}</td></tr>'
                    for i, (n, pos, aff, *_r) in enumerate(PEOPLE, 1))
     return f'''
-<p class="c-lead">The Institute for Human &amp; Future is an interdisciplinary research community<br>of researchers from a range of disciplines.</p>
+<p class="c-lead">The Institute for Human &amp; Future brings together researchers<br>from a range of disciplines.</p>
 <div class="ppl-wrap" style="margin-top:50px">
   <div class="swiper ppl-swiper"><div class="swiper-wrapper">{slides}</div></div>
   <button type="button" class="sw-arr prev" aria-label="Previous"><i class="chev"></i></button>
@@ -439,7 +439,7 @@ BODY['en-results'] = results()
 
 # Insight: 국문 인사이트 글 가운데 영문 칸을 채운 글만 WordPress가 그때그때 보여 줌(inc/en.php hnf_en_insight)
 BODY['en-insight'] = '''
-<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series of reflections and proposals on humans and the future.<br>It is written by the Institute&rsquo;s researchers together with researchers from a wide range of related disciplines, activists and practitioners in the field, and educators.<br>Issues are published in Korean and also made available in English.</p>
+<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series of reflections and proposals on humans and the future.<br>Contributors include the Institute&rsquo;s researchers, scholars from a wide range of related disciplines, activists and practitioners in the field, and educators.<br>Issues are published in Korean and also made available in English.</p>
 <!--HNF:en-insight-->
 <p class="tbl-note">English editions are listed here as they become available.</p>
 <!--/HNF:en-insight-->
@@ -454,7 +454,7 @@ FIELDS = [
      ['Directions of education', 'Teaching methods', 'Future education', 'Schools &amp; classrooms']),
     ('research02', 'Technology &amp; Society', 'Examining how emerging technologies affect individuals and communities',
      'We study the impact of AI and other emerging technologies on individuals and communities from a social science perspective, and identify policy issues and recommendations to prepare for the future.',
-     ['Artificial intelligence', 'Technology gaps', 'Social science research', 'Policy recommendations']),
+     ['Artificial intelligence', 'Technology divide', 'Social science research', 'Policy recommendations']),
     ('research04', 'Technology Ethics &amp; Citizenship', 'Developing human-centered technology ethics and future citizenship',
      'We work toward human-centered technology ethics and study citizenship education for those who will live through an era of technological transformation.',
      ['Technology ethics', 'Ethical design', 'Future citizenship', 'Citizenship education']),
@@ -520,7 +520,7 @@ BODY['en-contact'] = f'''
   <div style="--lc:#1c7a45"><div class="ico"><svg viewBox="0 0 40 40"><rect x="9" y="5" width="22" height="25" rx="5"/><path d="M9 19h22M14 35l3-5M26 35l-3-5"/></svg><span>Transit</span></div>
     <div><strong>By train or bus</strong><ul class="dot-list"><li>ITX-Cheongchun / Gyeongchun Line: get off at Namchuncheon or Chuncheon Station, then take a taxi or city bus</li><li>Express / intercity bus: get off at Chuncheon Intercity Bus Terminal, then take a taxi or city bus</li></ul></div></div>
 </div>
-<p class="tbl-note">※ Please contact us by phone ({TEL}) or email before your visit, and we will be glad to guide you.</p>
+<p class="tbl-note">※ Please contact us by phone ({TEL}) or email before your visit, and we will be glad to help you find your way.</p>
 '''
 
 
