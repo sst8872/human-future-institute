@@ -89,7 +89,7 @@ SUBVIS = '''<section class="sub-visual" style="--img:url(../images/{img});--dim:
 HERO = '''<section class="visual en-visual hv-ed" data-static aria-label="Vision">
   <div class="track">
     <div class="slide sa t-center on" style="--img:url(../images/hero01.jpg);--dim:0.22">
-      <div class="txt"><p class="eyebrow">VISION</p><p class="lead">In an era of technological transformation, centered on human values</p><h2 class="big"><em>Leading</em> Future Discourse</h2><a href="en-vision.html" class="hv-link hv-small">VIEW MORE <i class="chev r"></i></a></div>
+      <div class="txt"><p class="eyebrow">VISION</p><p class="lead">In an era of technological transformation, asking what tomorrow holds for humanity</p><h2 class="big"><em>Leading</em> Future Discourse</h2><a href="en-vision.html" class="hv-link hv-small">VIEW MORE <i class="chev r"></i></a></div>
     </div>
   </div>
   <div class="hv-axis" aria-hidden="true"><span>HUMAN</span><i><b></b></i><span>FUTURE</span></div>
@@ -105,7 +105,7 @@ def page(fn, group, title, img, sv, svg_group, body):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | Institute for Humanity &amp; Future</title>
-<meta name="description" content="Institute for Humanity &amp; Future — human-centered research on the future in an era of technological transformation">
+<meta name="description" content="Institute for Humanity &amp; Future — research on the future of humanity in an era of technological transformation">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
 <link rel="icon" href="images/favicon-hnf.png">
@@ -207,7 +207,7 @@ BODY = {}
 
 BODY['en'] = '''
 <p class="c-lead">The Institute for Humanity &amp; Future is an interdisciplinary research institute<br>based at Chuncheon National University of Education, Korea.</p>
-<div class="v-banner en-banner"><strong>Leading future discourse centered on human values<br>in an era of technological transformation</strong></div>
+<div class="v-banner en-banner"><strong>Leading future discourse that asks what tomorrow holds for humanity<br>in an era of technological transformation</strong></div>
 <p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, the humanities and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
 <div class="en-groups">
   <section class="en-group"><h4>About</h4><ul class="en-links">
@@ -249,11 +249,11 @@ BODY['en-greeting'] = '''
 
 BODY['en-vision'] = '''
 <div class="vrow rv"><h4>Vision</h4>
-  <div class="v-banner"><strong>Leading future discourse centered on human values<br>in an era of technological transformation</strong></div></div>
+  <div class="v-banner"><strong>Leading future discourse that asks what tomorrow holds for humanity<br>in an era of technological transformation</strong></div></div>
 <div class="vrow rv"><h4>Founding Purposes</h4>
   <ol class="goal">
-    <li><span class="n">01</span><strong>Exploring enduring human values</strong><p>In an age when technology is reshaping human capabilities and boundaries, we explore the values that make us human, such as dignity and autonomy, relationships and empathy.</p></li>
-    <li><span class="n">02</span><strong>Setting future directions for education and society</strong><p>Reading changes in technology, the humanities and society, and the environment together, we propose concrete directions for education and the tasks society must prepare for.</p></li>
+    <li><span class="n">01</span><strong>Exploring enduring human values</strong><p>In an age when technology is reshaping the capabilities of humanity and the boundaries of our lives, we explore the values that make us human, such as dignity and autonomy, relationships and empathy.</p></li>
+    <li><span class="n">02</span><strong>Setting future directions for education and society</strong><p>Reading changes in technology, the humanities and society, and the environment together, we propose concrete directions for education and the tasks society must prepare for, toward a future in which humanity can live sustainably with nature.</p></li>
     <li><span class="n">03</span><strong>Reappraising and disseminating the value of the humanities and social sciences</strong><p>In debates about the future that center on technology, we reaffirm the academic and social significance of the humanities and social sciences, and disseminate our research to schools, local communities, and civil society.</p></li>
   </ol></div>
 <div class="vrow rv"><h4>Three Perspectives</h4>

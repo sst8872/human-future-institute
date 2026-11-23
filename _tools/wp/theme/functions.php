@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261123s');
+define('HNF_VER', '20261123t');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -48,7 +48,7 @@ function hnf_og() {
     if (is_front_page() || is_home()) $title = $full;
     elseif (is_singular()) $title = wp_strip_all_tags(get_the_title()) . ' | 인류와미래연구소';
     else $title = hnf_title($full);
-    $desc  = '기술 변혁의 시대, 인간의 가치를 중심에 둔 미래 담론을 선도하는 춘천교육대학교 인류와미래연구소';
+    $desc  = '기술 변혁의 시대, 인류의 내일을 묻는 미래 담론을 선도하는 춘천교육대학교 인류와미래연구소';
     if (is_singular('post')) {
         $f = get_post_meta(get_the_ID(), 'hnf_f', true);
         $t = is_array($f) ? trim(wp_strip_all_tags((string) ($f['summary'] ?? $f['body'] ?? ''))) : '';
