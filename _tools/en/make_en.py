@@ -312,19 +312,19 @@ def strategy():
   <ul class="hist-nav"><li><a href="#hist-top">Development Strategy<i class="chev r"></i></a></li><li><a href="#st1">Forecasting</a></li><li><a href="#st2">Exploring</a></li><li><a href="#st3">Transition</a></li><li><a href="#st4">Synthesis · 2035</a></li></ul>
   <div>
     <div id="hist-top">
-      <p class="c-lead">From 2026 to 2035, our first cycle, we set a specific theme each year<br>under the academic theme &ldquo;Human &amp; Future&rdquo; and carry on research and academic forums.</p>
+      <p class="c-lead">From 2026 to 2035, our first cycle, we set a specific theme each year<br>under the academic theme &ldquo;Humanity &amp; Future&rdquo; and carry on research and academic forums.</p>
       <ul class="dot-list c-txt" style="margin-top:24px">
         <li>Systematically explore, from the perspective of the humanities and social sciences, the changes technological transformation brings to the human mode of existence, social structures, and the relationship between humans and nature</li>
         <li>Build up research in three stages: Forecasting Future Change (2026&ndash;2028), Exploring Future Challenges (2029&ndash;2031), and Transition to the Future (2032&ndash;2034)</li>
         <li>Apply a spiral research structure in which each stage cycles through three perspectives &mdash; technology, the humanities and society, and the environment &mdash; year by year, deepening our questions layer by layer</li>
         <li>In 2035, synthesize and evaluate the results of the first cycle and set the theme and research directions for the second cycle</li>
       </ul>
-      <h4 class="c-tit" style="margin-top:60px"><small>THE 1ST 10-YEAR CYCLE</small>Academic Theme of the First 10-Year Cycle: &ldquo;Human &amp; Future&rdquo;</h4>
+      <h4 class="c-tit" style="margin-top:60px"><small>THE 1ST 10-YEAR CYCLE</small>Academic Theme of the First 10-Year Cycle: &ldquo;Humanity &amp; Future&rdquo;</h4>
       <div class="tbl-scroll"><table class="tbl matrix en-matrix"><colgroup><col style="width:190px"><col><col><col></colgroup>
         <thead class="pc-only"><tr><th>Stage</th><th><span class="badge p-tech">Technology</span></th><th><span class="badge p-hum">Humanities &amp; Society</span></th><th><span class="badge p-env">Environment</span></th></tr></thead>
         <tbody>{rows}</tbody></table></div>
     </div>
-    <div class="hist-head"><strong>HUMAN &amp; FUTURE</strong><span>2026 — 2035</span></div>
+    <div class="hist-head"><strong>HUMANITY &amp; FUTURE</strong><span>2026 — 2035</span></div>
     <div class="hist-line">{line}</div>
   </div>
 </div>
