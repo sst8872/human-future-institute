@@ -7,7 +7,7 @@ title_en="Rethinking Humanity in an Era of Technological Transformation",
 author_en="Heojeong Yoon (Director, Institute for Humanity & Future; Professor, Department of Science Education, Chuncheon National University of Education)",
 summary_en="Marking the opening of the Institute for Humanity & Future, this essay asks anew how we should define the human in the age of artificial intelligence. Looking at problems that technology alone cannot solve, such as inequality and the climate crisis, it examines the role of university researchers and the need for interdisciplinary collaboration, and proposes three directions for universities and research.",
 quote_en="The future is something we choose before it is something we predict. Which future we choose cannot be decided by technological efficiency alone; it must take into account human dignity, justice in our communities, and coexistence with nature.",
-tags_en="#HumanAndFuture #ArtificialIntelligence #ConceptOfTheHuman #InterdisciplinaryResearch #EducationPolicy #ClimateCrisis",
+tags_en="#HumanityAndFuture #ArtificialIntelligence #ConceptOfTheHuman #InterdisciplinaryResearch #EducationPolicy #ClimateCrisis",
 body_en="""The Institute for Humanity & Future has opened its doors. Researchers in science education, the humanities, the social sciences, education, and science and technology have come together to explore the human values that endure in an era of rapid technological change, and to connect what we learn to the future of education and society. On the occasion of our opening, I would like to share why we are turning to this subject now, and where I believe university research should be heading.
 
 ## How Should We Define the Human in the Age of AI?
