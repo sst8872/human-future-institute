@@ -656,7 +656,7 @@ body.sub .header .lang,.header.open .lang{color:#e0c473}
 @media (min-width:1025px){.am-lang{display:none}}
 /* 영문 연구 분야 고리: 글자를 가운데 흰 원에서 조금 비켜 놓기 */
 body.lang-en .f-intro .ring>div{font-size:15px;line-height:1.25;box-sizing:border-box}
-body.lang-en .f-intro .ring .a{padding-bottom:16%}
+body.lang-en .f-intro .ring .a{padding-bottom:5%}
 body.lang-en .f-intro .ring .b{padding-right:12%}
 body.lang-en .f-intro .ring .c{padding-left:12%}
 body.lang-en .f-intro .ring .core{font-size:13px;line-height:1.3}
