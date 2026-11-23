@@ -56,3 +56,9 @@
 - 첫 화면 사진 글은 왼쪽 아래(`.visual.hv-ed`, css/identity.css 끝), 사진 아래 띠 3칸 `inc/strip.php` `hnf_home_strip()`(index.html `<!--HNF:home-strip-->` 자리)
 - 자동: 인사이트 최신 2편 + 공지사항 › 학술 행사(news-notice-2) 최신 1건(모자라면 공지·소식). 관리 화면 「연구소 관리 → 첫 화면 소식 띠」에서 칸마다 글·머리 글자·아래 글자 선택(option `hnf_strip`), 고른 글이 없어지면 그 칸은 자동
 - 휴대폰은 띠를 옆으로 넘겨 봄. 첫 화면 맨 위에서는 「맨 위로」 단추 감춤(body.hv-top). 영문 첫 화면(en.html)은 그대로
+
+## 이름 변경 (11-23)
+- 연구소 이름 「인류와미래연구소」, 영문 「Institute for Humanity & Future」(HNF·로고 그림·도메인 inshnf.com 유지). 학술 주제 「인간과 미래」(Human & Future)와 주간 포럼 제목은 그대로
+- 로고 글자 그림은 `_tools/make_logo_horizontal.py`·`make_logo_vertical.py`(Pretendard: `npm pack pretendard` → /tmp/pt)로 SVG를 만들고 Playwright로 PNG. 포스터는 `_tools/poster/forum-01/poster_blue.html`
+- DB는 `wp search-replace`로 바꿈(바꾸기 전 해당 행은 서버 `~/hnf_setup/before_rename.json`에 보관). `wp db export`는 서버에서 막혀 있음
+- 랩탑·PC 작업 폴더 이름(「인간과 미래 연구소」)은 경로라서 그대로
