@@ -893,7 +893,15 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
   .f-intro .ring>div{font-size:15px}
   .f-intro .ring>div small{font-size:10px;letter-spacing:.6px}
 }
+@media (max-width:640px){
+  body.lang-en .f-intro .ring .b{padding-right:0}
+  body.lang-en .f-intro .ring .c{padding-left:0}
+}
 @media (max-width:380px){
-  .f-intro .ring .b{padding-right:6%}
-  .f-intro .ring .c{padding-left:6%}
+  .f-intro .ring .b,body.lang-en .f-intro .ring .b{padding-right:6%}
+  .f-intro .ring .c,body.lang-en .f-intro .ring .c{padding-left:6%}
+}
+@media (max-width:340px){
+  .f-intro .ring .b,body.lang-en .f-intro .ring .b{padding:14% 10% 0 0}
+  .f-intro .ring .c,body.lang-en .f-intro .ring .c{padding:14% 0 0 10%}
 }
