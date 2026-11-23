@@ -108,6 +108,11 @@
 
   /* 5. 맨 위로 */
   $('.f-gotop')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  // 첫 화면: 맨 위에 있을 때는 「맨 위로」 단추를 감춤(사진 아래 소식 띠를 가리지 않게)
+  if ($('.hv-ed')) {
+    const top = () => document.body.classList.toggle('hv-top', window.scrollY < 200);
+    top(); window.addEventListener('scroll', top, { passive: true });
+  }
 
   /* 6. 메인 비주얼 — 옆으로 밀리는 무한 반복 슬라이드
         5초마다 넘김(DELAY), 넘어가는 시간 1.2초(css/identity.css 의 .track.anim).

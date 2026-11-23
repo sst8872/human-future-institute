@@ -208,6 +208,8 @@ def main():
             assert a1 > a0, slug
             s = s[:a0] + region('main', slug, s[a0:a1]) + s[a1:]
         if slug == 'index':
+            # 첫 화면 아래 소식 띠(자동 + 관리 화면에서 고른 글)
+            s = re.sub(r'<!--HNF:home-strip-->.*?<!--/HNF:home-strip-->', '<?php hnf_home_strip(); ?>', s, flags=re.S)
             # 공지 목록 자료 + 인사이트 슬라이드
             s = s.replace('<script src="js/main.js', '<script>window.HNF_NOTICES=<?=hnf_notices_json()?>;</script>\n<script src="js/main.js', 1)
             a = s.find('<div class="swiper rp-swiper"><div class="swiper-wrapper">')

@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261123o');
+define('HNF_VER', '20261123p');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -13,6 +13,7 @@ require __DIR__ . '/inc/editor.php';
 require __DIR__ . '/inc/write.php';
 require __DIR__ . '/inc/apply.php';
 require __DIR__ . '/inc/en.php';
+require __DIR__ . '/inc/strip.php';
 
 add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
