@@ -79,7 +79,7 @@ function hnf_en_insight() {
             echo '<p class="meta"><span class="badge gray">Insight' . ($e['issue'] !== '' ? ' No. ' . esc_html($e['issue']) : '') . '</span></p>';
             echo '<strong>' . esc_html($e['title']) . '</strong>';
             if ($e['tags']) echo '<span class="p-tags">' . implode(' ', array_map(fn($t) => '#' . esc_html($t), array_slice($e['tags'], 0, 3))) . '</span>';
-            echo '<time>' . esc_html(get_the_date('M j, Y', $p)) . '</time></a>';
+            echo '<time>' . esc_html(date('M j, Y', strtotime($p->post_date))) . '</time></a>';
         }
         echo '</div>';
         return;
@@ -99,7 +99,7 @@ function hnf_en_insight() {
     echo '<article class="b-view en-view">';
     echo '<header class="bv-head"><span class="badge gray">Insight' . ($e['issue'] !== '' ? ' No. ' . esc_html($e['issue']) : '') . '</span>';
     echo '<h4 class="bv-title">' . esc_html($e['title']) . '</h4>';
-    echo '<p class="bv-meta"><span>' . hnf_en_writer($p) . '</span><time>' . esc_html(get_the_date('F j, Y', $p)) . '</time><a class="bv-ko" href="' . esc_url(get_permalink($p)) . '" lang="ko">한국어 원문</a></p></header>';
+    echo '<p class="bv-meta"><span>' . hnf_en_writer($p) . '</span><time>' . esc_html(date('F j, Y', strtotime($p->post_date))) . '</time><a class="bv-ko" href="' . esc_url(get_permalink($p)) . '" lang="ko">한국어 원문</a></p></header>';
     echo '<div class="bv-body wp-content">' . $html;
     if ($tags) echo '<p class="tp-tags">' . implode('', array_map(fn($t) => '<span>#' . esc_html($t) . '</span>', $tags)) . '</p>';
     echo '</div>';
