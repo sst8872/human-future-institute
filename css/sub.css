@@ -884,3 +884,12 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 .v-banner strong{line-height:1.4}
 @media (max-width:1024px){.v-banner{height:auto;min-height:200px;padding:36px 28px}}
 @media (max-width:640px){.v-banner{min-height:160px;padding:32px 22px}.v-banner strong{font-size:21px;line-height:1.45;word-break:keep-all}.v-banner strong br{display:none}}
+
+/* 연구 분야 원 — 휴대폰에서 가운데 흰 원(기술 윤리)이 양옆 원의 글자(기술과 사회 등)를 가리던 것 (2026-11-23) */
+@media (max-width:640px){
+  .f-intro .ring>div{font-size:15px}
+  .f-intro .ring>div small{font-size:10px;letter-spacing:.6px}
+  .f-intro .ring .b{padding-right:13%}
+  .f-intro .ring .c{padding-left:13%}
+  .f-intro .ring .core{width:104px;height:104px;font-size:14px}
+}
