@@ -50,3 +50,4 @@
 - 발전전략 표는 영문만 휴대폰에서 칸을 위아래로 쌓음(`.en-matrix`)
 - 11-23 영문 Insight: /en/insight/(WP 페이지 ID 366, 부모 en) 목록, /en/insight/<글 번호>/ 글 보기(`inc/en.php` `hnf_en_insight`, 재작성 규칙 → 바꾸면 `wp rewrite flush`). 국문 인사이트 글의 영문 칸(title_en·author_en·summary_en·quote_en·thumb_en·body_en·refs_en·tags_en, 글쓰기 화면 아래쪽)에 영문 제목·본문이 있으면 나옴. 1·2호 번역 완료(영문 표지 371·369, 영문 그림 368·370은 `hnf_dpr`=2)
 - 도표 그림은 폭 640×2배로 만들고 첨부 meta `hnf_dpr`=2 → 화면에서 640으로 보여 그림 속 글자가 본문(15px)과 비슷해짐
+- 한국인 이름을 영문으로 옮길 때 하이픈(-)을 쓰지 않음: 이름은 붙여 쓰고(Heojeong Yoon), 참고 문헌 이니셜도 C.W.처럼 하이픈 없이(Cho, C.W.) — 11-23 사용자 지시
