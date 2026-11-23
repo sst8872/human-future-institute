@@ -448,7 +448,7 @@ BODY['en-insight'] = '''
 
 FIELDS = [
     ('research03', 'Human Values', 'Asking what human nature and values mean in an era of technological transformation',
-     'In an age when technology is reshaping human capabilities and boundaries, we explore from a humanities perspective the values that make us human, such as dignity and autonomy, relationships and empathy.',
+     'In an age when technology is reshaping the capabilities of humanity and the boundaries of our lives, we explore from a humanities perspective the values that make us human, such as dignity and autonomy, relationships and empathy.',
      ['Human nature', 'Dignity &amp; autonomy', 'Relationships &amp; empathy', 'Humanities research']),
     ('research01', 'Future Education', 'Researching education that responds to social change',
      'Reading changes in technology, the humanities and society, and the environment together, we study the directions and methods of education. Our findings are shared with schools and local communities.',
