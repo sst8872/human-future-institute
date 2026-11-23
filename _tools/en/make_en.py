@@ -86,13 +86,14 @@ SUBVIS = '''<section class="sub-visual" style="--img:url(../images/{img});--dim:
   <p class="sv-group">{svg_group}</p>
 </section>'''
 # 국문 첫 화면 첫 장(지구 그림)과 같은 틀, 한 장만(data-static: 넘김 없음)
-HERO = '''<section class="visual en-visual" data-static aria-label="Vision">
+HERO = '''<section class="visual en-visual hv-ed" data-static aria-label="Vision">
   <div class="track">
     <div class="slide sa t-center on" style="--img:url(../images/hero01.jpg);--dim:0.22">
       <div class="txt"><p class="eyebrow">VISION</p><p class="lead">In an era of technological transformation, centered on human values</p><h2 class="big"><em>Leading</em> Future Discourse</h2><a href="en-vision.html" class="hv-link hv-small">VIEW MORE <i class="chev r"></i></a></div>
     </div>
   </div>
   <div class="hv-axis" aria-hidden="true"><span>HUMAN</span><i><b></b></i><span>FUTURE</span></div>
+  <!--HNF:en-home-strip--><nav class="hv-strip" aria-label="Latest Insights"><div class="hv-strip-in"><a href="en-insight.html"><small>INSIGHT No. 2</small><b>The Age of AI: Machines That Know the Answers, Humans Who Ask the Questions</b><time>November 22, 2026</time></a><a href="en-insight.html"><small>INSIGHT No. 1</small><b>Rethinking Humanity in an Era of Technological Transformation</b><time>November 21, 2026</time></a><a href="en-insight.html"><small>INSIGHT</small><b>All Insights</b><time>Essays by researchers, practitioners, and educators</time></a></div></nav><!--/HNF:en-home-strip-->
 </section>'''
 
 

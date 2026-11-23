@@ -232,6 +232,9 @@ def main():
             assert a >= 0, 'hl-sec'
             b = s.find('</section>', a) + len('</section>')
             s = s[:a] + '<?php if (hnf_has_stories()): ?>' + s[a:b] + '<?php endif; ?>' + s[b:]
+        if slug == 'en':
+            # 영문 첫 화면 아래 띠: 영문 인사이트 최신 3편
+            s = re.sub(r'<!--HNF:en-home-strip-->.*?<!--/HNF:en-home-strip-->', '<?php hnf_en_home_strip(); ?>', s, flags=re.S)
         if slug == 'en-results':
             # 영문 연구 성과: 정적 목록 대신 「구성원 연구 성과」 게시판 글(영문 칸)을 그때그때 그림
             s = re.sub(r'<!--HNF:en-results-->.*?<!--/HNF:en-results-->', '<?php hnf_en_results(); ?>', s, flags=re.S)

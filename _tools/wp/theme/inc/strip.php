@@ -148,3 +148,19 @@ function hnf_strip_page() {
     submit_button('저장');
     echo '</form></div>';
 }
+
+/* 영문 첫 화면 아래 띠: 영문 인사이트 최신 3편(모자라면 마지막 칸은 「All Insights」) */
+function hnf_en_home_strip() {
+    $ps = array_slice(hnf_en_insight_posts(), 0, 3);
+    echo '<nav class="hv-strip" aria-label="Latest Insights"><div class="hv-strip-in">';
+    foreach ($ps as $p) {
+        $n = preg_replace('/\D/', '', hnf_issue($p->ID));
+        printf('<a href="%s"><small>%s</small><b>%s</b><time>%s</time></a>', esc_url(hnf_en_insight_url($p->ID)),
+            esc_html('INSIGHT' . ($n !== '' ? ' No. ' . $n : '')), esc_html(hnf_en_f($p->ID)['title']),
+            esc_html(date('F j, Y', strtotime($p->post_date))));
+    }
+    if (count($ps) < 3) {
+        printf('<a href="%s"><small>INSIGHT</small><b>All Insights</b><time>Essays by researchers, practitioners, and educators</time></a>', esc_url(hnf_en_insight_url()));
+    }
+    echo '</div></nav>';
+}
