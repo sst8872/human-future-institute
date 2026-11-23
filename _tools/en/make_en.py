@@ -206,8 +206,8 @@ def page(fn, group, title, img, sv, svg_group, body):
 BODY = {}
 
 BODY['en'] = '''
-<p class="c-lead">The Institute for Humanity &amp; Future is an interdisciplinary research institute<br>based at Chuncheon National University of Education, Korea.</p>
-<div class="v-banner en-banner"><strong>Leading future discourse that asks what tomorrow holds for humanity<br>in an era of technological transformation</strong></div>
+<p class="c-lead">The Institute for Humanity &amp; Future is an interdisciplinary research institute <br>based at Chuncheon National University of Education, Korea.</p>
+<div class="v-banner en-banner"><strong>Leading future discourse that asks what tomorrow holds for humanity <br>in an era of technological transformation</strong></div>
 <p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, the humanities and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
 <div class="en-groups">
   <section class="en-group"><h4>About</h4><ul class="en-links">
@@ -249,7 +249,7 @@ BODY['en-greeting'] = '''
 
 BODY['en-vision'] = '''
 <div class="vrow rv"><h4>Vision</h4>
-  <div class="v-banner"><strong>Leading future discourse that asks what tomorrow holds for humanity<br>in an era of technological transformation</strong></div></div>
+  <div class="v-banner"><strong>Leading future discourse that asks what tomorrow holds for humanity <br>in an era of technological transformation</strong></div></div>
 <div class="vrow rv"><h4>Founding Purposes</h4>
   <ol class="goal">
     <li><span class="n">01</span><strong>Exploring enduring human values</strong><p>In an age when technology is reshaping the capabilities of humanity and the boundaries of our lives, we explore the values that make us human, such as dignity and autonomy, relationships and empathy.</p></li>
@@ -261,7 +261,7 @@ BODY['en-vision'] = '''
     <p style="text-align:center;margin-bottom:10px"><b style="font-size:18px;color:#111;box-shadow:inset 0 -9px 0 #f3e8c9">Reading technology, the humanities and society, and the environment together</b></p>
     <div class="circles">
       <div class="cc"><svg viewBox="0 0 56 56" stroke="#1d44d8"><rect x="16" y="16" width="24" height="24" rx="3"/><rect x="23" y="23" width="10" height="10"/><path d="M22 10v6M28 10v6M34 10v6M22 40v6M28 40v6M34 40v6M10 22h6M10 28h6M10 34h6M40 22h6M40 28h6M40 34h6"/></svg><strong>Technology</strong></div><span class="plus">+</span>
-      <div class="cc"><svg viewBox="0 0 56 56" stroke="#c9a24a"><circle cx="20" cy="20" r="6"/><circle cx="36" cy="20" r="6"/><path d="M8 44c1-9 6-13 12-13s11 4 12 13M24 44c1-9 6-13 12-13s11 4 12 13"/></svg><strong>Humanities &amp;<br>Society</strong></div><span class="plus">+</span>
+      <div class="cc"><svg viewBox="0 0 56 56" stroke="#c9a24a"><circle cx="20" cy="20" r="6"/><circle cx="36" cy="20" r="6"/><path d="M8 44c1-9 6-13 12-13s11 4 12 13M24 44c1-9 6-13 12-13s11 4 12 13"/></svg><strong>Humanities &amp; <br>Society</strong></div><span class="plus">+</span>
       <div class="cc"><svg viewBox="0 0 56 56" stroke="#1c7a45"><path d="M12 44C12 22 26 10 46 10c0 22-12 34-34 34z"/><path d="M12 44L32 24"/></svg><strong>Environment</strong></div>
     </div>
   </div></div>
@@ -312,7 +312,7 @@ def strategy():
   <ul class="hist-nav"><li><a href="#hist-top">Development Strategy<i class="chev r"></i></a></li><li><a href="#st1">Forecasting</a></li><li><a href="#st2">Exploring</a></li><li><a href="#st3">Transition</a></li><li><a href="#st4">Synthesis · 2035</a></li></ul>
   <div>
     <div id="hist-top">
-      <p class="c-lead">From 2026 to 2035, our first cycle, we set a specific theme each year<br>under the academic theme &ldquo;Humanity &amp; Future&rdquo; and carry on research and academic forums.</p>
+      <p class="c-lead">From 2026 to 2035, our first cycle, we set a specific theme each year <br>under the academic theme &ldquo;Humanity &amp; Future&rdquo; and carry on research and academic forums.</p>
       <ul class="dot-list c-txt" style="margin-top:24px">
         <li>Systematically explore, from the perspective of the humanities and social sciences, the changes technological transformation brings to the human mode of existence, social structures, and the relationship between humans and nature</li>
         <li>Build up research in three stages: Forecasting Future Change (2026&ndash;2028), Exploring Future Challenges (2029&ndash;2031), and Transition to the Future (2032&ndash;2034)</li>
@@ -352,7 +352,7 @@ def people():
     rows = ''.join(f'<tr><td>{i}</td><td>{pos}</td><td class="strong">{n}</td><td class="l">{aff}</td></tr>'
                    for i, (n, pos, aff, *_r) in enumerate(PEOPLE, 1))
     return f'''
-<p class="c-lead">The Institute for Humanity &amp; Future brings together researchers<br>from a range of disciplines.</p>
+<p class="c-lead">The Institute for Humanity &amp; Future brings together researchers <br>from a range of disciplines.</p>
 <div class="ppl-wrap" style="margin-top:50px">
   <div class="swiper ppl-swiper"><div class="swiper-wrapper">{slides}</div></div>
   <button type="button" class="sw-arr prev" aria-label="Previous"><i class="chev"></i></button>
@@ -440,7 +440,7 @@ BODY['en-results'] = results()
 
 # Insight: 국문 인사이트 글 가운데 영문 칸을 채운 글만 WordPress가 그때그때 보여 줌(inc/en.php hnf_en_insight)
 BODY['en-insight'] = '''
-<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series of reflections and proposals on humans and the future.<br>Contributors include the Institute&rsquo;s researchers, scholars from a wide range of related disciplines, activists and practitioners in the field, and educators.<br>Issues are published in Korean and also made available in English.</p>
+<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series of reflections and proposals on humans and the future. <br>Contributors include the Institute&rsquo;s researchers, scholars from a wide range of related disciplines, activists and practitioners in the field, and educators. <br>Issues are published in Korean and also made available in English.</p>
 <!--HNF:en-insight-->
 <p class="tbl-note">English editions are listed here as they become available.</p>
 <!--/HNF:en-insight-->
@@ -471,8 +471,8 @@ def research():
                  f'  <p class="team"><span>Lead <b>Research &amp; Development Division</b></span></p></div></div>')
     return f'''
 <div class="f-intro rv">
-  <div class="ring"><div class="a">Human<br>Values</div><div class="b">Future<br>Education</div><div class="c">Technology<br>&amp; Society</div><div class="core">Technology<br>Ethics</div></div>
-  <div><h4 class="c-tit" style="margin:0 0 20px"><small>RESEARCH FIELDS</small>Researching humans and society<br>in an age of technology</h4>
+  <div class="ring"><div class="a">Human <br>Values</div><div class="b">Future <br>Education</div><div class="c">Technology <br>&amp; Society</div><div class="core">Technology <br>Ethics</div></div>
+  <div><h4 class="c-tit" style="margin:0 0 20px"><small>RESEARCH FIELDS</small>Researching humans and society <br>in an age of technology</h4>
   <p class="c-txt">Deciding what kind of future is desirable cannot rest on technological efficiency alone. The Institute pursues four areas of research that together ask about human dignity, justice in our communities, and coexistence with nature.</p>
   <a href="en-strategy.html" class="btn" style="margin-top:26px">Development Strategy <i class="chev r"></i></a></div>
 </div>
