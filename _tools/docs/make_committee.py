@@ -3,7 +3,9 @@
 필요: pip install python-hwpx (7.x). 이 폴더에서 `python3 make_committee.py`"""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'forms'))
-from make_hwp import Form, W, TW, INK, BORDER
+import make_hwp
+make_hwp.FONT = '함초롬돋움'   # 한글에 기본으로 들어 있는 무료 공문 글꼴(참고 공문과 비슷한 돋움 계열)
+from make_hwp import Form, W, TW, INK, BORDER, png_for_hwp
 from PIL import Image
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else '인류와미래연구소 운영위원회 위원 구성(안)'
@@ -18,8 +20,8 @@ def line(width=0.5):
 f.para('인류의 내일을 묻는 미래 담론', size=9, color='#555555', align='CENTER', after=160)
 p = f.para('', align='CENTER', after=200, border=line(0.7))
 im = Image.open('logo-set.png'); h_mm = 17; w_mm = h_mm * im.width / im.height   # 로고·국문 이름·영문 이름이 한 세트인 가로 로고
-p.add_picture(d.media.add_image(open('logo-set.png', 'rb').read(), 'png'),
-              width=int(w_mm / 25.4 * 7200), height=int(h_mm / 25.4 * 7200), alignment='CENTER')
+wu, hu = int(w_mm / 25.4 * 7200), int(h_mm / 25.4 * 7200)
+p.add_picture(d.media.add_image(png_for_hwp('logo-set.png', wu), 'png'), width=wu, height=hu, alignment='CENTER')
 
 # 수신·경유·제목
 f.para('수신자   내부결재', size=11, align='LEFT', before=120, after=40)
@@ -53,15 +55,24 @@ f.table([900, 1400, 1500, 4038, 1800], [
 ])
 B('7. 위원 임기: 2026. 11. 30. ~ 2028. 11. 29.(2년)  끝.', before=80)
 
-# 결재·시행 정보
-f.para('', after=600)
-foot = lambda t, **k: f.para(t, size=9.5, color='#333333', align='LEFT', before=k.get('before', 40), border=k.get('border'))
-bft = f.st.ensure_border_fill(border_color='#000000', border_width_mm=0.5, active_borders=['top'])
-foot('기안자                              검토                              결재  소장', before=200, border={'borderFillIDRef': bft, 'offsetTop': 300})
-foot('시행  인류와미래연구소-       (2026.    .    .)                    접수', before=160)
-foot('우 24328  강원특별자치도 춘천시 공지로 126 춘천교육대학교 과학관 203호  /  https://inshnf.com')
-foot('전화 033-260-6461   전송               /  hjyoon@cnue.ac.kr  /  공개')
+# 결재·시행 정보: 위에 굵은 줄, 아래는 테두리 없는 표로 칸을 맞춤
+f.para('', after=500)
+f.para('', after=0, border=line(0.5))
+F = 9.5
+lab = lambda t, **k: {'text': t, 'size': F, 'bold': True, 'align': 'LEFT', **k}
+val = lambda t='', **k: {'text': t, 'size': F, 'align': 'LEFT', **k}
+f.gap = 0
+f.table([1100, 2112, 1100, 2113, 1100, 2113], [
+    ([lab('기안자'), val(), lab('검토'), val(), lab('결재'), val('소장')], 620),
+], border='#FFFFFF', inner=(60, 40))
+f.table([1100, 5325, 1100, 2113], [
+    ([lab('시행'), val('인류와미래연구소-        (2026.     .     .)'), lab('접수'), val()], 0),
+    ([lab('우 24328'), val('강원특별자치도 춘천시 공지로 126 춘천교육대학교 과학관 203호'), lab('누리집'), val('https://inshnf.com')], 0),
+], border='#FFFFFF', inner=(60, 40))
+f.table([1100, 2112, 1100, 2113, 1100, 2113], [
+    ([lab('전화'), val('033-260-6461'), lab('전송'), val(), lab('전자우편'), val('hjyoon@cnue.ac.kr')], 0),
+    ([lab('공개 구분'), val('공개', span=5)], 0),
+], border='#FFFFFF', inner=(60, 40))
 
 d.save(OUT + '.hwpx')
-open(OUT + '.hwp', 'wb').write(d.to_bytes(format='hwp'))   # 한글 2014 이하용
-print('saved', OUT + '.hwpx', '.hwp')
+print('saved', OUT + '.hwpx')

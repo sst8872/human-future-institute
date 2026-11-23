@@ -16,6 +16,17 @@ LABEL = '#EEF1F7'
 INK = '#0B1633'
 
 
+def png_for_hwp(path, width_unit):
+    """한글은 그림 원래 크기를 PNG의 DPI로 계산한다(DPI가 없으면 96).
+    표시 폭(HWPUNIT)과 원래 크기가 같아지도록 DPI를 적어 넣어야 그림이 잘리거나 확대되지 않는다."""
+    import io
+    from PIL import Image
+    im = Image.open(path)
+    dpi = im.width * 7200 / width_unit
+    buf = io.BytesIO(); im.save(buf, 'PNG', dpi=(dpi, dpi))
+    return buf.getvalue()
+
+
 class Form:
     def __init__(self):
         d = self.d = HwpxDocument.new(inherit_style=False)
@@ -55,14 +66,15 @@ class Form:
         return {'borderFillIDRef': bf, 'offsetBottom': 600}
 
     # 표
-    def table(self, cols, rows):
+    def table(self, cols, rows, border=None, inner=None):
         """cols: twip 폭 목록. rows: [(cells, min_height_twip)], cell = dict(text|lines, label, span, align, valign, hint, size, color, bold)"""
         nr, nc = len(rows), len(cols)
         t = self.d.add_table(nr, nc)
         t.set_width(W * TW)
         t.set_column_widths(cols)
-        t.set_borders(border_width_mm=0.12, color=BORDER)
-        t.set_in_margins(left=140 * TW, right=140 * TW, top=90 * TW, bottom=90 * TW)
+        t.set_borders(border_width_mm=0.12, color=border or BORDER)
+        im = inner or (140, 90)
+        t.set_in_margins(left=im[0] * TW, right=im[0] * TW, top=im[1] * TW, bottom=im[1] * TW)
         t.set_treat_as_char(False)   # 글자처럼 취급 끔 → 쪽 경계에서 나뉠 수 있게(docx 표처럼)
         t.page_split = 'CELL'
         t.set_out_margins(left=0, right=0, top=0, bottom=self.gap * TW)  # 떠 있는 표 아래 여백 — 다음 제목·문장이 표에 붙지 않게
@@ -169,9 +181,9 @@ class Form:
         p = ft.paragraphs[0]
         p.clear_text()
         p.para_pr_id_ref = self.pp('CENTER')
-        data = open('brand.png', 'rb').read()
         h_mm = 34 * 25.4 / 96        # docx 그림 높이 34px(96dpi) ≈ 9mm
         w_mm = h_mm * 1667 / 400
+        data = png_for_hwp('brand.png', int(w_mm / 25.4 * 7200))
         item = self.d.media.add_image(data, 'png')
         p.add_picture(item, width=int(w_mm / 25.4 * 7200), height=int(h_mm / 25.4 * 7200), alignment='CENTER')
 
