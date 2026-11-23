@@ -879,3 +879,8 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
   .grt-q::before{top:-4px}
   .grt-q::after{bottom:-26px}
 }
+
+/* 비전 띠 — 휴대폰에서 높이가 200px로 고정돼 긴 문장(영문)이 상자 밖으로 잘리던 것 (2026-11-23) */
+.v-banner strong{line-height:1.4}
+@media (max-width:1024px){.v-banner{height:auto;min-height:200px;padding:36px 28px}}
+@media (max-width:640px){.v-banner{min-height:160px;padding:32px 22px}.v-banner strong{font-size:21px;line-height:1.45;word-break:keep-all}.v-banner strong br{display:none}}
