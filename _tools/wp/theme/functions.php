@@ -5,7 +5,7 @@
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261123x');
+define('HNF_VER', '20261123y');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -55,7 +55,7 @@ function hnf_og() {
         if ($t !== '') $desc = mb_substr(preg_replace('/\s+/u', ' ', preg_replace('/[#*\-]+ ?/u', '', $t)), 0, 110);
     }
     $url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . strtok($_SERVER['REQUEST_URI'], '?');
-    $img = HNF_T . '/images/og-home.jpg';
+    $img = HNF_T . '/images/og-home-v2.jpg';
     $m = [
         ['property', 'og:type', is_singular('post') ? 'article' : 'website'], ['property', 'og:site_name', $site],
         ['property', 'og:title', $title], ['property', 'og:description', $desc], ['property', 'og:url', $url],
