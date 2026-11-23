@@ -236,7 +236,7 @@ BODY['en-greeting'] = '''
 <div>
   <div class="grt">
     <div class="grt-l">
-      <h4 class="grt-q">Shaping a discourse on the future that asks what tomorrow holds for humanity</h4>
+      <h4 class="grt-q">The future is something we choose before it is something we predict</h4>
       <p class="grt-lead">Technology has continually expanded the life of humanity. Yet today&rsquo;s technological transformation goes beyond the question of what humanity can do and asks us anew what it is to be human. The Institute for Humanity &amp; Future was founded to take up this question, from the life of each person to the future of the human community, as a subject of scholarly inquiry.</p>
       <div class="grt-box"><h5>Why the humanities and social sciences matter more than ever</h5><p>The future is something we choose before it is something we predict. Deciding what kind of future is desirable cannot rest on technological efficiency alone; it calls for reflection on human dignity, justice in our communities, and the coexistence of humanity and nature. This is why the humanities and social sciences are needed all the more in an age of technology.</p></div>
       <div class="grt-box"><h5>An interdisciplinary research community</h5><p>The Institute aims to be an interdisciplinary community in which researchers from science education, the humanities, the social sciences, education, and science and technology work together. Where different disciplinary perspectives meet, we seek a balanced understanding of the future and alternatives that can be put into practice.</p></div>
