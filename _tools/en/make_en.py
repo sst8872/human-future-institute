@@ -92,7 +92,7 @@ HERO = '''<section class="visual en-visual hv-ed" data-static aria-label="Vision
       <div class="txt"><p class="eyebrow">VISION</p><p class="lead">In an era of technological transformation, asking what tomorrow holds for humanity</p><h2 class="big"><em>Leading</em> Future Discourse</h2><a href="en-vision.html" class="hv-link hv-small">VIEW MORE <i class="chev r"></i></a></div>
     </div>
   </div>
-  <div class="hv-axis" aria-hidden="true"><span>HUMAN</span><i><b></b></i><span>FUTURE</span></div>
+  <div class="hv-axis" aria-hidden="true"><span>HUMANITY</span><i><b></b></i><span>FUTURE</span></div>
   <!--HNF:en-home-strip--><nav class="hv-strip" aria-label="Latest Insights"><div class="hv-strip-in"><a href="en-insight.html"><small>INSIGHT No. 2</small><b>The Age of AI: Machines That Know the Answers, Humans Who Ask the Questions</b><time>November 22, 2026</time></a><a href="en-insight.html"><small>INSIGHT No. 1</small><b>Rethinking Humanity in an Era of Technological Transformation</b><time>November 21, 2026</time></a><a href="en-insight.html"><small>INSIGHT</small><b>All Insights</b><time>Essays by researchers, practitioners, and educators</time></a></div></nav><!--/HNF:en-home-strip-->
 </section>'''
 
@@ -208,7 +208,7 @@ BODY = {}
 BODY['en'] = '''
 <p class="c-lead">The Institute for Humanity &amp; Future is an interdisciplinary research institute <br>based at Chuncheon National University of Education, Korea.</p>
 <div class="v-banner en-banner"><strong>Leading future discourse that asks what tomorrow holds for humanity <br>in an era of technological transformation</strong></div>
-<p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, the humanities and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
+<p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humanity can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, the humanities and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
 <div class="en-groups">
   <section class="en-group"><h4>About</h4><ul class="en-links">
     <li><a href="en-greeting.html"><strong>Greeting</strong><span>A message from the Director</span><i class="chev r"></i></a></li>
@@ -473,7 +473,7 @@ def research():
 <div class="f-intro rv">
   <div class="ring"><div class="a">Human <br>Values</div><div class="b">Future <br>Education</div><div class="c">Technology <br>&amp; Society</div><div class="core">Technology <br>Ethics</div></div>
   <div><h4 class="c-tit" style="margin:0 0 20px"><small>RESEARCH FIELDS</small>Researching humans and society <br>in an age of technology</h4>
-  <p class="c-txt">Deciding what kind of future is desirable cannot rest on technological efficiency alone. The Institute pursues four areas of research that together ask about human dignity, justice in our communities, and coexistence with nature.</p>
+  <p class="c-txt">Deciding what kind of future is desirable cannot rest on technological efficiency alone. The Institute pursues four areas of research that together ask about human dignity, justice in our communities, and the coexistence of humanity and nature.</p>
   <a href="en-strategy.html" class="btn" style="margin-top:26px">Development Strategy <i class="chev r"></i></a></div>
 </div>
 {rows}
