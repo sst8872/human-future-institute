@@ -107,3 +107,7 @@
   .tp-quote::after{right:18px;bottom:16px;width:24px;height:18px}
   .wp-content .tp-quote blockquote p{font-size:17px}
 }
+/* 영문 Insight (2026-11-23) */
+.tp-tags span{padding:5px 12px;border-radius:20px;background:#eef2f8;color:var(--primary,#1d44d8);font-size:14px;font-weight:600}
+.en-view .bv-meta .bv-ko{color:var(--primary,#1d44d8);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.en-view .tp-refs li{word-break:break-word}

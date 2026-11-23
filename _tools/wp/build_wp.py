@@ -233,6 +233,9 @@ def main():
         if slug == 'en-results':
             # 영문 연구 성과: 정적 목록 대신 「구성원 연구 성과」 게시판 글(영문 칸)을 그때그때 그림
             s = re.sub(r'<!--HNF:en-results-->.*?<!--/HNF:en-results-->', '<?php hnf_en_results(); ?>', s, flags=re.S)
+        if slug == 'en-insight':
+            # 영문 Insight: 국문 인사이트 글의 영문 칸(목록 또는 /en/insight/<번호>/ 글 보기)
+            s = re.sub(r'<!--HNF:en-insight-->.*?<!--/HNF:en-insight-->', '<?php hnf_en_insight(); ?>', s, flags=re.S)
         out = conv(s)
         if EN(slug):
             out = out.replace('<?php hnf_admin_link(); ?>', '')

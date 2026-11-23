@@ -40,6 +40,15 @@ function hnf_fields($slug) {
             $body, $photos,
             ['refs', '참고 문헌', 'area', false, '한 줄에 하나씩'],
             ['tags', '키워드(해시태그)', 'line', false, '예: #생성형AI #교사교육 #지속가능성 (띄어 쓰면 여러 개, # 없이 써도 됨)'],
+            // 영문판 (inshnf.com/en/insight/) — 영문 제목과 영문 본문이 있어야 영문 사이트에 나옵니다
+            ['title_en', '영문 제목 (영문 사이트용)', 'line', false, '영문 제목과 영문 본문을 채우면 영문 사이트 Insight(inshnf.com/en/insight/)에 이 글이 나옵니다'],
+            ['author_en', '영문 필자', 'line', false, '예: Heojeong Yoon (Director, Institute for Human & Future)'],
+            ['summary_en', '영문 요약', 'area', false, ''],
+            ['quote_en', '영문 핵심 문구', 'area', false, ''],
+            ['thumb_en', '영문 대표 사진', 'image', false, '비우면 국문 대표 사진을 씁니다(그림 안에 한글이 있을 때만 따로 넣으세요)'],
+            ['body_en', '영문 본문', 'area', false, '국문 본문과 같은 규칙(빈 줄로 문단, 「## 소제목」, 「[사진 번호 | 설명]」)'],
+            ['refs_en', '영문 참고 문헌', 'area', false, '한 줄에 하나씩'],
+            ['tags_en', '영문 키워드', 'line', false, '예: #IntegrativeIntelligence #ScienceEducation'],
         ],
         'pub-reports' => [
             ['rep_no', '보고서 번호', 'line', false, '예: HNF 연구보고서 [2026-1호]'],
@@ -331,7 +340,7 @@ function hnf_write_page() {
         switch ($type) {
             case 'line': echo '<input type="text" name="' . $name . '" value="' . esc_attr($v) . '"' . ($req ? ' required' : '') . '>'; break;
             case 'url': echo '<input type="url" name="' . $name . '" value="' . esc_attr($v) . '" placeholder="https://">'; break;
-            case 'area': echo '<textarea name="' . $name . '" rows="4"' . ($req ? ' required' : '') . '>' . esc_textarea($v) . '</textarea>'; break;
+            case 'area': echo '<textarea name="' . $name . '" rows="' . (in_array($k, ['body_en', 'refs_en'], true) ? 14 : 4) . '"' . ($req ? ' required' : '') . '>' . esc_textarea($v) . '</textarea>'; break;
             case 'text':
             case 'rules':
                 $imgs = [];

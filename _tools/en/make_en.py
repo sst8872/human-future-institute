@@ -22,19 +22,21 @@ PAGES = [
     ('en-research', 'research', 'Research Areas', 'hero02.jpg', 'sv-research.jpg', 'RESEARCH'),
     ('en-projects', 'research', 'Research Projects', 'hero02.jpg', 'sv-research.jpg', 'RESEARCH'),
     ('en-results', 'research', 'Members&rsquo; Research', 'hero02.jpg', 'sv-research.jpg', 'RESEARCH'),
+    ('en-insight', 'insight', 'Insight', 'hero02.jpg', 'sv-resources.jpg', 'INSIGHT'),
     ('en-contact', 'contact', 'Contact', 'inst01.jpg', 'sv-location.jpg', 'CONTACT'),
 ]
 GROUPS = [
     ('about', 'About', [('en-greeting', 'Greeting'), ('en-vision', 'Vision'), ('en-strategy', 'Development Strategy'), ('en-organization', 'Organization'), ('en-people', 'People')]),
     ('research', 'Research', [('en-research', 'Research Areas'), ('en-projects', 'Research Projects'), ('en-results', 'Members&rsquo; Research')]),
+    ('insight', 'Insight', []),
     ('contact', 'Contact', []),
 ]
-GROUP_HREF = {'about': 'en-greeting', 'research': 'en-research', 'contact': 'en-contact'}
+GROUP_HREF = {'about': 'en-greeting', 'research': 'en-research', 'insight': 'en-insight', 'contact': 'en-contact'}
 # 각 영문 페이지와 짝이 되는 국문 페이지(KOR 단추)
 KO = {'en': 'index', 'en-greeting': 'about-greeting', 'en-vision': 'about-vision', 'en-strategy': 'about-history',
       'en-people': 'about-people', 'en-research': 'research-fields', 'en-projects': 'research-projects',
       'en-contact': 'about-location', 'en-organization': 'about-organization',
-      'en-results': 'research-results'}
+      'en-results': 'research-results', 'en-insight': 'pub-insight'}
 
 CUR = ' class="cur"'
 PRINT_SVG = '<svg viewBox="0 0 24 24"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M7 14h10v7H7z"/><circle cx="17.5" cy="12" r=".6"/></svg>'
@@ -218,6 +220,9 @@ BODY['en'] = '''
     <li><a href="en-research.html"><strong>Research Areas</strong><span>Four areas of inquiry</span><i class="chev r"></i></a></li>
     <li><a href="en-projects.html"><strong>Research Projects</strong><span>Current projects and progress</span><i class="chev r"></i></a></li>
     <li><a href="en-results.html"><strong>Members&rsquo; Research</strong><span>Articles, reports, and presentations</span><i class="chev r"></i></a></li>
+  </ul></section>
+  <section class="en-group"><h4>Insight</h4><ul class="en-links">
+    <li><a href="en-insight.html"><strong>Insight</strong><span>Essays on humans and the future by our researchers</span><i class="chev r"></i></a></li>
   </ul></section>
   <section class="en-group"><h4>Contact</h4><ul class="en-links">
     <li><a href="en-contact.html"><strong>Contact</strong><span>Address, phone, email, and directions</span><i class="chev r"></i></a></li>
@@ -431,6 +436,14 @@ def results():
 
 
 BODY['en-results'] = results()
+
+# Insight: 국문 인사이트 글 가운데 영문 칸을 채운 글만 WordPress가 그때그때 보여 줌(inc/en.php hnf_en_insight)
+BODY['en-insight'] = '''
+<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series, in which our researchers share their reflections and proposals on humans and the future.<br>Issues are published in Korean and also made available in English.</p>
+<!--HNF:en-insight-->
+<p class="tbl-note">English editions are listed here as they become available.</p>
+<!--/HNF:en-insight-->
+'''
 
 FIELDS = [
     ('research03', 'Human Values', 'Asking what human nature and values mean in an era of technological transformation',
