@@ -797,3 +797,6 @@ body.hv-top .float-btns{opacity:0;pointer-events:none}
 .en-visual.hv-ed .lead{margin-left:0;margin-right:0;max-width:760px;font-size:clamp(18px,1.7vw,28px)}
 .en-visual.hv-ed .big{font-size:clamp(46px,5.4vw,100px)}
 @media (max-width:768px){.en-visual.hv-ed .big{font-size:40px}.en-visual.hv-ed .lead{font-size:16px}}
+
+/* 첫 화면 다섯째 슬라이드: 휴대폰에서는 「미래는 예측의 / 대상이기 이전에 / 선택의 대상」 세 줄 */
+@media (max-width:768px){.hv-ed .s5-big span{display:block}.hv-ed .s5-big br{display:none}.hv-ed .s5-big em{display:block}}
