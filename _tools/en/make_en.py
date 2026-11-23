@@ -120,7 +120,7 @@ def page(fn, group, title, img, sv, svg_group, body):
 <header class="header" id="header">
   <div class="hd-top">
     <div class="inner">
-      <a class="m-lang" href="{ko}" lang="ko" aria-label="한국어">KOR</a>
+      <div class="lang m-lang"><a href="{ko}" lang="ko">KOR</a><span>|</span><b>ENG</b></div>
       <h1 class="logo">
         <a href="en.html">
           <img src="images/logo.png" alt="HNF logo" class="logo-img">
