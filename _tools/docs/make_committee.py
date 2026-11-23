@@ -16,11 +16,10 @@ def line(width=0.5):
 
 # 머리: 표어 · 기관 로고와 이름
 f.para('인류의 내일을 묻는 미래 담론', size=9, color='#555555', align='CENTER', after=160)
-p = f.para('', align='CENTER', after=60)
-im = Image.open('logo-blue.png'); h_mm = 15; w_mm = h_mm * im.width / im.height
-p.add_picture(d.media.add_image(open('logo-blue.png', 'rb').read(), 'png'),
+p = f.para('', align='CENTER', after=200, border=line(0.7))
+im = Image.open('logo-set.png'); h_mm = 17; w_mm = h_mm * im.width / im.height   # 로고·국문 이름·영문 이름이 한 세트인 가로 로고
+p.add_picture(d.media.add_image(open('logo-set.png', 'rb').read(), 'png'),
               width=int(w_mm / 25.4 * 7200), height=int(h_mm / 25.4 * 7200), alignment='CENTER')
-f.para('인류와미래연구소', size=22, bold=True, color='#000000', align='CENTER', after=200, border=line(0.7))
 
 # 수신·경유·제목
 f.para('수신자   내부결재', size=11, align='LEFT', before=120, after=40)
