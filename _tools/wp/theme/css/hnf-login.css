@@ -13,7 +13,7 @@ body.login *:not(.dashicons):not([class*=dashicons]){font-family:Pretendard,-app
 /* 로고: WordPress W 대신 연구소 가로 로고(흰색 원본) */
 .login h1 a,
 body.login h1 a{
-  background:url(../images/brand/hnf_logo_horizontal_white.svg) center/contain no-repeat !important;
+  background:url(../images/brand/hnf_logo_horizontal_white_v2.svg) center/contain no-repeat !important;
   background-color:transparent !important;
   width:260px;height:66px;margin:0 auto 32px;
   border-radius:0;text-indent:-9999px;overflow:hidden;
