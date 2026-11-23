@@ -324,7 +324,7 @@ def strategy():
         <thead class="pc-only"><tr><th>Stage</th><th><span class="badge p-tech">Technology</span></th><th><span class="badge p-hum">Humanities &amp; Society</span></th><th><span class="badge p-env">Environment</span></th></tr></thead>
         <tbody>{rows}</tbody></table></div>
     </div>
-    <div class="hist-head"><strong>HUMANITY &amp; FUTURE</strong><span>2026 — 2035</span></div>
+    <div class="hist-head"><strong>HUMANITY <span class="nw">&amp; FUTURE</span></strong><span>2026 — 2035</span></div>
     <div class="hist-line">{line}</div>
   </div>
 </div>
