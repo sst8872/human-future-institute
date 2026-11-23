@@ -51,3 +51,8 @@
 - 11-23 영문 Insight: /en/insight/(WP 페이지 ID 366, 부모 en) 목록, /en/insight/<글 번호>/ 글 보기(`inc/en.php` `hnf_en_insight`, 재작성 규칙 → 바꾸면 `wp rewrite flush`). 국문 인사이트 글의 영문 칸(title_en·author_en·summary_en·quote_en·thumb_en·body_en·refs_en·tags_en, 글쓰기 화면 아래쪽)에 영문 제목·본문이 있으면 나옴. 1·2호 번역 완료(영문 표지 371·369, 영문 그림 368·370은 `hnf_dpr`=2)
 - 도표 그림은 폭 640×2배로 만들고 첨부 meta `hnf_dpr`=2 → 화면에서 640으로 보여 그림 속 글자가 본문(15px)과 비슷해짐
 - 한국인 이름을 영문으로 옮길 때 하이픈(-)을 쓰지 않음: 이름은 붙여 쓰고(Heojeong Yoon), 참고 문헌 이니셜도 C.W.처럼 하이픈 없이(Cho, C.W.) — 11-23 사용자 지시
+
+## 첫 화면 소식 띠 (11-23)
+- 첫 화면 사진 글은 왼쪽 아래(`.visual.hv-ed`, css/identity.css 끝), 사진 아래 띠 3칸 `inc/strip.php` `hnf_home_strip()`(index.html `<!--HNF:home-strip-->` 자리)
+- 자동: 인사이트 최신 2편 + 공지사항 › 학술 행사(news-notice-2) 최신 1건(모자라면 공지·소식). 관리 화면 「연구소 관리 → 첫 화면 소식 띠」에서 칸마다 글·머리 글자·아래 글자 선택(option `hnf_strip`), 고른 글이 없어지면 그 칸은 자동
+- 휴대폰은 띠를 옆으로 넘겨 봄. 첫 화면 맨 위에서는 「맨 위로」 단추 감춤(body.hv-top). 영문 첫 화면(en.html)은 그대로
