@@ -17,7 +17,7 @@ wp_set_current_user($admin ? $admin->ID : 1);
 /* 기본 글·페이지 정리 */
 foreach (['hello-world'] as $s) { $p = get_page_by_path($s, OBJECT, 'post'); if ($p) wp_delete_post($p->ID, true); }
 foreach (['sample-page', 'privacy-policy'] as $s) { $p = get_page_by_path($s); if ($p) wp_delete_post($p->ID, true); }
-if ($admin) wp_update_user(['ID' => $admin->ID, 'display_name' => '인간과미래연구소', 'nickname' => '인간과미래연구소']);
+if ($admin) wp_update_user(['ID' => $admin->ID, 'display_name' => '인류와미래연구소', 'nickname' => '인류와미래연구소']);
 
 /* 페이지 */
 $order = 0;

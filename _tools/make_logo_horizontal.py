@@ -23,7 +23,7 @@ def ink_bounds(fontfile,text,size):
         bp=BoundsPen(gs); gs[cmap[ord(ch)]].draw(bp)
         if bp.bounds: ys+= [bp.bounds[1],bp.bounds[3]]
     return min(ys)*size/upm, max(ys)*size/upm
-KR='인간과미래연구소'; EN='INSTITUTE FOR HUMAN & FUTURE'
+KR='인류와미래연구소'; EN='INSTITUTE FOR HUMANITY & FUTURE'
 E=256; GAP=44
 krsz=104; krf=P+'Pretendard-ExtraBold.otf'; enf=P+'Pretendard-SemiBold.otf'
 krw=width(krf,KR,krsz,-2)
@@ -43,7 +43,7 @@ def svg(emblem_png, kr_col, en_col, bg=None):
     b64=base64.b64encode(open(emblem_png,'rb').read()).decode()
     bgr=f'<rect width="100%" height="100%" fill="{bg}"/>' if bg else ''
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
-<title>인간과미래연구소 INSTITUTE FOR HUMAN &amp; FUTURE</title>{bgr}
+<title>인류와미래연구소 INSTITUTE FOR HUMANITY &amp; FUTURE</title>{bgr}
 <image width="{E}" height="{E}" href="data:image/png;base64,{b64}" xlink:href="data:image/png;base64,{b64}"/>
 <path fill="{kr_col}" d="{krp}"/>
 <path fill="{en_col}" d="{enp}"/>

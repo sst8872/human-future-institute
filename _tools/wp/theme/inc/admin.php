@@ -29,7 +29,7 @@ function hnf_admin_home() {
     $u = wp_get_current_user();
     $boards = hnf_boards();
     echo '<div class="wrap hnf-home">';
-    echo '<h1 class="hnf-h1"><img src="' . esc_url(HNF_T . '/images/logo.png') . '" alt="">인간과미래연구소 관리</h1>';
+    echo '<h1 class="hnf-h1"><img src="' . esc_url(HNF_T . '/images/logo.png') . '" alt="">인류와미래연구소 관리</h1>';
     echo '<p class="hnf-hello"><b>' . esc_html($u->display_name) . '</b>님, 안녕하세요. 게시판에 글을 쓰거나 홈페이지의 글·사진을 고칠 수 있습니다. <a href="' . esc_url(HNF_H . '/') . '" target="_blank">홈페이지 열기 ↗</a></p>';
 
     echo '<h2 class="hnf-h2">게시판 <small>글을 쓰면 홈페이지 목록에 바로 나옵니다</small></h2><div class="hnf-grid">';
@@ -199,8 +199,8 @@ add_action('login_enqueue_scripts', function () {
     wp_enqueue_style('hnf-login', HNF_T . '/css/hnf-login.css', ['login'], HNF_VER);
 });
 add_filter('login_headerurl', fn() => HNF_H . '/');
-add_filter('login_headertext', fn() => '인간과미래연구소');
-add_filter('admin_footer_text', fn() => '인간과미래연구소 홈페이지 관리');
+add_filter('login_headertext', fn() => '인류와미래연구소');
+add_filter('admin_footer_text', fn() => '인류와미래연구소 홈페이지 관리');
 add_filter('update_footer', fn() => '', 99);
 add_action('admin_bar_menu', function ($bar) {
     $bar->remove_node('wp-logo');

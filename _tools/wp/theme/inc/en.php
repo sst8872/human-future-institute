@@ -61,7 +61,7 @@ function hnf_en_insight_posts() {
 function hnf_en_writer($p) {
     $m = ['연구개발부' => 'Research &amp; Development Division', '기획운영부' => 'Planning &amp; Operations Division', '미래혁신부' => 'Future Innovation Division'];
     $w = hnf_writer($p);
-    return $m[$w] ?? 'Institute for Human &amp; Future';
+    return $m[$w] ?? 'Institute for Humanity &amp; Future';
 }
 
 function hnf_en_insight() {
@@ -75,7 +75,7 @@ function hnf_en_insight() {
             $e = hnf_en_f($p->ID);
             $img = $e['thumb'] ? wp_get_attachment_image_url((int) $e['thumb'], 'large') : '';
             echo '<a href="' . esc_url(hnf_en_insight_url($p->ID)) . '" class="p-card">';
-            echo $img ? '<div class="thumb"><img src="' . esc_url($img) . '" alt="" loading="lazy"></div>' : '<div class="thumb noimg"><span>INSTITUTE FOR HUMAN &amp; FUTURE</span></div>';
+            echo $img ? '<div class="thumb"><img src="' . esc_url($img) . '" alt="" loading="lazy"></div>' : '<div class="thumb noimg"><span>INSTITUTE FOR HUMANITY &amp; FUTURE</span></div>';
             echo '<p class="meta"><span class="badge gray">Insight' . ($e['issue'] !== '' ? ' No. ' . esc_html($e['issue']) : '') . '</span></p>';
             echo '<strong>' . esc_html($e['title']) . '</strong>';
             if ($e['tags']) echo '<span class="p-tags">' . implode(' ', array_map(fn($t) => '#' . esc_html($t), array_slice($e['tags'], 0, 3))) . '</span>';
@@ -95,7 +95,7 @@ function hnf_en_insight() {
     $e['tags'] = '';
     $html = hnf_tpl_html('pub-insight', $e);
     $html = str_replace(['<p class="tp-author">글 · ', '<b>참고 문헌</b>', '<b>요약</b>'], ['<p class="tp-author">By ', '<b>References</b>', '<b>Summary</b>'], $html);
-    echo '<script>document.title=' . wp_json_encode($e['title'] . ' | Insight | Institute for Human & Future') . ';</script>';
+    echo '<script>document.title=' . wp_json_encode($e['title'] . ' | Insight | Institute for Humanity & Future') . ';</script>';
     echo '<article class="b-view en-view">';
     echo '<header class="bv-head"><span class="badge gray">Insight' . ($e['issue'] !== '' ? ' No. ' . esc_html($e['issue']) : '') . '</span>';
     echo '<h4 class="bv-title">' . esc_html($e['title']) . '</h4>';

@@ -48,8 +48,8 @@ function sign(sentence,who,dept){
     p(sentence,{align:AlignmentType.CENTER,before:420,after:300,size:21}),
     p('20      년      월      일',{align:AlignmentType.CENTER,after:300,size:21}),
     p(who+' :                                   (서명 또는 인)',{align:AlignmentType.RIGHT,after:360,size:21}),
-    p('인간과미래연구소장 귀하',{align:AlignmentType.LEFT,after:240,size:24,bold:true}),
-    new Paragraph({spacing:{before:120},border:{top:{style:BorderStyle.SINGLE,size:4,color:'9AA3B5',space:6}},children:[t('제출처 : 인간과미래연구소 '+dept+'  (TEL 033-260-6461 · E-mail hjyoon@cnue.ac.kr)',{size:18,color:'555555'})]}),
+    p('인류와미래연구소장 귀하',{align:AlignmentType.LEFT,after:240,size:24,bold:true}),
+    new Paragraph({spacing:{before:120},border:{top:{style:BorderStyle.SINGLE,size:4,color:'9AA3B5',space:6}},children:[t('제출처 : 인류와미래연구소 '+dept+'  (TEL 033-260-6461 · E-mail hjyoon@cnue.ac.kr)',{size:18,color:'555555'})]}),
     p('※ 작성한 양식은 전자우편으로 보내 주시기 바랍니다. 칸이 부족하면 늘려 쓰거나 별지를 붙여 주십시오.',{size:18,color:'555555',before:40}),
   ];
 }
@@ -63,8 +63,8 @@ function header(code,title,sub){
 }
 
 function brand(){
-  // 로고+인간과미래연구소+영문을 그림 한 장으로(brand.png) — 영문 장평을 한글 폭에 맞춤, PC 글꼴과 관계없이 같게 보임
-  return new Paragraph({alignment:AlignmentType.CENTER,children:[new ImageRun({type:'png',data:fs.readFileSync('brand.png'),transformation:{width:Math.round(34*1667/400),height:34},altText:{title:'인간과미래연구소',description:'인간과미래연구소 INSTITUTE FOR HUMAN & FUTURE',name:'brand'}})]});
+  // 로고+인류와미래연구소+영문을 그림 한 장으로(brand.png) — 영문 장평을 한글 폭에 맞춤, PC 글꼴과 관계없이 같게 보임
+  return new Paragraph({alignment:AlignmentType.CENTER,children:[new ImageRun({type:'png',data:fs.readFileSync('brand.png'),transformation:{width:Math.round(34*1667/400),height:34},altText:{title:'인류와미래연구소',description:'인류와미래연구소 INSTITUTE FOR HUMANITY & FUTURE',name:'brand'}})]});
 }
 function doc(children){
   return new Document({styles:{default:{document:{run:{font:FONT,size:20}}}},
@@ -88,7 +88,7 @@ const mou=[
   sec('4. 주요 협력 내용'), box([],2200,'협력하려는 사업·활동의 내용을 구체적으로 적어 주십시오.'),
   sec('5. 역할 분담'),
   table([2300,3669,3669],[
-    row([L('구분',2300),L('제안 기관',3669),L('인간과미래연구소',3669)]),
+    row([L('구분',2300),L('제안 기관',3669),L('인류와미래연구소',3669)]),
     row([L('주요 역할',2300),cell('',3669),cell('',3669)],900),
     row([L('지원·부담 사항',2300),cell('',3669),cell('',3669)],900),
   ]),
@@ -96,7 +96,7 @@ const mou=[
   sec('7. 붙임 자료'),
   table(C2,[row([L('붙임',C2[0]),cell([p('□ 기관 소개 자료 1부      □ 협약서(안) 1부'),p('□ 기타 (                                        )')],C2[1])])]),
   ...consent('업무협약 제안 검토 및 협의를 위한 연락'),
-  ...sign('위와 같이 인간과미래연구소와의 업무협약을 제안합니다.','제안 기관 대표','기획운영부'),
+  ...sign('위와 같이 인류와미래연구소와의 업무협약을 제안합니다.','제안 기관 대표','기획운영부'),
 ];
 // ===== 양식 2: 연계사업 운영 신청서 =====
 const biz=[
@@ -122,7 +122,7 @@ const biz=[
     row([L('연구소 요청 사항',C2[0]),cell([p('연구소에 요청하는 사항을 적어 주십시오.',{size:18,color:'8A93A6'})],C2[1],{valign:VerticalAlign.TOP})],1500),
   ]),
   ...consent('연계사업 운영 신청 검토 및 협의를 위한 연락'),
-  ...sign('위와 같이 인간과미래연구소 연계사업 운영을 신청합니다.','신청 기관 대표','미래혁신부'),
+  ...sign('위와 같이 인류와미래연구소 연계사업 운영을 신청합니다.','신청 기관 대표','미래혁신부'),
 ];
 (async()=>{
   fs.writeFileSync('업무협약(MOU) 제안서.docx',await Packer.toBuffer(doc(mou)));

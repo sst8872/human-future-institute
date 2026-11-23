@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""인간과미래연구소 정적 HTML → WordPress 테마(inshnf) 생성기.
+"""인류와미래연구소 정적 HTML → WordPress 테마(inshnf) 생성기.
 
 사용: python3 _tools/wp/build_wp.py <저장소 폴더> <출력 폴더>
  - 출력 폴더/inshnf/ : 테마

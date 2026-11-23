@@ -158,9 +158,9 @@ class Form:
         self.para(sentence, size=10.5, align='CENTER', before=420, after=300)
         self.para('20      년      월      일', size=10.5, align='CENTER', after=300)
         self.para(who + ' :                                   (서명 또는 인)', size=10.5, align='RIGHT', after=360)
-        self.para('인간과미래연구소장 귀하', size=12, bold=True, align='LEFT', after=240)
+        self.para('인류와미래연구소장 귀하', size=12, bold=True, align='LEFT', after=240)
         bf = self.st.ensure_border_fill(border_color=BORDER, border_width_mm=0.12, active_borders=['top'])
-        self.para('제출처 : 인간과미래연구소 ' + dept + '  (TEL 033-260-6461 · E-mail hjyoon@cnue.ac.kr)', size=9, color='#555555', align='LEFT', before=120,
+        self.para('제출처 : 인류와미래연구소 ' + dept + '  (TEL 033-260-6461 · E-mail hjyoon@cnue.ac.kr)', size=9, color='#555555', align='LEFT', before=120,
                   border={'borderFillIDRef': bf, 'offsetTop': 600})
         self.para('※ 작성한 양식은 전자우편으로 보내 주시기 바랍니다. 칸이 부족하면 늘려 쓰거나 별지를 붙여 주십시오.', size=9, color='#555555', align='LEFT', before=40)
 
@@ -199,7 +199,7 @@ def mou():
     f.sec('4. 주요 협력 내용'); f.box(2200, '협력하려는 사업·활동의 내용을 구체적으로 적어 주십시오.')
     f.sec('5. 역할 분담', new_page=True)
     f.table([2300, 3669, 3669], [
-        ([L('구분'), L('제안 기관'), L('인간과미래연구소')], 0),
+        ([L('구분'), L('제안 기관'), L('인류와미래연구소')], 0),
         ([L('주요 역할'), {'text': ''}, {'text': ''}], 900),
         ([L('지원·부담 사항'), {'text': ''}, {'text': ''}], 900),
     ])
@@ -207,7 +207,7 @@ def mou():
     f.sec('7. 붙임 자료')
     f.table(C2, [([L('붙임'), {'lines': ['□ 기관 소개 자료 1부      □ 협약서(안) 1부', '□ 기타 (                                        )']}], 0)])
     f.consent('업무협약 제안 검토 및 협의를 위한 연락')
-    f.sign('위와 같이 인간과미래연구소와의 업무협약을 제안합니다.', '제안 기관 대표', '기획운영부')
+    f.sign('위와 같이 인류와미래연구소와의 업무협약을 제안합니다.', '제안 기관 대표', '기획운영부')
     f.save('업무협약(MOU) 제안서')
 
 
@@ -238,7 +238,7 @@ def biz():
         ([L('연구소 요청 사항'), {'lines': [('연구소에 요청하는 사항을 적어 주십시오.', {'size': 9, 'color': '#8A93A6'})], 'valign': 'TOP'}], 1500),
     ])
     f.consent('연계사업 운영 신청 검토 및 협의를 위한 연락')
-    f.sign('위와 같이 인간과미래연구소 연계사업 운영을 신청합니다.', '신청 기관 대표', '미래혁신부')
+    f.sign('위와 같이 인류와미래연구소 연계사업 운영을 신청합니다.', '신청 기관 대표', '미래혁신부')
     f.save('연계사업 운영 신청서')
 
 

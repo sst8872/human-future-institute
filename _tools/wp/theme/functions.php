@@ -1,11 +1,11 @@
 <?php
 /**
- * 인간과미래연구소 테마 (정적 사이트를 그대로 옮긴 맞춤 테마)
+ * 인류와미래연구소 테마 (정적 사이트를 그대로 옮긴 맞춤 테마)
  * 원본: github.com/sst8872/human-future-institute → _tools/wp/build_wp.py 로 생성
  */
 define('HNF_T', get_template_directory_uri());
 define('HNF_H', untrailingslashit(home_url()));
-define('HNF_VER', '20261123q');
+define('HNF_VER', '20261123r');
 
 require __DIR__ . '/inc/boards.php';
 require __DIR__ . '/inc/admin.php';
@@ -43,12 +43,12 @@ function hnf_head() {
 
 /* 링크 미리보기(카카오톡·문자·SNS) — 대표 이미지는 남색 가로형 로고 (2026-11-21) */
 function hnf_og() {
-    $site  = '인간과미래연구소';
-    $full  = '인간과미래연구소 | Institute for Human & Future';
+    $site  = '인류와미래연구소';
+    $full  = '인류와미래연구소 | Institute for Humanity & Future';
     if (is_front_page() || is_home()) $title = $full;
-    elseif (is_singular()) $title = wp_strip_all_tags(get_the_title()) . ' | 인간과미래연구소';
+    elseif (is_singular()) $title = wp_strip_all_tags(get_the_title()) . ' | 인류와미래연구소';
     else $title = hnf_title($full);
-    $desc  = '기술 변혁의 시대, 인간의 가치를 중심에 둔 미래 담론을 선도하는 춘천교육대학교 인간과미래연구소';
+    $desc  = '기술 변혁의 시대, 인간의 가치를 중심에 둔 미래 담론을 선도하는 춘천교육대학교 인류와미래연구소';
     if (is_singular('post')) {
         $f = get_post_meta(get_the_ID(), 'hnf_f', true);
         $t = is_array($f) ? trim(wp_strip_all_tags((string) ($f['summary'] ?? $f['body'] ?? ''))) : '';
@@ -60,14 +60,14 @@ function hnf_og() {
         ['property', 'og:type', is_singular('post') ? 'article' : 'website'], ['property', 'og:site_name', $site],
         ['property', 'og:title', $title], ['property', 'og:description', $desc], ['property', 'og:url', $url],
         ['property', 'og:image', $img], ['property', 'og:image:width', '1200'], ['property', 'og:image:height', '630'],
-        ['property', 'og:image:alt', '인간과미래연구소 홈페이지 첫 화면'], ['property', 'og:locale', 'ko_KR'],
+        ['property', 'og:image:alt', '인류와미래연구소 홈페이지 첫 화면'], ['property', 'og:locale', 'ko_KR'],
         ['name', 'twitter:card', 'summary_large_image'], ['name', 'twitter:image', $img],
     ];
     foreach ($m as [$k, $n, $v]) echo '<meta ' . $k . '="' . $n . '" content="' . esc_attr(html_entity_decode($v, ENT_QUOTES, 'UTF-8')) . "\">\n";
 }
 
 function hnf_title($orig) {
-    $site = '인간과미래연구소 | Institute for Human & Future';
+    $site = '인류와미래연구소 | Institute for Humanity & Future';
     if (is_singular('post')) return esc_html(wp_strip_all_tags(get_the_title())) . ' | ' . $site;
     if (is_search()) return '검색 결과 | ' . $site;
     if (is_404()) return '페이지를 찾을 수 없습니다 | ' . $site;

@@ -5,7 +5,7 @@
  * 저장: 칸 값은 meta `hnf_f`(배열), 첨부 순서는 `hnf_files`(첨부 ID 배열), post_content는 검색용으로 다시 만든 HTML.
  */
 
-const HNF_DEPTS = ['기획운영부', '미래혁신부', '연구개발부', '인간과미래연구소'];
+const HNF_DEPTS = ['기획운영부', '미래혁신부', '연구개발부', '인류와미래연구소'];
 
 /* 게시판별 칸 */
 function hnf_fields($slug) {
@@ -33,7 +33,7 @@ function hnf_fields($slug) {
         ],
         'pub-insight' => [
             ['issue', '호수', 'line', true, '숫자만 쓰세요. 예: 1 → 「제1호」로 목록·글·첫 화면에 나옵니다'],
-            ['author', '필자', 'line', true, '예: 윤회정 (인간과미래연구소 소장)'],
+            ['author', '필자', 'line', true, '예: 윤회정 (인류와미래연구소 소장)'],
             ['summary', '요약', 'area', true, '2~3문장. 첫 화면 「인사이트」와 목록에 나옵니다(「핵심 문구」가 없으면 글 맨 위 상자에도)'],
             ['quote', '핵심 문구', 'area', false, '본문에서 가장 핵심적인 문장을 그대로 옮겨 쓰세요. 글 맨 위에 따옴표 상자로 나옵니다'],
             ['thumb', '대표 사진', 'image', false, '목록 카드·첫 화면 그림'],
@@ -42,7 +42,7 @@ function hnf_fields($slug) {
             ['tags', '키워드(해시태그)', 'line', false, '예: #생성형AI #교사교육 #지속가능성 (띄어 쓰면 여러 개, # 없이 써도 됨)'],
             // 영문판 (inshnf.com/en/insight/) — 영문 제목과 영문 본문이 있어야 영문 사이트에 나옵니다
             ['title_en', '영문 제목 (영문 사이트용)', 'line', false, '영문 제목과 영문 본문을 채우면 영문 사이트 Insight(inshnf.com/en/insight/)에 이 글이 나옵니다'],
-            ['author_en', '영문 필자', 'line', false, '예: Heojeong Yoon (Director, Institute for Human & Future)'],
+            ['author_en', '영문 필자', 'line', false, '예: Heojeong Yoon (Director, Institute for Humanity & Future)'],
             ['summary_en', '영문 요약', 'area', false, ''],
             ['quote_en', '영문 핵심 문구', 'area', false, ''],
             ['thumb_en', '영문 대표 사진', 'image', false, '비우면 국문 대표 사진을 씁니다(그림 안에 한글이 있을 때만 따로 넣으세요)'],

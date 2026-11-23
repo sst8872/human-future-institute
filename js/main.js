@@ -1,4 +1,4 @@
-/* 인간과미래연구소 — 공통 스크립트 */
+/* 인류와미래연구소 — 공통 스크립트 */
 (function () {
   const $ = (s, p = document) => p.querySelector(s);
   const $$ = (s, p = document) => [...p.querySelectorAll(s)];

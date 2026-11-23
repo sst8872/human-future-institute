@@ -82,7 +82,7 @@ def lnb(fn, group, title):
 
 
 SUBVIS = '''<section class="sub-visual" style="--img:url(../images/{img});--dim:0.55;--sv:url(../images/{sv})">
-  <p class="sv-en">INSTITUTE FOR HUMAN &amp; FUTURE</p>
+  <p class="sv-en">INSTITUTE FOR HUMANITY &amp; FUTURE</p>
   <p class="sv-group">{svg_group}</p>
 </section>'''
 # 국문 첫 화면 첫 장(지구 그림)과 같은 틀, 한 장만(data-static: 넘김 없음)
@@ -104,8 +104,8 @@ def page(fn, group, title, img, sv, svg_group, body):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} | Institute for Human &amp; Future</title>
-<meta name="description" content="Institute for Human &amp; Future — human-centered research on the future in an era of technological transformation">
+<title>{title} | Institute for Humanity &amp; Future</title>
+<meta name="description" content="Institute for Humanity &amp; Future — human-centered research on the future in an era of technological transformation">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
 <link rel="icon" href="images/favicon-hnf.png">
@@ -127,7 +127,7 @@ def page(fn, group, title, img, sv, svg_group, body):
       <h1 class="logo">
         <a href="en.html">
           <img src="images/logo.png" alt="HNF logo" class="logo-img">
-          <span><b>인간과미래연구소</b><em>INSTITUTE FOR HUMAN &amp; FUTURE</em></span>
+          <span><b>인류와미래연구소</b><em>INSTITUTE FOR HUMANITY &amp; FUTURE</em></span>
         </a>
       </h1>
       <ul class="util"></ul>
@@ -177,12 +177,12 @@ def page(fn, group, title, img, sv, svg_group, body):
         </ul>
       </div>
       <div class="f-row2">
-        <div class="f-emblem"><img src="images/logo.png" alt="" class="logo-img"><b>인간과미래연구소</b><em>INSTITUTE FOR HUMAN &amp; FUTURE</em></div>
+        <div class="f-emblem"><img src="images/logo.png" alt="" class="logo-img"><b>인류와미래연구소</b><em>INSTITUTE FOR HUMANITY &amp; FUTURE</em></div>
         <div class="f-info">
           <address><ul>
             <li><p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Institute</p><span>Room 203, Science Building, Chuncheon National University of Education (TEL) {TEL} (E-MAIL) {MAIL}</span></li>
           </ul></address>
-          <p class="copy">COPYRIGHT ⓒ 2026 INSTITUTE FOR HUMAN &amp; FUTURE. ALL RIGHTS RESERVED.</p>
+          <p class="copy">COPYRIGHT ⓒ 2026 INSTITUTE FOR HUMANITY &amp; FUTURE. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@ def page(fn, group, title, img, sv, svg_group, body):
 BODY = {}
 
 BODY['en'] = '''
-<p class="c-lead">The Institute for Human &amp; Future is an interdisciplinary research institute<br>based at Chuncheon National University of Education, Korea.</p>
+<p class="c-lead">The Institute for Humanity &amp; Future is an interdisciplinary research institute<br>based at Chuncheon National University of Education, Korea.</p>
 <div class="v-banner en-banner"><strong>Leading future discourse centered on human values<br>in an era of technological transformation</strong></div>
 <p class="c-txt en-intro">Today&rsquo;s technological change asks not only what humans can do, but what it means to be human. Bringing together researchers in science education, the humanities, the social sciences, education, and technology, the Institute studies how technology, the humanities and society, and the environment are changing together &mdash; and shares its findings with schools, local communities, and civil society.</p>
 <div class="en-groups">
@@ -237,11 +237,11 @@ BODY['en-greeting'] = '''
   <div class="grt">
     <div class="grt-l">
       <h4 class="grt-q">Shaping a human-centered discourse on the future</h4>
-      <p class="grt-lead">Technology has continually expanded the possibilities of human life. Yet today&rsquo;s technological transformation goes beyond the question of what humans can do and asks us anew what it is to be human. The Institute for Human &amp; Future was founded to take up this question as a subject of scholarly inquiry.</p>
+      <p class="grt-lead">Technology has continually expanded the possibilities of human life. Yet today&rsquo;s technological transformation goes beyond the question of what humans can do and asks us anew what it is to be human. The Institute for Humanity &amp; Future was founded to take up this question as a subject of scholarly inquiry.</p>
       <div class="grt-box"><h5>Why the humanities and social sciences matter more than ever</h5><p>The future is something we choose before it is something we predict. Deciding what kind of future is desirable cannot rest on technological efficiency alone; it calls for reflection on human dignity, justice in our communities, and coexistence with nature. This is why the humanities and social sciences are needed all the more in an age of technology.</p></div>
       <div class="grt-box"><h5>An interdisciplinary research community</h5><p>The Institute aims to be an interdisciplinary community in which researchers from science education, the humanities, the social sciences, education, and science and technology work together. Where different disciplinary perspectives meet, we seek a balanced understanding of the future and alternatives that can be put into practice.</p></div>
       <div class="grt-box"><h5>To schools and to society</h5><p>Building on rigorous research and open scholarly exchange, the Institute will return its findings to classrooms and to society, and contribute to shaping a human-centered discourse on the future.</p><p style="margin-top:14px">Thank you.</p></div>
-      <div class="grt-sign"><p>Director, Institute for Human &amp; Future <b>Heojeong Yoon</b></p><img src="images/sign.png" alt="Signature of Heojeong Yoon" class="sign-img"></div>
+      <div class="grt-sign"><p>Director, Institute for Humanity &amp; Future <b>Heojeong Yoon</b></p><img src="images/sign.png" alt="Signature of Heojeong Yoon" class="sign-img"></div>
     </div>
   </div>
 </div>
@@ -352,7 +352,7 @@ def people():
     rows = ''.join(f'<tr><td>{i}</td><td>{pos}</td><td class="strong">{n}</td><td class="l">{aff}</td></tr>'
                    for i, (n, pos, aff, *_r) in enumerate(PEOPLE, 1))
     return f'''
-<p class="c-lead">The Institute for Human &amp; Future brings together researchers<br>from a range of disciplines.</p>
+<p class="c-lead">The Institute for Humanity &amp; Future brings together researchers<br>from a range of disciplines.</p>
 <div class="ppl-wrap" style="margin-top:50px">
   <div class="swiper ppl-swiper"><div class="swiper-wrapper">{slides}</div></div>
   <button type="button" class="sw-arr prev" aria-label="Previous"><i class="chev"></i></button>
@@ -511,7 +511,7 @@ BODY['en-projects'] = projects()
 
 BODY['en-contact'] = f'''
 <div class="map"><iframe title="Map: Chuncheon National University of Education" src="https://www.openstreetmap.org/export/embed.html?bbox=127.7428%2C37.8562%2C127.7548%2C37.8630&amp;layer=mapnik&amp;marker=37.85961%2C127.74879" style="width:100%;height:100%;border:0" loading="lazy"></iframe></div>
-<div class="addr"><div><h5>Institute for Human &amp; Future</h5><dl><dt>Address</dt><dd>{ADDR}</dd><dt>Phone</dt><dd><a href="{TEL_HREF}">{TEL}</a></dd><dt>Email</dt><dd><a href="mailto:{MAIL}">{MAIL}</a></dd></dl></div>
+<div class="addr"><div><h5>Institute for Humanity &amp; Future</h5><dl><dt>Address</dt><dd>{ADDR}</dd><dt>Phone</dt><dd><a href="{TEL_HREF}">{TEL}</a></dd><dt>Email</dt><dd><a href="mailto:{MAIL}">{MAIL}</a></dd></dl></div>
   <a href="https://www.google.com/maps/search/?api=1&amp;query=Chuncheon+National+University+of+Education" target="_blank" rel="noopener" class="btn-map"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Open in Google Maps <i class="chev r"></i></a></div>
 
 <h4 class="c-tit">Getting Here</h4>

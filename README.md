@@ -1,6 +1,6 @@
-# 인간과미래연구소 웹사이트
+# 인류와미래연구소 웹사이트
 
-INSTITUTE FOR HUMAN & FUTURE 홈페이지 (정적 HTML/CSS/JS).
+INSTITUTE FOR HUMANITY & FUTURE 홈페이지 (정적 HTML/CSS/JS).
 
 - 첫 화면: `index.html`
 - 공통 서브 헤더·푸터 동기화: `python _tools/sync_layout.py` (about-greeting.html 기준)

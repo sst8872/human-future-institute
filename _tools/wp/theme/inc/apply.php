@@ -64,7 +64,7 @@ function hnf_apply_submit() {
     $body = hnf_apply_events()[$event] . ($event === 'insight-writer' ? '' : ' 참여 신청') . "이 들어왔습니다.\n\n";
     foreach (hnf_apply_fields($event) as $k => $lb) $body .= $lb . ': ' . $a[$k] . "\n";
     $body .= "\n신청 목록: " . admin_url('admin.php?page=hnf-apply&event=' . $event);
-    wp_mail(hnf_apply_notify_to(), '[인간과미래연구소] ' . $kind . ' — ' . $a['name'], $body);
+    wp_mail(hnf_apply_notify_to(), '[인류와미래연구소] ' . $kind . ' — ' . $a['name'], $body);
     $go('sent');
 }
 

@@ -1,5 +1,5 @@
 /* =========================================================
-   인간과미래연구소 — 고유 디자인 (identity.css)
+   인류와미래연구소 — 고유 디자인 (identity.css)
    콘셉트: 「인간 ↔ 미래」를 잇는 축
      · 인간 = 종이빛 바탕
      · 미래 = 먹빛 남색 + 금색 선
@@ -588,6 +588,12 @@ body.sub .header .logo .logo-img{
   .hd-top .logo-img{width:30px!important;height:30px!important}
   .hd-top .logo b{font-size:15px!important}
   .hd-top .logo em{font-size:7px!important}
+}
+
+@media (max-width:340px){
+  .hd-top .inner{grid-template-columns:62px minmax(0,1fr) 70px;padding-left:10px;padding-right:10px}
+  .hd-top .m-search,.hd-top .m-menu{width:34px}
+  .hd-top .logo b{font-size:14px!important}
 }
 
 /* ---------- 영문 페이지 ---------- */

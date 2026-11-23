@@ -4,11 +4,11 @@ E = {}
 
 E[311] = dict(
 title_en="Rethinking Humanity in an Era of Technological Transformation",
-author_en="Heojeong Yoon (Director, Institute for Human & Future; Professor, Department of Science Education, Chuncheon National University of Education)",
-summary_en="Marking the opening of the Institute for Human & Future, this essay asks anew how we should define the human in the age of artificial intelligence. Looking at problems that technology alone cannot solve, such as inequality and the climate crisis, it examines the role of university researchers and the need for interdisciplinary collaboration, and proposes three directions for universities and research.",
+author_en="Heojeong Yoon (Director, Institute for Humanity & Future; Professor, Department of Science Education, Chuncheon National University of Education)",
+summary_en="Marking the opening of the Institute for Humanity & Future, this essay asks anew how we should define the human in the age of artificial intelligence. Looking at problems that technology alone cannot solve, such as inequality and the climate crisis, it examines the role of university researchers and the need for interdisciplinary collaboration, and proposes three directions for universities and research.",
 quote_en="The future is something we choose before it is something we predict. Which future we choose cannot be decided by technological efficiency alone; it must take into account human dignity, justice in our communities, and coexistence with nature.",
 tags_en="#HumanAndFuture #ArtificialIntelligence #ConceptOfTheHuman #InterdisciplinaryResearch #EducationPolicy #ClimateCrisis",
-body_en="""The Institute for Human & Future has opened its doors. Researchers in science education, the humanities, the social sciences, education, and science and technology have come together to explore the human values that endure in an era of rapid technological change, and to connect what we learn to the future of education and society. On the occasion of our opening, I would like to share why we are turning to this subject now, and where I believe university research should be heading.
+body_en="""The Institute for Humanity & Future has opened its doors. Researchers in science education, the humanities, the social sciences, education, and science and technology have come together to explore the human values that endure in an era of rapid technological change, and to connect what we learn to the future of education and society. On the occasion of our opening, I would like to share why we are turning to this subject now, and where I believe university research should be heading.
 
 ## How Should We Define the Human in the Age of AI?
 
@@ -42,7 +42,7 @@ Long-term educational planning at the national level is also gathering pace. The
 
 The Institute has designated 2026–2035 as its first cycle and will carry on its research under the academic theme "Human & Future." The first three years (2026–2028) are devoted to Forecasting Future Change, the next three (2029–2031) to Exploring Future Challenges, and the following three (2032–2034) to the Transition to the Future. Within each stage, our research cycles year by year through three perspectives: technology, the humanities and society, and the environment. In 2035, we will synthesize the results of the first cycle and set the direction for the next decade. In the process, we aim to identify policy agendas to prepare for future society and to propose practicable solutions.
 
-[사진 FIG | Research directions of the Institute for Human & Future's first cycle (2026–2035)]
+[사진 FIG | Research directions of the Institute for Humanity & Future's first cycle (2026–2035)]
 
 ## Directions for Universities and Research
 
@@ -72,7 +72,7 @@ World Economic Forum. (2025). The future of jobs report 2025. https://www.weforu
 
 E[354] = dict(
 title_en="The Age of AI: Machines That Know the Answers, Humans Who Ask the Questions",
-author_en="Eunmi Park (Head, Planning & Operations Division, Institute for Human & Future; Department of Science Education, Chuncheon National University of Education)",
+author_en="Eunmi Park (Head, Planning & Operations Division, Institute for Humanity & Future; Department of Science Education, Chuncheon National University of Education)",
 summary_en="Starting from the question of why the “fastest route” suggested by a navigation system felt so uncomfortable, this essay considers the questions humans must ask in the face of machines that know the answers. It proposes “integrative intelligence,” built on the three pillars of scientific literacy, humanistic reflection, and social participation, as a key concept for the kind of person education should develop in the age of AI, and outlines the changes needed in schools and in policy.",
 quote_en="A machine can find the route for us. But asking whether that route is right, and whom it is for, is up to us.",
 tags_en="#IntegrativeIntelligence #EducationInTheAgeOfAI #ScienceEducation #HumanitiesAndSocialSciences #TheQuestioningHuman",

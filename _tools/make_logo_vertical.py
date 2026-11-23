@@ -17,7 +17,7 @@ R=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
 def svg(png,kc,ec):
     b=base64.b64encode(open(png,'rb').read()).decode()
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
-<title>인간과미래연구소 INSTITUTE FOR HUMAN &amp; FUTURE</title>
+<title>인류와미래연구소 INSTITUTE FOR HUMANITY &amp; FUTURE</title>
 <image x="{ex}" y="0" width="{E}" height="{E}" href="data:image/png;base64,{b}" xlink:href="data:image/png;base64,{b}"/>
 <path fill="{kc}" d="{krp}"/>
 <path fill="{ec}" d="{enp}"/>
