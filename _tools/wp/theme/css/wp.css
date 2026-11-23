@@ -112,3 +112,4 @@
 .en-view .bv-meta .bv-ko{color:var(--primary,#1d44d8);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .en-view .tp-refs li{word-break:break-word}
 .sub-content:has(.en-view) .en-res-lead{display:none}
+.card-grid>*{min-width:0}.en-ins .p-tags{white-space:normal;overflow-wrap:anywhere}
