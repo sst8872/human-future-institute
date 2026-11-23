@@ -241,7 +241,7 @@ BODY['en-greeting'] = '''
       <div class="grt-box"><h5>Why the humanities and social sciences matter more than ever</h5><p>The future is something we choose before it is something we predict. Deciding what kind of future is desirable cannot rest on technological efficiency alone; it calls for reflection on human dignity, justice in our communities, and the coexistence of humanity and nature. This is why the humanities and social sciences are needed all the more in an age of technology.</p></div>
       <div class="grt-box"><h5>An interdisciplinary research community</h5><p>The Institute aims to be an interdisciplinary community in which researchers from science education, the humanities, the social sciences, education, and science and technology work together. Where different disciplinary perspectives meet, we seek a balanced understanding of the future and alternatives that can be put into practice.</p></div>
       <div class="grt-box"><h5>To schools and to society</h5><p>Building on rigorous research and open scholarly exchange, the Institute will return its findings to classrooms and to society, and contribute to shaping a discourse for a better future for humanity.</p><p style="margin-top:14px">Thank you.</p></div>
-      <div class="grt-sign"><p>Director, Institute for Humanity &amp; Future <b>Heojeong Yoon</b></p><img src="images/sign.png" alt="Signature of Heojeong Yoon" class="sign-img"></div>
+      <div class="grt-sign"><p>Director, Institute for Humanity &amp; Future <br><b>Heojeong Yoon</b></p><img src="images/sign.png" alt="Signature of Heojeong Yoon" class="sign-img"></div>
     </div>
   </div>
 </div>
@@ -314,7 +314,7 @@ def strategy():
     <div id="hist-top">
       <p class="c-lead">From 2026 to 2035, our first cycle, we set a specific theme each year <br>under the academic theme &ldquo;Humanity &amp; Future&rdquo; and carry on research and academic forums.</p>
       <ul class="dot-list c-txt" style="margin-top:24px">
-        <li>Systematically explore, from the perspective of the humanities and social sciences, the changes technological transformation brings to the human mode of existence, social structures, and the relationship between humans and nature</li>
+        <li>Systematically explore, from the perspective of the humanities and social sciences, the changes technological transformation brings to the human mode of existence, social structures, and the relationship between humanity and nature</li>
         <li>Build up research in three stages: Forecasting Future Change (2026&ndash;2028), Exploring Future Challenges (2029&ndash;2031), and Transition to the Future (2032&ndash;2034)</li>
         <li>Apply a spiral research structure in which each stage cycles through three perspectives &mdash; technology, the humanities and society, and the environment &mdash; year by year, deepening our questions layer by layer</li>
         <li>In 2035, synthesize and evaluate the results of the first cycle and set the theme and research directions for the second cycle</li>
@@ -440,7 +440,7 @@ BODY['en-results'] = results()
 
 # Insight: 국문 인사이트 글 가운데 영문 칸을 채운 글만 WordPress가 그때그때 보여 줌(inc/en.php hnf_en_insight)
 BODY['en-insight'] = '''
-<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series of reflections and proposals on humans and the future. <br>Contributors include the Institute&rsquo;s researchers, scholars from a wide range of related disciplines, activists and practitioners in the field, and educators. <br>Issues are published in Korean and also made available in English.</p>
+<p class="c-lead en-res-lead">Insight is the Institute&rsquo;s essay series of reflections and proposals on humanity and the future. <br>Contributors include the Institute&rsquo;s researchers, scholars from a wide range of related disciplines, activists and practitioners in the field, and educators. <br>Issues are published in Korean and also made available in English.</p>
 <!--HNF:en-insight-->
 <p class="tbl-note">English editions are listed here as they become available.</p>
 <!--/HNF:en-insight-->

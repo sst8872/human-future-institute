@@ -800,3 +800,8 @@ body.hv-top .float-btns{opacity:0;pointer-events:none}
 
 /* 첫 화면 다섯째 슬라이드: 「기술의 속도보다 / 방향을 묻습니다」 두 줄 */
 .hv-ed .s5-big span{display:block}
+
+/* 조직도·연구진 구성표: 휴대폰에서 이름·직위가 한 글자씩 끊기지 않게(11-23) */
+@media (max-width:768px){.tbl-mem th,.tbl-mem td{white-space:nowrap;padding-left:6px;padding-right:6px}.tbl-mem th:last-child,.tbl-mem td:last-child{white-space:normal;text-align:left}}
+/* 영문 페이지: 낱말 중간에서 줄이 바뀌지 않게 */
+body.lang-en dd,body.lang-en td,body.lang-en .c-txt{word-break:normal;overflow-wrap:break-word}
