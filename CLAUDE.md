@@ -73,3 +73,10 @@
 - 인사이트 1호 핵심 문구: 앞으로는 인류가 무엇을 할 수 있는가보다 무엇을 소중히 여기고 어떻게 더불어 살아가는가를 함께 따져 보아야 합니다
 - 휴대폰에서 <br>이 감춰지는 곳(.c-lead·.grt-lead·.v-banner strong·.clm-title)은 <br> 앞에 띄어쓰기
 - **문구·이름을 바꾼 뒤 점검 범위(11-23 로그인 화면 옛 로고를 놓친 뒤 정함)**: ① 공개 페이지 전부를 캐시 피하는 주소와 **일반 주소** 둘 다 ② 로그인 화면(wp-login.php)·404·검색·/feed/·/wp-sitemap.xml ③ CSS가 불러오는 그림(`url(...)`)·테마 images 전체 OCR(tesseract kor+eng) ④ 같은 이름으로 덮어쓴 파일이 어디서 쓰이는지(쓰이면 새 이름으로) ⑤ 첨부 파일 글자(hwp·docx·pdf) ⑥ DB 전체 검색(`wp db search`, 수정 이력 revision은 공개 안 됨)
+
+## 한글 문서 만들기 (11-23)
+- **python-hwpx로 그림을 넣으면 한글에서 잘려 보인다**: 한글은 `hp:imgClip`(그리고 imgDim)을 **픽셀×75** 단위로 읽는데 python-hwpx는 HWPUNIT(표시 크기)로 쓴다 → 그림 왼쪽 위 일부만 보임. PNG에 DPI를 넣는 것(`png_for_hwp`)으로는 안 고쳐졌다. 고치려면 imgClip right·bottom을 그림 픽셀 폭·높이×75로 바꾸고 imgDim을 지운다(아직 `make_hwp.py`에 넣지 않음)
+- 지금 확실한 길: docx(docx-js)로 만들기 → 랩탑 한글(호워드 hword.exe가 docx를 연다) → 「한글 문서(*.hwp)」로 저장 → 한글 2020(hwp.exe)에서 열어 「한글 표준 문서(*.hwpx)」로 저장 → 필요하면 hwpx XML 보정(`_tools/docs/fix_committee_hwpx.py`: 표 뒤 빈 줄은 표를 「글자처럼 취급」, 줄 배치 `linesegarray`는 지워 한글이 다시 계산)
+- computer use: 한글 2020·호워드 허락됨(full). 파일 대화 상자는 「파일 이름」 칸에만 입력 가능(전체 경로를 쳐도 됨). 쪽 수는 상태 표시줄 「1/2쪽」, 전체 쪽 보기는 오른쪽 아래 배율 막대를 끌어서. 끝나면 computer_release_lock
+- 사용자에게는 **hwpx 하나만** 보낸다(두 파일 보내지 말 것)
+- 공문 글꼴: 함초롬돋움(한글 기본, 무료)
