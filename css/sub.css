@@ -333,14 +333,14 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 
 /* 연구 분야 */
 .f-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:60px;background:var(--bg-soft);margin-bottom:60px}
-.f-intro .ring{position:relative;width:min(420px,100%);aspect-ratio:1;margin:0 auto}
-.f-intro .ring>div{position:absolute;width:44%;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;font-size:17px;font-weight:700;mix-blend-mode:multiply}
+.f-intro .ring{position:relative;width:min(420px,100%);aspect-ratio:10/9;margin:0 auto}
+.f-intro .ring>div{position:absolute;width:40%;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;font-size:17px;font-weight:700;mix-blend-mode:multiply}
 .f-intro .ring>div small{font-family:var(--en);font-size:11px;font-weight:400;letter-spacing:1px;opacity:.85}
-.f-intro .ring .a{left:28%;top:0;background:rgba(12,46,134,.9)}
-.f-intro .ring .b{left:0;top:40%;background:rgba(201,162,74,.92)}
-.f-intro .ring .c{right:0;top:40%;background:rgba(29,68,216,.85)}
+.f-intro .ring .a{left:30%;top:0;background:rgba(12,46,134,.9)}
+.f-intro .ring .b{left:0;top:55.5%;background:rgba(201,162,74,.92)}
+.f-intro .ring .c{right:0;top:55.5%;background:rgba(29,68,216,.85)}
 .f-intro .ring .d{left:28%;top:56%;width:44%;background:rgba(0,16,58,.85);mix-blend-mode:normal;opacity:0}
-.f-intro .ring .core{left:50%;top:52%;width:120px;height:120px;transform:translate(-50%,-50%);background:#fff;color:var(--deep);mix-blend-mode:normal;box-shadow:0 10px 30px rgba(0,0,0,.12);font-size:15px}
+.f-intro .ring .core{left:30%;top:35.5%;background:#fff;color:var(--deep);mix-blend-mode:normal;box-shadow:0 10px 30px rgba(0,0,0,.12)}
 .f-row{display:grid;grid-template-columns:600px 1fr;gap:70px;align-items:center;padding:50px 0;border-top:1px solid #e5e5e5}
 .f-row:nth-of-type(even){grid-template-columns:1fr 600px}
 .f-row:nth-of-type(even) .ph{order:2}
@@ -885,23 +885,10 @@ a:hover>.cover,.cover:hover{transform:translateY(-6px);box-shadow:0 20px 36px rg
 @media (max-width:1024px){.v-banner{height:auto;min-height:200px;padding:36px 28px}}
 @media (max-width:640px){.v-banner{min-height:160px;padding:32px 22px}.v-banner strong{font-size:21px;line-height:1.45;word-break:keep-all}.v-banner strong br{display:none}}
 
-/* 연구 분야 원 — 휴대폰 (2026-11-23)
-   세 원과 가운데 원(기술 윤리)은 크기를 줄이지 않는다(모두 같은 비중). 대신 원 묶음을 상자 좌우 여백까지 넓혀 자리를 만들고,
-   양옆 글자는 가운데 원에 닿지 않을 만큼만(필요한 폭에서만) 바깥으로 옮긴다 */
+/* 연구 분야 원 (2026-11-23) — 네 원(인간의 가치·미래 교육·기술과 사회·기술 윤리)은 모두 같은 크기(묶음 폭의 40%).
+   가운데 원과 겹치는 만큼 바깥 세 원을 벌려 놓아 글자가 가려지지 않는다. 휴대폰에서는 묶음을 상자 좌우 여백까지 넓힌다 */
 @media (max-width:640px){
   .f-intro .ring{width:calc(100% + 36px);margin:0 -18px}
   .f-intro .ring>div{font-size:15px}
   .f-intro .ring>div small{font-size:10px;letter-spacing:.6px}
-}
-@media (max-width:640px){
-  body.lang-en .f-intro .ring .b{padding-right:0}
-  body.lang-en .f-intro .ring .c{padding-left:0}
-}
-@media (max-width:380px){
-  .f-intro .ring .b,body.lang-en .f-intro .ring .b{padding-right:6%}
-  .f-intro .ring .c,body.lang-en .f-intro .ring .c{padding-left:6%}
-}
-@media (max-width:340px){
-  .f-intro .ring .b,body.lang-en .f-intro .ring .b{padding:14% 10% 0 0}
-  .f-intro .ring .c,body.lang-en .f-intro .ring .c{padding:14% 0 0 10%}
 }
