@@ -139,7 +139,7 @@ function hnf_strip_page() {
         }
         echo '</select></td>';
         printf('<td><input type="text" name="s[%d][label]" value="%s" placeholder="예: WEEKLY FORUM" class="regular-text" style="width:100%%"></td>', $i, esc_attr($r['label']));
-        printf('<td><input type="text" name="s[%d][sub]" value="%s" placeholder="예: 12.11(금) 17:00 · Zoom" class="regular-text" style="width:100%%"></td>', $i, esc_attr($r['sub']));
+        printf('<td><input type="text" name="s[%d][sub]" value="%s" placeholder="예: 12.11(금) 17:30 · Zoom" class="regular-text" style="width:100%%"></td>', $i, esc_attr($r['sub']));
         $n = $now[$i] ?? null;
         echo '<td>' . ($n ? '<small style="color:#b28829;font-weight:600">' . esc_html($n['label']) . '</small><br>' . esc_html(get_the_title($n['id'])) . '<br><small>' . esc_html($n['sub']) . (hnf_strip_ok($r['id']) ? ' · 고른 글' : ' · 자동') . '</small>' : '-') . '</td></tr>';
     }
